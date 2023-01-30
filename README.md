@@ -1,4 +1,4 @@
-# the-grey-market
+# The-Grey-Market
 
 It is very hard to find reliable data about the prices of items around you. Mnay sources can very and often times leads us to 
 over pay for things that we did not need to overpay for. The Grey Market program is intended to be used as a place where you 
