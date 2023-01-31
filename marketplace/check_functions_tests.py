@@ -3,15 +3,8 @@
 
 import unittest
 import check_functions as mod
-from vehicle_mod			import make_atv
+from vehicle_mod			import make_vehicle
 
-model_list = {"yamaha"	: ["banshee", "blaster", "raptor", "yfz", "timberwolf"], 
-						"tao" : ["tao"], 
-						"polaris" 		: ["explorer", "sportsman", "predator"],
-						"kawasaki" 	: ["brute force", "mojave"],
-						"honda"		: ["fourtrax", "ex"],
-						"suzuki"		:["ltz"]
-						}
 
 class Check_Answer_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
@@ -43,11 +36,11 @@ class Check_Answer_Tests(unittest.TestCase):
 
 class Check_Model_Tests(unittest.TestCase):
 	
-	myAtv1 = make_atv("2019", "tao", "tao", "110", "no", "600")
-	myAtv2 = make_atv("1997", "honda", "fourtrax", "325", "no", "870")
-	myAtv3 = make_atv("2001", "polaris", "sportsman", "400", "yes", "2100")
-	myAtv4 = make_atv("2008", "yamaha", "raptor", "600", "no", "1600")
-	myAtv5 = make_atv("2008", "yamaha", "raptor", "600", "no", "1100")
+	myAtv1 = make_vehicle("2019", "tao", "tao", "110", "no", "600")
+	myAtv2 = make_vehicle("1997", "honda", "fourtrax", "325", "no", "870")
+	myAtv3 = make_vehicle("2001", "polaris", "sportsman", "400", "yes", "2100")
+	myAtv4 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1600")
+	myAtv5 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1100")
 	database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
 	#--------------------------------------------------------------------------------------------------#
 	# EXPECTATIONS
@@ -61,11 +54,11 @@ class Check_Model_Tests(unittest.TestCase):
 		
 class Check_Brand_Tests(unittest.TestCase):
 	
-	myAtv1 = make_atv("2019", "tao", "tao", "110", "no", "600")
-	myAtv2 = make_atv("1997", "honda", "fourtrax", "325", "no", "870")
-	myAtv3 = make_atv("2001", "polaris", "sportsman", "400", "yes", "2100")
-	myAtv4 = make_atv("2008", "yamaha", "raptor", "600", "no", "1600")
-	myAtv5 = make_atv("2008", "yamaha", "raptor", "600", "no", "1100")
+	myAtv1 = make_vehicle("2019", "tao", "tao", "110", "no", "600")
+	myAtv2 = make_vehicle("1997", "honda", "fourtrax", "325", "no", "870")
+	myAtv3 = make_vehicle("2001", "polaris", "sportsman", "400", "yes", "2100")
+	myAtv4 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1600")
+	myAtv5 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1100")
 	database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
 	
 	#--------------------------------------------------------------------------------------------------#
@@ -82,14 +75,14 @@ class Check_Brand_Tests(unittest.TestCase):
 
 class Is_In_Database(unittest.TestCase):
 	
-	myAtv1 = make_atv("2019", "tao", "tao", "110", "no", "600")
-	myAtv2 = make_atv("1997", "honda", "fourtrax", "325", "no", "870")
-	myAtv3 = make_atv("2001", "polaris", "sportsman", "400", "yes", "2100")
-	myAtv4 = make_atv("2008", "yamaha", "raptor", "600", "no", "1600")
-	myAtv5 = make_atv("2008", "yamaha", "raptor", "600", "no", "1100")
+	myAtv1 = make_vehicle("2019", "tao", "tao", "110", "no", "600")
+	myAtv2 = make_vehicle("1997", "honda", "fourtrax", "325", "no", "870")
+	myAtv3 = make_vehicle("2001", "polaris", "sportsman", "400", "yes", "2100")
+	myAtv4 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1600")
+	myAtv5 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1100")
 	database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
 	
-	myAtv6 = make_atv("1996", "kawasaki", "brute", "700", "yes", "4200")
+	myAtv6 = make_vehicle("1996", "kawasaki", "brute", "700", "yes", "4200")
 	
 	def test_is_in_database_1(self):
 		self.assertTrue(mod.is_in_database(self.myAtv1, self.database))

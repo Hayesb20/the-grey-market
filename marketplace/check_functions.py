@@ -10,9 +10,9 @@ words_of_denial 		= ["no", "n", "nope", "nay", "not", "ni", "np", "nothing", "no
 
 search_words 			= ["look up", "search", "find"]
 								
-atv_words 				= ["atv", "quad", "quads", "wheelers", "four wheelers", "atvs", "ats"]
+# atv_words 				= ["atv", "quad", "quads", "wheelers", "four wheelers", "atvs", "ats"]
 
-mower_word 			= ["mower", "mow"]
+#mower_word 			= ["mower", "mow"]
 
 show_words				= ["show database", "show", "see", "see database", "see data", "show data"]
 
@@ -36,9 +36,10 @@ def check_answer(answer):
 	if 	answer.lower() 	in affirmative_words: 				return "yes"
 	elif 	answer.lower() 	in words_of_denial: 					return "no"
 	elif  answer.lower()		in search_words:							return "search"
-	elif 	answer.lower()		in atv_words:								return "atv_word"
-	elif 	answer.lower()		in mower_word:							return "mower_word"
+#	elif 	answer.lower()		in atv_words:								return "atv_word"
+#	elif 	answer.lower()		in mower_word:							return "mower_word"
 	elif 	answer.lower() 	in show_words:							return "show_database"
+	elif  answer.lower()		== "vehicles":								return "vehicle_word"
 	elif  answer.lower()		== "open log":								return "open_log"
 	elif 	answer.lower()		== "backup":								return "backup"
 	elif 	answer.lower()		== "load backup":						return "load_backup"

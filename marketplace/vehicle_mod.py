@@ -26,14 +26,14 @@ def confirm_atv(atv):
 	return message
 
 # TESTED - Given the needed paramiters, creates and returns an atv object
-def make_atv(year, brand, model, cc_rating, awd, price):
-	new_atv = Atv(   year.replace(" ", "").lower(), 
+def make_vehicle(year, brand, model, cc_rating, awd, price):
+	new_vehicle = Atv(   year.replace(" ", "").lower(), 
 								brand.strip().lower(), 
 								model.strip().lower(), 
 								cc_rating.replace(" ", "").lower(),
 								awd.replace(" ", "").lower(), 
 								price.replace(" ", "").lower())
-	return new_atv
+	return new_vehicle
 	
 	
 	

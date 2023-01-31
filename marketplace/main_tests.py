@@ -5,7 +5,6 @@
 import unittest
 
 import vehicle_statistic_mod_tests
-import main_mod_tests
 import auto_fill_mod_tests
 import check_functions_tests
 import load_and_save_files_tests
@@ -20,11 +19,6 @@ unittest.TextTestRunner(verbosity=2).run(suite)
 
 print("\nRunning atv_statistic_modules_tests")
 suite = unittest.TestLoader().loadTestsFromModule(vehicle_statistic_mod_tests)
-unittest.TextTestRunner(verbosity=2).run(suite)
-
-print("\nRunning main_modules_tests")
-print("!! NO TESTS TO RUN!!")
-suite = unittest.TestLoader().loadTestsFromModule(main_mod_tests)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 print("\nRunning auto_fill_mod_tests")

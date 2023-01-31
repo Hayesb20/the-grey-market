@@ -10,14 +10,14 @@ from auto_fill_mod 				import autofill_atv
 from load_and_save_files 	import load_file, save_file, dict_of_filepaths, show_database
 
 
-atv_database = []
+vehicle_database = []
 
 
 def get_brand():
 	brand = input("\n What is the brand? ")
 	brand = brand.strip().lower()
 	
-	while not CF.check_brand(brand, atv_database):
+	while not CF.check_brand(brand, vehicle_database):
 		answer = input("\n I do not recognize that brand. Are you sure its correct? ")
 		if CF.check_answer(answer) == "yes":
 			print ("\n Okay, just wanted to make sure ")
@@ -32,7 +32,7 @@ def get_model():
 	model = input ("\n What is the model? ")
 	model = model.strip().lower()
 
-	while not CF.check_model(model = model, a_dict = atv_database):
+	while not CF.check_model(model = model, a_dict = vehicle_database):
 		answer = input ("\n I do not recognize this model? Are you sure its correct? ")
 		if CF.check_answer(answer) == "yes"	: 
 			print ("\n Okay, just wanted to make sure ")	
@@ -48,24 +48,24 @@ def is_same_thing(item):
 	if answer == "no": print ("\n Same one? Okay, I won't remember it then ")
 	elif answer == "yes" :
 		print("\n Okay!, i'll record this one too")
-		atv_database.append(item)
+		vehicle_database.append(item)
 	elif answer == "other": is_same_thing()
 
-def should_I_remember(answer, item, atv_database):
+def should_I_remember(answer, item, vehicle_database):
 	answer = CF.check_answer(answer)
 	if answer == "yes":
 		print("\n Okay")
-		atv_database.append(item)
+		vehicle_database.append(item)
 							
 	elif answer == "no": print("\n Consider it forgotten. ")
 		
 	elif answer == "other":
 		answer = input("\n I'm afraid I didn't understand. Do you want me to record it? ")
-		should_I_remember(answer, item, atv_database)
+		should_I_remember(answer, item, vehicle_database)
 	
-def build_atv(database):
-	string = input("\n Cool, tell me about this ATV "
-								+ "\n I need to know the ATVs year, model, "
+def build_vehicle(database):
+	string = input("\n Cool, tell me about this vehicle "
+								+ "\n I need to know the year, model, "
 								+ "\n brand, engine size, price and whether or not "
 								+ "\n it has 4X4 capabilities\n"
 								+ "\n Please be sure to use spaces between words\n ")
@@ -95,34 +95,34 @@ def build_atv(database):
 	except: 	price = input("\n How much is it? ")
 		
 
-	new_atv = VM.make_atv(	year 		 = year.strip(), 
+	new_vehicle = VM.make_vehicle(	year 		 	= year.strip(), 
 														brand		 = brand.strip().lower(), 
 														model 	 = model.strip().lower(), 
 														cc_rating= cc_rating.strip(), 
 														awd 	     = awd.strip().lower(), 
 														price 		 = price.strip())
 	VM.confirm_atv(new_atv)
-	return new_atv
+	return new_vehicle
 
 def load_files():
 	# Look for a txt file at the designated location to use
-	try:	load_file(	database = atv_database,
+	try:	load_file(	database = vehicle_database,
 							filename = dict_of_filepaths["filepath_to_atv_database_txt"])
-	except: print(" Failed to load 'atv_database.txt'")	
+	except: print(" Failed to load 'vehicle_database.txt'")	
 	else: print(" Database loaded successfully")	
 
 def save_files():
-	try: save_file(	database = atv_database, 
+	try: save_file(	database = vehicle_database, 
 						filename =  dict_of_filepaths["filepath_to_atv_database_txt"])
-	except: print(" Failed to save 'atv_database.txt'")
+	except: print(" Failed to save 'vehicle_database.txt'")
 	else: print(" Database saved successfully")	
 
 def options():
-	options_list = ["\n Show database : I will show you all the ATVs I know of",
+	options_list = ["\n Show database : I will show you all the vehicles I know of",
 							" Load Backup : I will load my most recent backup",
 							" Backup : I will update by backup files",
 							" Stop : We will return to the privious page",
-							" Open Log : We can talk about some ATVs you want me to remember" ]
+							" Open Log : We can add new vehicles to our record" ]
 
 	for option in options_list: print(option)
 
@@ -141,7 +141,7 @@ def work_with_vehicles():
 			answer = input ("\n Sorry, what did you want to do? \n  ")
 	
 		elif CF.check_answer(answer) == "show_database":
-			try:		 	show_database(atv_database)
+			try:		 	show_database(vehicle_database)
 			except: 	print ("No database to show")
 			else: 	 	print (" Okay, there it is")
 			options()
@@ -149,9 +149,9 @@ def work_with_vehicles():
 	
 		elif CF.check_answer(answer) == "load_backup":
 			# Add some sort of warning message about potential data loss and add an option to cancel
-			while atv_database != []: atv_database.pop()
+			while vehicle_database != []: vehicle_database.pop()
 			try: 
-				load_file(	database = atv_database, filename = dict_of_filepaths["filepath_to_atv_database_backup_txt"])
+				load_file(	database = vehicle_database, filename = dict_of_filepaths["filepath_to_atv_database_backup_txt"])
 				save_files()
 			except: 	print("Failed to load 'atv_database_backup.txt'")				
 			else: 		print(" Databased loaded successfully")
@@ -161,7 +161,7 @@ def work_with_vehicles():
 	
 		elif CF.check_answer(answer) == "backup":
 			try:
-				save_file(	database = atv_database, 
+				save_file(	database = vehicle_database, 
 									filename = dict_of_filepaths["filepath_to_atv_database_backup_txt"])
 				print("Backup Successful")
 			except: print("Backup Failed")
@@ -172,11 +172,11 @@ def work_with_vehicles():
 		elif CF.check_answer(answer) == "open_log":
 		
 			j = 0
-			print("\n Okay, let's go check out this ATV of yours")
+			print("\n Okay, let's go check out this vehicle of yours")
 			while j < 1:
 						
-				#Asks the user for the needed information to make a new ATV
-				new_atv = build_atv(database = atv_database) 
+				#Asks the user for the needed information to make a new vehicle
+				new_atv = build_vehicle(database = vehicle_database) 
 				
 				if new_atv == "no object made": 
 					print(" Okay no problem \n Is there something else we can do here? \n")
@@ -190,7 +190,7 @@ def work_with_vehicles():
 			
 				while answer != "yes":
 					if answer == "no":
-						new_atv	= build_atv(database = atv_database)
+						new_atv	= build_vehicle(database = vehicle_database)
 						print (VM.confirm_atv(new_atv))
 						answer	= input(" Is this correct? (Yes/No) ")
 						answer	= CF.check_answer(answer)
@@ -204,16 +204,16 @@ def work_with_vehicles():
 				# same brand and model only.
 				answer = input("\n Would you like to see how the atv you just told me \n"
 										+ " about compares to what I can find out? ")
-				if CF.check_answer(answer) == "yes": print("\n" + get_statistical_data(new_atv, atv_database))
+				if CF.check_answer(answer) == "yes": print("\n" + get_statistical_data(new_atv, vehicle_database))
 				
 				#Look up and see if the atv already exists in the database and then checks
 				# to see what the user wants to do with the atv they created
-				answer = CF.is_in_database(new_atv, atv_database)
+				answer = CF.is_in_database(new_atv, vehicle_database)
 				if answer == True: is_same_thing(new_atv)
 				
 				else:
 					answer = input("\n It seems this a new one, should I remember it? ")
-					should_I_remember(answer, new_atv, atv_database)
+					should_I_remember(answer, new_atv, vehicle_database)
 					save_files()
 						
 				# Checks to see if the user would like to enter in another ATV
