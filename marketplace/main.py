@@ -3,19 +3,9 @@
 
 import main_mod as mod
 
-
-from check_functions 						import check_answer
-from load_and_save_files 				import load_file
-from load_and_save_files 				import save_file
-from load_and_save_files 				import dict_of_filepaths
-from work_with_vehicles		import work_with_atvs
-from search_mod								import search_item
-
-
-# For better or worse, these global variabls are being updated through various
-# functions. I may want to consier revamping the functions to take these as
-# local variables and paramiters. this might allow for easier creation and usage
-# of multiple classes in addition to the ATV class. 
+from check_functions 			import check_answer
+from work_with_vehicles		import work_with_vehicles
+from search_mod					import search_item
 
 
 def options():
@@ -36,7 +26,7 @@ def main():
 		
 		match word:
 			case "search" : search_item()
-			case "atv_word": work_with_atvs()
+			case "atv_word": work_with_vehicles()
 			case "mower_word": work_with_mowers()
 			case "no": i = i+1
 			case "other": print ("\n I'm sorry, I don't seem to know what that is")

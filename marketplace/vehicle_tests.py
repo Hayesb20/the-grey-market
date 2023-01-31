@@ -23,21 +23,21 @@ class Make_Atv_Tests(unittest.TestCase):
 	def test_for_Make_Atv_1(self):
 		myAtv = mod.make_atv("1998", "yamaha", "sport", "35", "yes", "2300")
 		self.assertEqual("1998", 		myAtv.get_year())
-		self.assertEqual("yamaha", myAtv.get_brand())
+		self.assertEqual("yamaha",	myAtv.get_brand())
 		self.assertEqual("sport", 		myAtv.get_model())
-		self.assertEqual("35",			myAtv.get_cc_rating())
-		self.assertEqual("yes",		myAtv.get_awd())
-		self.assertEqual("2300",		myAtv.get_price())
+		self.assertEqual("35",				myAtv.get_cc_rating())
+		self.assertEqual("yes",			myAtv.get_awd())
+		self.assertEqual("2300",			myAtv.get_price())
 
 	# TEST - make_atv is called with all arguments given, but arguments contain white spacing.
 	def test_for_Make_Atv_2(self):
 		myAtv = mod.make_atv(" 19 98 ", " yam aha ", " sp ort ", " 3 5 ", " y es ", " 23 00 ")	
 		self.assertEqual("1998", 		myAtv.get_year())
-		self.assertEqual("yam aha", myAtv.get_brand())
+		self.assertEqual("yam aha", 	myAtv.get_brand())
 		self.assertEqual("sp ort", 		myAtv.get_model())
 		self.assertEqual("35", 			myAtv.get_cc_rating())
-		self.assertEqual("yes", 		myAtv.get_awd())
-		self.assertEqual("2300",		myAtv.get_price())	
+		self.assertEqual("yes", 			myAtv.get_awd())
+		self.assertEqual("2300",			myAtv.get_price())	
 	
 	# TEST - make_atv is called with all arguments given, but arguments are mixed with upper
 	# and lower case chars

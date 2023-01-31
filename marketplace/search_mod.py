@@ -1,9 +1,9 @@
 # Brian Hayes
 # 23 Jan 2023
 
-from handeling_strings import parse
+from handeling_strings 		import parse
 from load_and_save_files import load_file, dict_of_filepaths, show_database
-from check_functions 			import check_answer
+from check_functions 		import check_answer
 
 
 atv_database = []

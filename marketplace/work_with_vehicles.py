@@ -1,14 +1,12 @@
 # Brian Hayes
 # 17 Nov 2022
 
-import main_mod
-import check_functions 						as CF
-import vehicle_mod							 	as wwam
+import check_functions 		as CF
+import vehicle_mod				as VM
 
 from vehicle_statistic_mod 	import get_statistical_data
 from handeling_strings 			import parse
 from auto_fill_mod 				import autofill_atv
-
 from load_and_save_files 	import load_file, save_file, dict_of_filepaths, show_database
 
 
@@ -97,13 +95,13 @@ def build_atv(database):
 	except: 	price = input("\n How much is it? ")
 		
 
-	new_atv = wwam.make_atv(	year 		 = year.strip(), 
+	new_atv = VM.make_atv(	year 		 = year.strip(), 
 														brand		 = brand.strip().lower(), 
 														model 	 = model.strip().lower(), 
 														cc_rating= cc_rating.strip(), 
 														awd 	     = awd.strip().lower(), 
 														price 		 = price.strip())
-	wwam.confirm_atv(new_atv)
+	VM.confirm_atv(new_atv)
 	return new_atv
 
 def load_files():
@@ -128,7 +126,7 @@ def options():
 
 	for option in options_list: print(option)
 
-def work_with_atvs():
+def work_with_vehicles():
 	
 	load_files()
 	
@@ -186,14 +184,14 @@ def work_with_atvs():
 									
 				# Ask the user to assure the input
 				print ("\n Okay great!, let's make sure I got that right, you have a")
-				print(wwam.confirm_atv(new_atv))
+				print(VM.confirm_atv(new_atv))
 				answer = input(" Is this correct? (Yes/No) ")
 				answer = CF.check_answer(answer)
 			
 				while answer != "yes":
 					if answer == "no":
 						new_atv	= build_atv(database = atv_database)
-						print (wwam.confirm_atv(new_atv))
+						print (VM.confirm_atv(new_atv))
 						answer	= input(" Is this correct? (Yes/No) ")
 						answer	= CF.check_answer(answer)
 				

@@ -1,8 +1,8 @@
 # Brian Hayes
 # 14 Nov 2022
 
-import vehicle_statistic_mod as stat
 import unittest
+import vehicle_statistic_mod as stat
 
 from atv_class import Atv
 from vehicle_mod import make_atv
