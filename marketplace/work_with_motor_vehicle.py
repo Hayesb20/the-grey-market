@@ -3,7 +3,7 @@
 
 import main_modules
 import check_functions 						as CF
-import working_with_atvs_modules 	as wwam
+import motor_vehicle_modules 			as mvm
 
 from atv_statistic_modules 	import get_statistical_data
 from handeling_strings 			import parse
@@ -97,13 +97,13 @@ def build_atv(database):
 	except: 	price = input("\n How much is it? ")
 		
 
-	new_atv = wwam.make_atv(	year 		 = year.strip(), 
+	new_atv = mvm.make_atv(	year 		 = year.strip(), 
 														brand		 = brand.strip().lower(), 
 														model 	 = model.strip().lower(), 
 														cc_rating= cc_rating.strip(), 
 														awd 	     = awd.strip().lower(), 
 														price 		 = price.strip())
-	wwam.confirm_atv(new_atv)
+	mvm.confirm_atv(new_atv)
 	return new_atv
 
 def load_files():
@@ -186,14 +186,14 @@ def work_with_atvs():
 									
 				# Ask the user to assure the input
 				print ("\n Okay great!, let's make sure I got that right, you have a")
-				print(wwam.confirm_atv(new_atv))
+				print(mvm.confirm_atv(new_atv))
 				answer = input(" Is this correct? (Yes/No) ")
 				answer = CF.check_answer(answer)
 			
 				while answer != "yes":
 					if answer == "no":
 						new_atv	= build_atv(database = atv_database)
-						print (wwam.confirm_atv(new_atv))
+						print (mvm.confirm_atv(new_atv))
 						answer	= input(" Is this correct? (Yes/No) ")
 						answer	= CF.check_answer(answer)
 				

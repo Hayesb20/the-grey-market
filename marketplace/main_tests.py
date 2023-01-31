@@ -9,7 +9,7 @@ import main_modules_tests
 import auto_fill_mod_tests
 import check_functions_tests
 import load_and_save_files_tests
-import working_with_atvs_tests
+import motor_vehicle_tests
 import atv_class_tests
 import handeling_strings_tests
 
@@ -40,7 +40,7 @@ suite = unittest.TestLoader().loadTestsFromModule(load_and_save_files_tests)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 print("\nRunning working_with_atvs_tests")
-suite = unittest.TestLoader().loadTestsFromModule(working_with_atvs_tests)
+suite = unittest.TestLoader().loadTestsFromModule(motor_vehicle_tests)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 print("\nRunning working_with_atvs_tests")
