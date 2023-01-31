@@ -4,16 +4,8 @@
 from datetime import date
 import math
 
-from check_functions import check_brand
-from check_functions import check_model
-from check_functions import check_answer
-
-# experianceing a problem when the model is correct but not listed in know 
-# models (known brands and models or models and their cc) the price is being set to the 
-# given cc rating even though a price rating is given 
 
 def most_likely(the_dict, database):
-	#print("mostlikely item",the_dict["item"])
 	
 	if int(the_dict["item"]) > int(date.today().year): return "price"
 	elif int(the_dict["item"]) > 1000 and int(the_dict["item"]) < 1950: return "price" # 1000 cc_rating cannot be autocorrected for. Will not track anything older than 1950AD
@@ -106,11 +98,11 @@ def most_likely(the_dict, database):
 					and int(list_of_possible_CCs[1] == int(the_dict["item"]))):
 					price_occurence_counter = price_occurence_counter + 1
 
-		if int(the_dict["item"]) == int(list_of_possible_CCs[0]) and cc_occurence_counter > price_occurence_counter: return "cc_rating"
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[0]) and cc_occurence_counter < price_occurence_counter: return "price"
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter > price_occurence_counter: return "cc_rating"
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter < price_occurence_counter: return "price"		
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter == price_occurence_counter: return "cannot_interpret"	
+		if int(the_dict["item"]) == int(list_of_possible_CCs[0]) 	and cc_occurence_counter > price_occurence_counter: 	return "cc_rating"
+		elif int(the_dict["item"]) == int(list_of_possible_CCs[0]) and cc_occurence_counter < price_occurence_counter: 	return "price"
+		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter > price_occurence_counter: 	return "cc_rating"
+		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter < price_occurence_counter: 	return "price"		
+		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter == price_occurence_counter: 	return "cannot_interpret"	
 
 	# The two numbers ARE the same
 	if	(len(list_of_possible_CCs) == 2

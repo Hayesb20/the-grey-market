@@ -3,7 +3,7 @@
 # the program
 
 
-# NOT TESTED - Takes a string and creates a list of each word in that string
+
 def parse(string):
 	len_of_string = len(string)
 	counter = 0
