@@ -1,11 +1,11 @@
 # Brian Hayes
 # 14 Nov 2022
 
-import atv_statistic_modules as stat
+import vehicle_statistic_mod as stat
 import unittest
 
 from atv_class import Atv
-from motor_vehicle_modules import make_atv
+from vehicle_mod import make_atv
 
 # SET UP STUFF
 myAtv1 = make_atv("2019", "tao", "tao", "110", "no", "600")

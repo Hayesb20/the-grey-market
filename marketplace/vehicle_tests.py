@@ -4,7 +4,7 @@
 import unittest
 from atv_class import Atv
 
-import working_with_atvs_modules as mod
+import vehicle_mod as mod
 
 class Make_Atv_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#

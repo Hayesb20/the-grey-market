@@ -1,11 +1,11 @@
 # Brian Hayes
 # 17 Nov 2022
 
-import main_modules
+import main_mod
 import check_functions 						as CF
-import working_with_atvs_modules 	as wwam
+import vehicle_mod							 	as wwam
 
-from atv_statistic_modules 	import get_statistical_data
+from vehicle_statistic_mod 	import get_statistical_data
 from handeling_strings 			import parse
 from auto_fill_mod 				import autofill_atv
 

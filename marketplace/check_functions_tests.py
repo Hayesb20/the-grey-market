@@ -3,7 +3,7 @@
 
 import unittest
 import check_functions as mod
-from motor_vehicle_modules import make_atv
+from vehicle_mod import make_atv
 
 model_list = {"yamaha"	: ["banshee", "blaster", "raptor", "yfz", "timberwolf"], 
 						"tao" : ["tao"], 
