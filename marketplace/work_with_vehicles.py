@@ -144,8 +144,6 @@ def work_with_vehicles():
 			try:		 	show_database(vehicle_database)
 			except: 	print ("No database to show")
 			else: 	 	print (" Okay, there it is")
-			options()
-			answer = input ("\n What next? ")
 	
 		elif CF.check_answer(answer) == "load_backup":
 			# Add some sort of warning message about potential data loss and add an option to cancel
