@@ -7,13 +7,14 @@ import search_mod as mod
 class Is_Valid_Thing_Tests(unittest.TestCase):
 	
 	def test_is_valid_thing_1(self):
-		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "polaris"))
-		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "1998"))
-		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "sportsman"))
-		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "400"))
-		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "no"))
-		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "1850"))
-		self.assertFalse(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850"], "yamaha"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "polaris"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "1998"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "sportsman"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "400"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "no"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "1850"))
+		self.assertFalse(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "yamaha"))
+		self.assertTrue(mod.is_valid_thing(["1998","polaris","sportsman","400","no","1850", "four wheeler"], "four wheeler"))
 		
 class Filter_Data_Tests(unittest.TestCase):
 	

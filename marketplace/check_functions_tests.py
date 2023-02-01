@@ -6,6 +6,14 @@ import check_functions as mod
 from vehicle_mod			import make_vehicle
 
 
+myAtv1 = make_vehicle(year = "2019", brand = "tao", model = "tao", cc_rating = "110", awd = "no", price = "600", classification = "four wheeler")
+myAtv2 = make_vehicle(year = "1997", brand = "honda", model = "fourtrax", cc_rating = "325", awd = "no", price = "870", classification = "four wheeler")
+myAtv3 = make_vehicle(year = "2001", brand = "polaris", model = "sportsman", cc_rating = "400", awd = "yes", price = "2100", classification = "four wheeler")
+myAtv4 = make_vehicle(year = "2008", brand = "yamaha", model = "raptor", cc_rating = "600", awd = "no", price = "1600", classification = "four wheeler")
+myAtv5 = make_vehicle(year = "2008", brand = "yamaha", model = "raptor", cc_rating = "600", awd = "no", price = "1100", classification = "four wheeler")
+
+database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
+
 class Check_Answer_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
 	# EXPECTATIONS
@@ -36,12 +44,7 @@ class Check_Answer_Tests(unittest.TestCase):
 
 class Check_Model_Tests(unittest.TestCase):
 	
-	myAtv1 = make_vehicle("2019", "tao", "tao", "110", "no", "600")
-	myAtv2 = make_vehicle("1997", "honda", "fourtrax", "325", "no", "870")
-	myAtv3 = make_vehicle("2001", "polaris", "sportsman", "400", "yes", "2100")
-	myAtv4 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1600")
-	myAtv5 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1100")
-	database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
+
 	#--------------------------------------------------------------------------------------------------#
 	# EXPECTATIONS
 	# check_model takes a string and a dictionary and will return True or False
@@ -49,17 +52,10 @@ class Check_Model_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
 	
 	def test_check_model_1(self):
-		self.assertTrue(mod.check_model("fourtrax", self.database))	
-		self.assertFalse(mod.check_model("mymy", self.database))
+		self.assertTrue(mod.check_model("fourtrax", database))	
+		self.assertFalse(mod.check_model("mymy", database))
 		
 class Check_Brand_Tests(unittest.TestCase):
-	
-	myAtv1 = make_vehicle("2019", "tao", "tao", "110", "no", "600")
-	myAtv2 = make_vehicle("1997", "honda", "fourtrax", "325", "no", "870")
-	myAtv3 = make_vehicle("2001", "polaris", "sportsman", "400", "yes", "2100")
-	myAtv4 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1600")
-	myAtv5 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1100")
-	database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
 	
 	#--------------------------------------------------------------------------------------------------#
 	# EXPECTATIONS
@@ -68,39 +64,26 @@ class Check_Brand_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
 	
 	def test_check_brand_1(self):
-		self.assertTrue(mod.check_brand("honda", self.database))	
-		self.assertFalse(mod.check_brand("mymy", self.database))
+		self.assertTrue(mod.check_brand("honda", database))	
+		self.assertFalse(mod.check_brand("mymy", database))
 	
 
 
 class Is_In_Database(unittest.TestCase):
 	
-	myAtv1 = make_vehicle("2019", "tao", "tao", "110", "no", "600")
-	myAtv2 = make_vehicle("1997", "honda", "fourtrax", "325", "no", "870")
-	myAtv3 = make_vehicle("2001", "polaris", "sportsman", "400", "yes", "2100")
-	myAtv4 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1600")
-	myAtv5 = make_vehicle("2008", "yamaha", "raptor", "600", "no", "1100")
-	database = [myAtv1, myAtv2, myAtv3, myAtv4, myAtv5]
 	
-	myAtv6 = make_vehicle("1996", "kawasaki", "brute", "700", "yes", "4200")
-	
-	def test_is_in_database_1(self):
-		self.assertTrue(mod.is_in_database(self.myAtv1, self.database))
+	def test_is_in_database_1(self): # First in list
+		self.assertTrue(mod.is_in_database(myAtv1, database))
 		
-	def test_is_in_database_2(self):
-		self.assertTrue(mod.is_in_database(self.myAtv2, self.database))
+	def test_is_in_database_2(self): # Second in list
+		self.assertTrue(mod.is_in_database(myAtv2, database))
+				
+	def test_is_in_database_5(self): # Last in list
+		self.assertTrue(mod.is_in_database(myAtv5, database))
 		
-	def test_is_in_database_3(self):
-		self.assertTrue(mod.is_in_database(self.myAtv3, self.database))
-		
-	def test_is_in_database_4(self):
-		self.assertTrue(mod.is_in_database(self.myAtv4, self.database))
-		
-	def test_is_in_database_5(self):
-		self.assertTrue(mod.is_in_database(self.myAtv5, self.database))
-		
-	def test_is_in_database_6(self):
-		self.assertFalse(mod.is_in_database(self.myAtv6, self.database))
+	def test_is_in_database_6(self): # Not in list
+		myAtv6 = make_vehicle(year = "2015", brand = "honda", model = "foreman", cc_rating = "400", awd = "yes", price = "1350", classification = "four wheeler")
+		self.assertFalse(mod.is_in_database(myAtv6, database))
 	
 
 

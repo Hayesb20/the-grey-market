@@ -26,13 +26,15 @@ def confirm_vehicle(vehicle):
 	return message
 
 # TESTED - Given the needed paramiters, creates and returns an vehicle object
-def make_vehicle(year, brand, model, cc_rating, awd, price):
-	new_vehicle = Atv(   year.replace(" ", "").lower(), 
-								brand.strip().lower(), 
-								model.strip().lower(), 
-								cc_rating.replace(" ", "").lower(),
-								awd.replace(" ", "").lower(), 
-								price.replace(" ", "").lower())
+def make_vehicle(year, brand, model, cc_rating, awd, price, classification = "All Terain Vehicle"):
+									
+	new_vehicle = Atv( year = year.replace(" ", "").lower(), 
+										brand = brand.strip().lower(), 
+										model = model.strip().lower(), 
+										cc_rating = cc_rating.replace(" ", "").lower(),
+										awd = awd.replace(" ", "").lower(), 
+										price = price.replace(" ", "").lower(),
+										classification = classification)
 	return new_vehicle
 	
 	

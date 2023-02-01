@@ -6,14 +6,14 @@ from load_and_save_files import load_file, dict_of_filepaths, show_database
 from check_functions 		import check_answer
 
 
-atv_database = []
+vehicle_database = []
 
 def load_files():
 	# Look for a txt file at the designated location to use
-	try:	load_file(	database = atv_database,
-							filename = dict_of_filepaths["filepath_to_atv_database_txt"])
-	except: print(" Failed to load 'atv_database.txt'")	
-	else: print(" Database loaded successfully")	
+	load_file(	database = vehicle_database,
+							filename = dict_of_filepaths["filepath_to_vehicle_database.txt"])
+	print(" Failed to load 'vehicle_database.txt'")	
+	print(" Database loaded successfully")	
 
 def is_valid_thing(a_list, a_word):
 	for i in range(len(a_list)):
@@ -62,7 +62,7 @@ def search_item ():
 		match word:
 			case "no" 							: return
 			case "add_filter" 				: filter_data(parse(input(" what would you like to filter by? \n ")))
-			case "show_database" 	: show_database(atv_database)
+			case "show_database" 	: show_database(vehicle_database)
 			case "remove_filters" 		: load_files()
 			case "price_info"				: show_price_info()
 

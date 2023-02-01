@@ -10,25 +10,29 @@ from atv_class import Atv
 ## and the price is not. Current coding as of 13/Jan/2023 will interpret the numbr divisable by 25 R0 as the price as 
 ## it is uncomon that prices > 1950 are not produced in incraments of 25 and the other number as the year.
 
+test_atv1 = Atv(year = "1997", brand = "yamaha", model = "banshee", cc_rating = "350", awd = "no", price = "3000", classification = "four wheeler")
+test_atv2 = Atv(year = "2015", brand = "kawasaki", model = "brute force", cc_rating = "750", awd = "yes", price = "4250", classification = "four wheeler")
+test_atv3 = Atv(year = "2012", brand = "polaris", model = "sportsman", cc_rating = "400", awd = "yes", price = "400", classification = "four wheeler")
+test_atv4 = Atv(year = "2002", brand = "polaris", model = "sportsman", cc_rating = "500", awd = "yes", price = "2800", classification = "four wheeler")
+test_atv5 = Atv(year = "1998", brand = "polaris", model = "xplorer", cc_rating = "400", awd = "yes", price = "1800", classification = "four wheeler")
+test_atv6 = Atv(year = "1987", brand = "honda", model = "fourtrax", cc_rating = "350", awd = "yes", price = "600", classification = "four wheeler")
+test_atv7 = Atv(year = "1996", brand =  "polaris", model = "sportsman", cc_rating = "350", awd = "no", price = "100", classification = "four wheeler")
+test_atv8 = Atv(year = "2000", brand = "polaris", model = "sportsman", cc_rating = "1000", awd = "no", price = "2000", classification = "four wheeler")
+test_atv9 = Atv(year = "2022", brand = "polaris", model = "sportsman", cc_rating = "500", awd = "yes", price = "1350", classification = "four wheeler")
+test_atv10 = Atv(year = "2018", brand = "polaris", model = "xplorer", cc_rating = "400", awd = "yes", price = "1600", classification = "four wheeler")
+test_atv11 = Atv(year = "2009", brand = "honda", model = "fourtrax", cc_rating = "350", awd = "yes", price = "600", classification = "four wheeler")
+test_atv12 = Atv(year = "2004", brand = "polaris", model = "sportsman", cc_rating = "350", awd = "no", price = "400", classification = "four wheeler")
+test_atv13 = Atv(year = "2012", brand = "polaris", model = "sportsman", cc_rating = "1000", awd = "no", price = "450", classification = "four wheeler")
+	
+the_data = [test_atv1, test_atv2, test_atv3, test_atv4, test_atv5, test_atv6, test_atv7,
+						test_atv8,test_atv9, test_atv10, test_atv11, test_atv12, test_atv13]
 
 class Autofill_Vehicle(unittest.TestCase):
-	
-	test_atv1 = Atv("1997", "yamaha", "banshee", "350", "no", "3000")
-	test_atv2 = Atv("2015", "kawasaki", "brute force", "750", "yes", "4250")
-	test_atv3 = Atv("2012", "polaris", "sportsman", "400", "yes", "400")
-	test_atv4 = Atv("2002", "polaris", "sportsman", "500", "yes", "2800")
-	test_atv5 = Atv("1998", "polaris", "xplorer", "400", "yes", "1800")
-	test_atv6 = Atv("1987", "honda", "fourtrax", "350", "yes", "600")
-	test_atv7 = Atv("1996", "polaris", "sportsman", "350", "no", "100")
-	test_atv8 = Atv("2000", "polaris", "sportsman", "1000", "no", "2000")
-	
-	the_data = [test_atv1, test_atv2, test_atv3, test_atv4, test_atv5, test_atv6, test_atv7,
-						test_atv8]
 	
 	# Given a list that appears exactly in the_data
 	def test_autofill_with_atv_1(self):
 		user_list = ["1998", "polaris", "xplorer", "400", "yes", "1800"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1998", 		autofilled_dict["year"])
 		self.assertEqual("polaris", 	autofilled_dict["brand"])
 		self.assertEqual("xplorer", 	autofilled_dict["model"])
@@ -39,7 +43,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Given a list that only appears across multiple the_data entries
 	def test_autofill_with_atv_2(self):
 		user_list = ["2012", "polaris", "sportsman", "500", "no", "100"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2012", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman", 	autofilled_dict["model"])
@@ -55,7 +59,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_3(self):
 		user_list = ["2012", "polaris", "sportsman", "500", "no"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2012", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -67,7 +71,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_4(self):
 		user_list = ["2012", "polaris", "sportsman", "500", "2800"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2012", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -79,7 +83,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_5(self):
 		user_list = ["polaris", "sportsman", "500", "no", "1850"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1850", 			autofilled_dict["price"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -91,7 +95,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_6(self):
 		user_list = ["1998", "polaris", "sportsman",  "no", "1850"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1850", 			autofilled_dict["price"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -103,7 +107,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_7(self):
 		user_list = ["1998", "polaris", "500", "no", "1850"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1850", 			autofilled_dict["price"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("1998",				autofilled_dict["year"])
@@ -115,7 +119,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_8(self):
 		user_list = ["1998", "sportsman", "500", "no", "1850"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1850", 			autofilled_dict["price"])
 		self.assertEqual("sportsman", 	autofilled_dict["model"])
 		self.assertEqual("1998",				autofilled_dict["year"])
@@ -131,7 +135,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_9(self):
 		user_list = ["polaris", "sportsman", "yes", "1998", "500", "1850"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1850", 			autofilled_dict["price"])
 		self.assertEqual("sportsman", 	autofilled_dict["model"])
 		self.assertEqual("1998",				autofilled_dict["year"])
@@ -144,7 +148,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofil will return the unknown price tag as the "price"
 	def test_autofill_with_atv_10(self):
 		user_list = ["3000", "polaris", "500", "2018", "xplorer","yes"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2018", 	autofilled_dict["year"])
 		self.assertEqual("polaris", autofilled_dict["brand"])
 		self.assertEqual("xplorer",	autofilled_dict["model"])
@@ -157,7 +161,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofil will return the unknown price tag as the "price"
 	def test_autofill_with_atv_11(self):
 		user_list = ["2006", "honda", "foreman", "500", "2800","yes"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2006", 		autofilled_dict["year"])
 		self.assertEqual("honda", 		autofilled_dict["brand"])
 		#self.assertEqual("foreman",	autofilled_dict["model"])				# Foreman does not appear in the sample dictionar and so it is not present here NEED TO ADDRESS
@@ -173,7 +177,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_12(self):
 		user_list = ["polaris", "sportsman", "yes", "1998", "500"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("sportsman", 	autofilled_dict["model"])
 		self.assertEqual("1998",				autofilled_dict["year"])
 		self.assertEqual("500", 				autofilled_dict["cc_rating"])
@@ -185,7 +189,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_13(self):
 		user_list = ["polaris", "yes", "1998", "500"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1998",		autofilled_dict["year"])
 		self.assertEqual("500", 		autofilled_dict["cc_rating"])
 		self.assertEqual("yes", 		autofilled_dict["awd"])
@@ -196,7 +200,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_14(self):
 		user_list = ["polaris", "1998", "500"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1998",		autofilled_dict["year"])
 		self.assertEqual("500", 		autofilled_dict["cc_rating"])
 		self.assertEqual("polaris", autofilled_dict["brand"])
@@ -206,7 +210,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_15(self):
 		user_list = ["polaris", "1998"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1998", 	autofilled_dict["year"])
 		self.assertEqual("polaris", autofilled_dict["brand"])
 		self.assertEqual(2, 				len(autofilled_dict)) # Assure that the dict only has the 5 keys checked above	
@@ -220,7 +224,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_16(self):
 		user_list = ["2010"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2010", autofilled_dict["year"])
 		self.assertEqual(1, 			len(autofilled_dict))
 		
@@ -228,7 +232,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_17(self):
 		user_list = ["yamaha"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("yamaha", autofilled_dict["brand"])
 		self.assertEqual(1, 				 len(autofilled_dict))		
 		
@@ -236,7 +240,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_18(self):
 		user_list = ["banshee"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("banshee", 	autofilled_dict["model"])
 		self.assertEqual(1, 					len(autofilled_dict))
 	
@@ -244,7 +248,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_19(self):
 		user_list = ["400"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("400", 	autofilled_dict["cc_rating"])
 		self.assertEqual(1, 			len(autofilled_dict))			
 		
@@ -252,7 +256,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_20(self):
 		user_list = ["yes"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("yes", 	autofilled_dict["awd"])
 		self.assertEqual(1, 			len(autofilled_dict))	
 		
@@ -260,7 +264,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill all known data without error
 	def test_autofill_with_atv_21(self):
 		user_list = ["1445"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("1445", autofilled_dict["price"])
 		self.assertEqual(1, 			len(autofilled_dict))	
 		
@@ -274,7 +278,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill in all keys and values
 	def test_autofill_with_atv_22(self):
 		user_list = ["2000", "polaris", "sportsman", "400", "no","400"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2000", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -287,7 +291,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill in all keys and values
 	def test_autofill_with_atv_23(self):
 		user_list = ["2000", "polaris", "sportsman", "400", "no","2000"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2000", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -306,7 +310,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill in all keys and values
 	def test_autofill_with_atv_24(self):
 		user_list = ["2000","2014", "polaris", "sportsman", "400", "no"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2014", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -321,7 +325,7 @@ class Autofill_Vehicle(unittest.TestCase):
 	# Expectation: autofill will appropreatly fill in all keys and values
 	def test_autofill_with_atv_25(self):
 		user_list = ["400","2014", "polaris", "sportsman", "500", "no"]
-		autofilled_dict = mod.autofill_vehicle(user_list, self.the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
 		self.assertEqual("2014", 			autofilled_dict["year"])
 		self.assertEqual("polaris", 		autofilled_dict["brand"])
 		self.assertEqual("sportsman",	autofilled_dict["model"])
@@ -334,22 +338,6 @@ class Autofill_Vehicle(unittest.TestCase):
 # most_likely will take any number that appears in the users input to determin what that number represents and then
 # return the appropriate responce if possible, otherwise will return "cannot_interpret"
 class Most_likely(unittest.TestCase):
-	test_atv1 = Atv("1997", "yamaha", "banshee", "350", "no", "3000")
-	test_atv2 = Atv("2015", "kawasaki", "brute force", "750", "yes", "4250")
-	test_atv3 = Atv("2012", "polaris", "sportsman", "400", "yes", "400")
-	test_atv4 = Atv("2002", "polaris", "sportsman", "500", "yes", "2800")
-	test_atv5 = Atv("1998", "polaris", "xplorer", "400", "yes", "1800")
-	test_atv6 = Atv("1987", "honda", "fourtrax", "350", "yes", "600")
-	test_atv7 = Atv("1996", "polaris", "sportsman", "350", "no", "100")
-	test_atv8 = Atv("2000", "polaris", "sportsman", "1000", "no", "2000")
-	test_atv9 = Atv("2022", "polaris", "sportsman", "500", "yes", "1350")
-	test_atv10 = Atv("2018", "polaris", "xplorer", "400", "yes", "1600")
-	test_atv11 = Atv("2009", "honda", "fourtrax", "350", "yes", "600")
-	test_atv12 = Atv("2004", "polaris", "sportsman", "350", "no", "400")
-	test_atv13 = Atv("2012", "polaris", "sportsman", "1000", "no", "450")
-	
-	the_data = [test_atv1, test_atv2, test_atv3, test_atv4, test_atv5, test_atv6, test_atv7,
-						test_atv8,test_atv9, test_atv10, test_atv11, test_atv12, test_atv13]
 	
 #################################################################################################
 							## TESTS THAT FOCUS ON priceS THAT ARE WITHIN A VALID YEAR RANGE ##
@@ -363,15 +351,15 @@ class Most_likely(unittest.TestCase):
 		a_dict = {}
 		
 		the_dict = {"item" : "1998", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("year", string)
 		
 		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cc_rating", string)
 		
 		the_dict = {"item" : "1800", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)		
 		
 	# User list will contain an appropreate year, common cc_rating, and a price value that falls within the range 
@@ -384,15 +372,15 @@ class Most_likely(unittest.TestCase):
 		a_dict = {}
 		
 		the_dict = {"item" : "1998", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("year", string)
 		
 		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cc_rating", string)
 		
 		the_dict = {"item" : "2000", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)	
 
 	# User list will contain an appropreate year, common cc_rating, and a price value that falls within the range 
@@ -408,7 +396,7 @@ class Most_likely(unittest.TestCase):
 		# that are appropreate for  "year" and "price". price IS divisable by 25 with a remainder of 0 and the year IS
 		# the same vlaue
 		the_dict = {"item" : "2000", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("year", string)
 		
 		# Assuming the user_list above, a_dict has already been populate with a "year" key and now most_likely is called
@@ -416,7 +404,7 @@ class Most_likely(unittest.TestCase):
 		# Expectation: most_liekly will return "price"
 		a_dict = {"year" : "2000"}
 		the_dict = {"item" : "2000", "users_list" : user_list, "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)
 		
 		
@@ -433,7 +421,7 @@ class Most_likely(unittest.TestCase):
 		# that are appropreate for  "year" and "price". price IS divisable by 25 with a remainder of 0 and the year IS
 		# the same vlaue
 		the_dict = {"item" : "1999", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("year", string)
 		
 		# Assuming the user_list above, a_dict has already been populate with a "year" key and now most_likely is called
@@ -441,12 +429,12 @@ class Most_likely(unittest.TestCase):
 		# Expectation: most_liekly will return "price"
 		a_dict = {"year" : "2000"}
 		the_dict = {"item" : "1999", "users_list" : user_list, "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)	
 	
 	
 		the_dict = {"item" : "400", "users_list" : user_list, "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cc_rating", string)
 	
 	
@@ -460,17 +448,17 @@ class Most_likely(unittest.TestCase):
 		
 		a_dict = {}
 		the_dict = {"item" : "1997", "users_list" : user_list, "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cannot_interpret", string)
 		
 		a_dict = {}
 		the_dict = {"item" : "1998", "users_list" : user_list, "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cannot_interpret", string)
 		
 		a_dict = {}
 		the_dict = {"item" : "400", "users_list" : user_list, "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cc_rating", string)
 
 ##################################################################################################
@@ -487,11 +475,11 @@ class Most_likely(unittest.TestCase):
 		a_dict = {}
 		
 		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cc_rating", string)		
 
 		the_dict = {"item" : "450", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)	
 	
 	# User list will contain an appropreate year, common cc_rating, and a price value that falls within the range 
@@ -504,12 +492,12 @@ class Most_likely(unittest.TestCase):
 		a_dict = {}
 		
 		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("cc_rating", string)
 		
 		a_dict = {"cc_rating" : "400"}
 		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
-		string  = mod.most_likely(the_dict, self.the_data)
+		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)
 	
 	

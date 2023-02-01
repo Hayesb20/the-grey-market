@@ -21,7 +21,7 @@ class Make_Vehicle_Tests(unittest.TestCase):
 	
 	# TEST make_vehicle is called with all arguments given as they are supposed to be
 	def test_for_Make_Vehicle_1(self):
-		myAtv = mod.make_vehicle("1998", "yamaha", "sport", "35", "yes", "2300")
+		myAtv = mod.make_vehicle(year = "1998", brand = "yamaha", model = "sport", cc_rating = "35", awd = "yes", price = "2300", classification = "four wheeler")
 		self.assertEqual("1998", 		myAtv.get_year())
 		self.assertEqual("yamaha",	myAtv.get_brand())
 		self.assertEqual("sport", 		myAtv.get_model())
@@ -31,7 +31,7 @@ class Make_Vehicle_Tests(unittest.TestCase):
 
 	# TEST - make_vehicle is called with all arguments given, but arguments contain white spacing.
 	def test_for_Make_Vehicle_2(self):
-		myAtv = mod.make_vehicle(" 19 98 ", " yam aha ", " sp ort ", " 3 5 ", " y es ", " 23 00 ")	
+		myAtv = mod.make_vehicle(year = " 19 98 ", brand =  " yam aha ", model = " sp ort ", cc_rating = " 3 5 ", awd = " y es ", price = " 23 00 ", classification = "four wheeler")	
 		self.assertEqual("1998", 		myAtv.get_year())
 		self.assertEqual("yam aha", 	myAtv.get_brand())
 		self.assertEqual("sp ort", 		myAtv.get_model())
@@ -42,7 +42,7 @@ class Make_Vehicle_Tests(unittest.TestCase):
 	# TEST - make_vehicle is called with all arguments given, but arguments are mixed with upper
 	# and lower case chars
 	def test_for_Make_Vehicle_3(self):
-		myAtv = mod.make_vehicle("2001", "BlaZEr", "RaptOr", "35", "YeS", "2412")	
+		myAtv = mod.make_vehicle(year = "2001", brand = "BlaZEr", model = "RaptOr", cc_rating = "35", awd = "YeS", price = "2412", classification = "four wheeler")	
 		self.assertEqual("2001", 		myAtv.get_year())
 		self.assertEqual("blazer", myAtv.get_brand())
 		self.assertEqual("raptor", 		myAtv.get_model())
@@ -59,13 +59,13 @@ class Confirm_Vehicle_Tests(unittest.TestCase):
 	
 	#TEST - confirm_atv is called with an atv whos awd is "yes"
 	def test_confirm_vehicle_1(self):
-		myAtv = mod.make_vehicle("1998", "yamaha", "sport", "35", "yes", "2300")
+		myAtv = mod.make_vehicle(year = "1998", brand = "yamaha", model = "sport", cc_rating = "35", awd = "yes", price = "2300", classification = "four wheeler")
 		message = mod.confirm_vehicle(myAtv)
 		self.assertEqual(" 1998 Yamaha Sport 35CC with 4X4 for $2300", message)
 
 	#TEST - confirm_atv is called with an atv whos awd is "no"
 	def test_confirm_vehicle_2(self):
-		myAtv = mod.make_vehicle("1998", "yamaha", "sport", "35", "no", "2300")
+		myAtv = mod.make_vehicle(year = "1998", brand = "yamaha", model = "sport", cc_rating = "35", awd = "no", price = "2300", classification = "four wheeler")
 		message = mod.confirm_vehicle(myAtv)
 		self.assertEqual(" 1998 Yamaha Sport 35CC without 4X4 for $2300", message)
 

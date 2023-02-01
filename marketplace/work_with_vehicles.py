@@ -93,14 +93,18 @@ def build_vehicle(database):
 		
 	try: 		price = a_dict["price"]	
 	except: 	price = input("\n How much is it? ")
+	
+	try: 		classification = a_dict["classification"]
+	except:	classification = input("\n What is this thing exactly? a car or a four wheeler maybe? ")
 		
 
-	new_vehicle = VM.make_vehicle(	year 		 	= year.strip(), 
+	new_vehicle = VM.make_vehicle(	year 		 = year.strip(), 
 																	brand		 = brand.strip().lower(), 
 																	model 	 = model.strip().lower(), 
 																	cc_rating= cc_rating.strip(), 
 																	awd 	     = awd.strip().lower(), 
-																	price 		 = price.strip())
+																	price 		 = price.strip(),
+																	classification = classification.lower())
 	VM.confirm_vehicle(new_vehicle)
 	return new_vehicle
 
@@ -217,7 +221,7 @@ def work_with_vehicles():
 				# Checks to see if the user would like to enter in another ATV
 				answer = input("\n Do you have another in mind? ")
 				if CF.check_answer(answer) == "yes": print("\n great!")
-				elif CF.check_answer(answer) == "no": return
+				elif CF.check_answer(answer) == "no": break
 				else : j = j+1
 	
 	return 

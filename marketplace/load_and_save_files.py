@@ -4,7 +4,7 @@
 from atv_class import Atv
 
 dict_of_filepaths = {
-								"filepath_to_vehicle_database.txt" 				: "txt_files/vehicle_database.txt",
+								"filepath_to_vehicle_database.txt" 					: "txt_files/vehicle_database.txt",
 								"filepath_to_vehicle_database_backup.txt"	: "txt_files/vehicle_database_backup.txt",
 							}
 
@@ -34,11 +34,11 @@ def load_file(database, filename):
 				contence = contence[1:]
 				
 			elif contence[0] == ",":
-				if len(myList)<=4:
+				if len(myList)<=5:
 					myList.append(year)
 				else:
 					myList.append(year)
-					load_atv = Atv(myList[0], myList[1], myList[2], myList[3], myList[4], myList[5])
+					load_atv = Atv(year = myList[0], brand = myList[1], model = myList[2], cc_rating = myList[3], awd = myList[4], price = myList[5])
 					database.append(load_atv)
 					myList = []
 				year = ""
@@ -67,6 +67,7 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 		string = string + thing.get_cc_rating() + ","
 		string = string + thing.get_awd() + ","
 		string = string + thing.get_price() + ","
+		string = string + thing.get_classification() + ","
 		string = string + "\n"
 	return string
 		
@@ -76,6 +77,6 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 #needs to actually return a string to be printed. not print itself
 def show_database(database):
 	for item in database:
-		print( item.get_year(), item.get_brand(), item.get_model(), 
+		print(item.get_classification(), item.get_year(), item.get_brand(), item.get_model(), 
 							item.get_cc_rating(), item.get_awd(), item.get_price())
 			
