@@ -149,7 +149,7 @@ def work_with_vehicles():
 			# Add some sort of warning message about potential data loss and add an option to cancel
 			while vehicle_database != []: vehicle_database.pop()
 			try: 
-				load_file(	database = vehicle_database, filename = dict_of_filepaths["filepath_to_atv_database_backup_txt"])
+				load_file(	database = vehicle_database, filename = dict_of_filepaths["filepath_to_vehicle_database_backup.txt"])
 				save_files()
 			except: 	print("Failed to load 'atv_database_backup.txt'")				
 			else: 		print(" Databased loaded successfully")
@@ -160,7 +160,7 @@ def work_with_vehicles():
 		elif CF.check_answer(answer) == "backup":
 			try:
 				save_file(	database = vehicle_database, 
-									filename = dict_of_filepaths["filepath_to_atv_database_backup_txt"])
+									filename = dict_of_filepaths["filepath_to_vehicle_database_backup.txt"])
 				print("Backup Successful")
 			except: print("Backup Failed")
 	
@@ -174,22 +174,22 @@ def work_with_vehicles():
 			while j < 1:
 						
 				#Asks the user for the needed information to make a new vehicle
-				new_atv = build_vehicle(database = vehicle_database) 
+				new_vehicle = build_vehicle(database = vehicle_database) 
 				
-				if new_atv == "no object made": 
+				if new_vehicle == "no object made": 
 					print(" Okay no problem \n Is there something else we can do here? \n")
 					break
 									
 				# Ask the user to assure the input
 				print ("\n Okay great!, let's make sure I got that right, you have a")
-				print(VM.confirm_atv(new_atv))
+				print(VM.confirm_vehicle(new_vehicle))
 				answer = input(" Is this correct? (Yes/No) ")
 				answer = CF.check_answer(answer)
 			
 				while answer != "yes":
 					if answer == "no":
-						new_atv	= build_vehicle(database = vehicle_database)
-						print (VM.confirm_atv(new_atv))
+						new_vehicle	= build_vehicle(database = vehicle_database)
+						print (VM.confirm_vehicle(new_vehicle))
 						answer	= input(" Is this correct? (Yes/No) ")
 						answer	= CF.check_answer(answer)
 				
