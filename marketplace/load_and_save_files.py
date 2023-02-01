@@ -34,7 +34,7 @@ def load_file(database, filename):
 				contence = contence[1:]
 				
 			elif contence[0] == ",":
-				if len(myList)<=5:
+				if len(myList)<=6:
 					myList.append(year)
 				else:
 					myList.append(year)
@@ -68,6 +68,7 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 		string = string + thing.get_awd() + ","
 		string = string + thing.get_price() + ","
 		string = string + thing.get_classification() + ","
+		string = string + thing.get_date_listed() + ","
 		string = string + "\n"
 	return string
 		
@@ -77,6 +78,6 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 #needs to actually return a string to be printed. not print itself
 def show_database(database):
 	for item in database:
-		print(item.get_classification(), item.get_year(), item.get_brand(), item.get_model(), 
+		print(item.get_date_listed(), item.get_classification(), item.get_year(), item.get_brand(), item.get_model(), 
 							item.get_cc_rating(), item.get_awd(), item.get_price())
 			

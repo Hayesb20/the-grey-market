@@ -1,19 +1,18 @@
 # Brian Hayes
 # 31-Oct-2022
 
-from vehicle_class import Vehicle
+from vehicle_class import Vehicle as V
 
-class Atv(Vehicle):
+class Atv(V):
 	
-	def __init__(self, cc_rating, year, model, awd,  brand, price,  classification = "All Terain Vehicle"):
+	def __init__(self, **kwargs):
+		V.__init__(self, **kwargs)
 
-		self.cc_rating 		= cc_rating
-		self.classification = classification
-		self.year 	= year
-		self.model	= model
-		self.awd 	= awd
-		self.brand 	= brand
-		self.price 	= price
+		# Required argument
+		self.cc_rating = kwargs["cc_rating"]
+		# Required arg that can be a default value
+		try: self.classification = kwargs["classification"]
+		except: self.classification = "All Terain Vehicle"
 		
 
 	def get_cc_rating(self):			return self.cc_rating
