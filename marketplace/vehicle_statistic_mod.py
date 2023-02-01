@@ -1,7 +1,7 @@
 # Brian Hayes
 #14 Nov 2022
 
-from vehicle_mod import confirm_atv
+from vehicle_mod import confirm_vehicle
 
 # IDEAS
 # 1) Create a function that when given a list of ATV objects will:
@@ -15,7 +15,7 @@ from vehicle_mod import confirm_atv
 
 
 
-def get_brand_model_year_averages(atv_object, atv_database):
+def get_brand_model_year_averages(vehicle_object, atv_database):
 	
 	# This is the cost sum for atvs whos brand, model, and year are the same
 	sum_if_same_3 = 0
@@ -32,11 +32,11 @@ def get_brand_model_year_averages(atv_object, atv_database):
 	atvs_in_same_1_catagory = 0
 	
 	for atv in atv_database:
-		if atv.get_brand() == atv_object.get_brand():
+		if atv.get_brand() == vehicle_object.get_brand():
 			
-			if atv.get_model() == atv_object.get_model():	
+			if atv.get_model() == vehicle_object.get_model():	
 				
-				if atv.get_year() == atv_object.get_year():
+				if atv.get_year() == vehicle_object.get_year():
 
 					sum_if_same_3 = sum_if_same_3 + int(atv.get_price())
 					sum_if_same_2 = sum_if_same_2 + int(atv.get_price())
@@ -75,62 +75,62 @@ def get_brand_model_year_averages(atv_object, atv_database):
 	return dict_of_averages
 					
 									
-def get_statistic_message(atv_object, atv_database):
-	average_info = get_brand_model_year_averages(atv_object, atv_database)
+def get_statistic_message(vehicle_object, atv_database):
+	average_info = get_brand_model_year_averages(vehicle_object, atv_database)
 	
 	brand_model_year_average = average_info["brand, model, year"]
 	brand_model_average = average_info["brand, model"]
 	brand_average = average_info["brand"]
 	
-	if int(atv_object.get_price()) < brand_model_year_average:
+	if int(vehicle_object.get_price()) < brand_model_year_average:
 		message1 = (" Compared to other ATVs that are the same brand, model, and year, \n"
-				+ " your" + confirm_atv(atv_object) + " is \n $" 
-				+ str(abs(int(atv_object.get_price()) - brand_model_year_average))
+				+ " your" + confirm_vehicle(vehicle_object) + " is \n $" 
+				+ str(abs(int(vehicle_object.get_price()) - brand_model_year_average))
 				+ " less than the average price of $" + str(brand_model_year_average) + "\n")
 				
-	elif int(atv_object.get_price()) == brand_model_year_average:
+	elif int(vehicle_object.get_price()) == brand_model_year_average:
 		message1 = (" Compared to other ATVs that are the same brand, model, and year, \n"
-				+ " your" + confirm_atv(atv_object) + " is the average price." + "\n")
+				+ " your" + confirm_vehicle(vehicle_object) + " is the average price." + "\n")
 
-	elif int(atv_object.get_price()) > brand_model_year_average:
+	elif int(vehicle_object.get_price()) > brand_model_year_average:
 		message1 = (" Compared to other ATVs that are the same brand, model, and year, \n"
-				+ " your" + confirm_atv(atv_object) + " is \n $" 
-				+ str(abs(int(atv_object.get_price()) - brand_model_year_average))
+				+ " your" + confirm_vehicle(vehicle_object) + " is \n $" 
+				+ str(abs(int(vehicle_object.get_price()) - brand_model_year_average))
 				+ " more than the average price of $" + str(brand_model_year_average) + "\n")
 
 
 
-	if int(atv_object.get_price()) < brand_model_average:
+	if int(vehicle_object.get_price()) < brand_model_average:
 		message2 = ("\n Compared to other ATVs that are the same brand and model \n"
-				+ " your" + confirm_atv(atv_object) + " is \n $" 
-				+ str(abs(int(atv_object.get_price()) - brand_model_average))
+				+ " your" + confirm_vehicle(vehicle_object) + " is \n $" 
+				+ str(abs(int(vehicle_object.get_price()) - brand_model_average))
 				+ " less than the average price of $" + str(brand_model_average) + "\n")
 		
-	elif int(atv_object.get_price()) == brand_model_average:
+	elif int(vehicle_object.get_price()) == brand_model_average:
 		message2 = ("\n Compared to other ATVs that are the same brand and model \n"
-				+ " your" + confirm_atv(atv_object) + " is the average price." + "\n")
+				+ " your" + confirm_vehicle(vehicle_object) + " is the average price." + "\n")
 
-	elif int(atv_object.get_price()) > brand_model_average:
+	elif int(vehicle_object.get_price()) > brand_model_average:
 		message2 = ("\n Compared to other ATVs that are the same brand and model \n"
-				+ " your" + confirm_atv(atv_object) + " is \n $" 
-				+ str(abs(int(atv_object.get_price()) - brand_model_average))
+				+ " your" + confirm_vehicle(vehicle_object) + " is \n $" 
+				+ str(abs(int(vehicle_object.get_price()) - brand_model_average))
 				+ " more than the average price of $" + str(brand_model_average) + "\n")
 
 
-	if int(atv_object.get_price()) < brand_average:
+	if int(vehicle_object.get_price()) < brand_average:
 		message3 = ("\n Compared to other ATVs that are the same brand \n"
-				+ " your" + confirm_atv(atv_object) + " is \n $" 
-				+ str(abs(int(atv_object.get_price()) - brand_average))
+				+ " your" + confirm_vehicle(vehicle_object) + " is \n $" 
+				+ str(abs(int(vehicle_object.get_price()) - brand_average))
 				+ " less than the average price of $" + str(brand_average) + "\n")
 		
-	elif int(atv_object.get_price()) == brand_average:
+	elif int(vehicle_object.get_price()) == brand_average:
 		message3 = ("\n Compared to other ATVs that are the same brand \n"
-				+ " your" + confirm_atv(atv_object) + " is the average price.\n")
+				+ " your" + confirm_vehicle(vehicle_object) + " is the average price.\n")
 
-	elif int(atv_object.get_price()) > brand_average:
+	elif int(vehicle_object.get_price()) > brand_average:
 		message3 = ("\n Compared to other ATVs that are the same brand \n"
-				+ " your" + confirm_atv(atv_object) + " is \n $" 
-				+ str(abs(int(atv_object.get_price()) - brand_average))
+				+ " your" + confirm_vehicle(vehicle_object) + " is \n $" 
+				+ str(abs(int(vehicle_object.get_price()) - brand_average))
 				+ " more than the average price of $" + str(brand_average) + "\n")
 
 	message = message1 + message2 + message3
@@ -138,8 +138,8 @@ def get_statistic_message(atv_object, atv_database):
 	return message
 
 
-def get_statistical_data(atv_object, atv_database):
-	message = get_statistic_message(atv_object, atv_database)
+def get_statistical_data(vehicle_object, atv_database):
+	message = get_statistic_message(vehicle_object, atv_database)
 	return message
 
 

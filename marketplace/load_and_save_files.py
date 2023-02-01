@@ -4,25 +4,23 @@
 from atv_class import Atv
 
 dict_of_filepaths = {
-								"filepath_to_atv_database_txt" 								: "txt_files/atv_database.txt",
-								"filepath_to_atv_database_backup_txt" 				: "txt_files/atv_database_backup.txt",
+								"filepath_to_vehicle_database.txt" 				: "txt_files/vehicle_database.txt",
+								"filepath_to_vehicle_database_backup.txt"	: "txt_files/vehicle_database_backup.txt",
 							}
 
 # TESTED - given a file name and a database, will figure out which loading method to call
 def load_file(database, filename):				
 	
-	#print(database)
-	if filename == dict_of_filepaths["filepath_to_atv_database_txt"]:
-		database = load_atv_file(database, filename)
+	if filename == dict_of_filepaths["filepath_to_vehicle_database.txt"]:
+		database = load_file(database, filename)
 		
-	elif filename == dict_of_filepaths["filepath_to_atv_database_backup_txt"]:
-		database = load_atv_file(database, filename)
+	elif filename == dict_of_filepaths["filepath_to_vehicle_database_backup.txt"]:
+		database = load_file(database, filename)
 		
 	return database
-	# Need to create a backup option for models and their cc
 			
 #NOT TESTED - Takes an empty list and filename, will load the list with contence of file (atvs)	
-def load_atv_file(database, filename):
+def load_file(database, filename):
 	with open(filename, "r") as file_object:
 		contence = file_object.read()
 		myList = []
@@ -49,12 +47,12 @@ def load_atv_file(database, filename):
 			
 # NOT TESTED - Will use a filename to determin which sub function needs to be called		
 def save_file(database, filename):
-	if filename == dict_of_filepaths["filepath_to_atv_database_txt"]:
+	if filename == dict_of_filepaths["filepath_to_vehicle_database.txt"]:
 		with open(filename, "w") as file_object:
 			long_string = convert_objects_in_atv_database_to_a_string(database)
 			file_object.write(long_string)		
 			
-	elif filename == dict_of_filepaths["filepath_to_atv_database_backup_txt"]:
+	elif filename == dict_of_filepaths["filepath_to_vehicle_database_backup.txt"]:
 		with open(filename, "w") as file_object:
 			long_string = convert_objects_in_atv_database_to_a_string(database)
 			file_object.write(long_string)	
@@ -80,6 +78,4 @@ def show_database(database):
 	for item in database:
 		print( item.get_year(), item.get_brand(), item.get_model(), 
 							item.get_cc_rating(), item.get_awd(), item.get_price())
-		
-def show_brands_and_models(dictionary):
-	print(dictionary)		
+			

@@ -12,20 +12,20 @@ from atv_class 					import Atv
 
 # TESTED - Takes an etv abject and returns a formatted message to ask the user if
 # everything is correct
-def confirm_atv(atv):
+def confirm_vehicle(vehicle):
 	
-	if atv.get_awd() == "yes": is_awd = " with 4X4 "
+	if vehicle.get_awd() == "yes": is_awd = " with 4X4 "
 	else: is_awd 	= " without 4X4 "
 	
-	message = (  " " 			+ atv.get_year() 
-						+ " " 			+ atv.get_brand().title() 
-						+ " " 			+ atv.get_model().title() 
-						+ " " 			+ atv.get_cc_rating() 
+	message = (  " " 			+ vehicle.get_year() 
+						+ " " 			+ vehicle.get_brand().title() 
+						+ " " 			+ vehicle.get_model().title() 
+						+ " " 			+ vehicle.get_cc_rating() 
 						+ "CC" 		+ is_awd 
-						+ "for $" 	+ atv.get_price())
+						+ "for $" 	+ vehicle.get_price())
 	return message
 
-# TESTED - Given the needed paramiters, creates and returns an atv object
+# TESTED - Given the needed paramiters, creates and returns an vehicle object
 def make_vehicle(year, brand, model, cc_rating, awd, price):
 	new_vehicle = Atv(   year.replace(" ", "").lower(), 
 								brand.strip().lower(), 

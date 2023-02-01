@@ -112,18 +112,9 @@ def most_likely(the_dict, database):
 				if temp_dict["cc_rating"] : return "price"
 			except: return "cc_rating"
 
-				
-		
-		
-		
-		
-		
-				
-				
-				
 # a_list is a list with strings that represent information about the object the user wants to create			
 # database will be a list of known objects 
-def autofill_atv(users_list, database):
+def autofill_vehicle(users_list, database):
 	
 	a_dict = {}
 	for thing in database:

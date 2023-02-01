@@ -158,4 +158,10 @@
 2003,polaris,predator,500,no,900,
 1994,honda,fourtrax,300,no,1400,
 1998,polaris,sawtooth,200,no,2000,
-
+2001,polaris,sportsman,500,yes,4700,
+1996,polaris,xpress,300,no,1000,
+1999,polaris,scrambler,500,no,1200,
+2001,honda,rancher,350,no,2000,
+2003,honda,rancher,350,no,1200,
+2003,yamaha,kodiak,400,yes,1800,
+1993,polaris,trailboss,350,yes,300,

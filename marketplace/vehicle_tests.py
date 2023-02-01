@@ -6,7 +6,7 @@ from atv_class import Atv
 
 import vehicle_mod as mod
 
-class Make_Atv_Tests(unittest.TestCase):
+class Make_Vehicle_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
 	# EXPECTATIONS
 	# make_vehicle should create an atv object whos variables are lowercase strings
@@ -20,7 +20,7 @@ class Make_Atv_Tests(unittest.TestCase):
 	# returned answer should be "big bear" not "bigbear" )
 	
 	# TEST make_vehicle is called with all arguments given as they are supposed to be
-	def test_for_Make_Atv_1(self):
+	def test_for_Make_Vehicle_1(self):
 		myAtv = mod.make_vehicle("1998", "yamaha", "sport", "35", "yes", "2300")
 		self.assertEqual("1998", 		myAtv.get_year())
 		self.assertEqual("yamaha",	myAtv.get_brand())
@@ -30,7 +30,7 @@ class Make_Atv_Tests(unittest.TestCase):
 		self.assertEqual("2300",			myAtv.get_price())
 
 	# TEST - make_vehicle is called with all arguments given, but arguments contain white spacing.
-	def test_for_Make_Atv_2(self):
+	def test_for_Make_Vehicle_2(self):
 		myAtv = mod.make_vehicle(" 19 98 ", " yam aha ", " sp ort ", " 3 5 ", " y es ", " 23 00 ")	
 		self.assertEqual("1998", 		myAtv.get_year())
 		self.assertEqual("yam aha", 	myAtv.get_brand())
@@ -41,7 +41,7 @@ class Make_Atv_Tests(unittest.TestCase):
 	
 	# TEST - make_vehicle is called with all arguments given, but arguments are mixed with upper
 	# and lower case chars
-	def test_for_Make_Atv_3(self):
+	def test_for_Make_Vehicle_3(self):
 		myAtv = mod.make_vehicle("2001", "BlaZEr", "RaptOr", "35", "YeS", "2412")	
 		self.assertEqual("2001", 		myAtv.get_year())
 		self.assertEqual("blazer", myAtv.get_brand())
@@ -50,7 +50,7 @@ class Make_Atv_Tests(unittest.TestCase):
 		self.assertEqual("yes", 		myAtv.get_awd())
 		self.assertEqual("2412",		myAtv.get_price())
 		
-class Confirm_Atv_Tests(unittest.TestCase):
+class Confirm_Vehicle_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
 	# EXPECTATIONS
 	# confirm_atv takes an atv object and returns a string displaying the all different
@@ -58,15 +58,15 @@ class Confirm_Atv_Tests(unittest.TestCase):
 	#--------------------------------------------------------------------------------------------------#
 	
 	#TEST - confirm_atv is called with an atv whos awd is "yes"
-	def test_confirm_atv_1(self):
+	def test_confirm_vehicle_1(self):
 		myAtv = mod.make_vehicle("1998", "yamaha", "sport", "35", "yes", "2300")
-		message = mod.confirm_atv(myAtv)
+		message = mod.confirm_vehicle(myAtv)
 		self.assertEqual(" 1998 Yamaha Sport 35CC with 4X4 for $2300", message)
 
 	#TEST - confirm_atv is called with an atv whos awd is "no"
-	def test_confirm_atv_2(self):
+	def test_confirm_vehicle_2(self):
 		myAtv = mod.make_vehicle("1998", "yamaha", "sport", "35", "no", "2300")
-		message = mod.confirm_atv(myAtv)
+		message = mod.confirm_vehicle(myAtv)
 		self.assertEqual(" 1998 Yamaha Sport 35CC without 4X4 for $2300", message)
 
 

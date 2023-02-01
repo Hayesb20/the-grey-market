@@ -6,7 +6,7 @@ import vehicle_mod				as VM
 
 from vehicle_statistic_mod 	import get_statistical_data
 from handeling_strings 			import parse
-from auto_fill_mod 				import autofill_atv
+from auto_fill_mod 				import autofill_vehicle
 from load_and_save_files 	import load_file, save_file, dict_of_filepaths, show_database
 
 
@@ -74,7 +74,7 @@ def build_vehicle(database):
 	my_list = parse(string)
 	
 	#Takes a list and returns a dictionary
-	a_dict = autofill_atv(	my_list, database = database)
+	a_dict = autofill_vehicle(	my_list, database = database)
 	
 	try: 		year = a_dict["year"]
 	except: 	year = input("\n What is the year of the ATV? ")
@@ -96,24 +96,24 @@ def build_vehicle(database):
 		
 
 	new_vehicle = VM.make_vehicle(	year 		 	= year.strip(), 
-														brand		 = brand.strip().lower(), 
-														model 	 = model.strip().lower(), 
-														cc_rating= cc_rating.strip(), 
-														awd 	     = awd.strip().lower(), 
-														price 		 = price.strip())
-	VM.confirm_atv(new_atv)
+																	brand		 = brand.strip().lower(), 
+																	model 	 = model.strip().lower(), 
+																	cc_rating= cc_rating.strip(), 
+																	awd 	     = awd.strip().lower(), 
+																	price 		 = price.strip())
+	VM.confirm_vehicle(new_vehicle)
 	return new_vehicle
 
 def load_files():
 	# Look for a txt file at the designated location to use
 	try:	load_file(	database = vehicle_database,
-							filename = dict_of_filepaths["filepath_to_atv_database_txt"])
+							filename = dict_of_filepaths["filepath_to_vehicle_database.txt"])
 	except: print(" Failed to load 'vehicle_database.txt'")	
 	else: print(" Database loaded successfully")	
 
 def save_files():
 	try: save_file(	database = vehicle_database, 
-						filename =  dict_of_filepaths["filepath_to_atv_database_txt"])
+						filename =  dict_of_filepaths["filepath_to_vehicle_database.txt"])
 	except: print(" Failed to save 'vehicle_database.txt'")
 	else: print(" Database saved successfully")	
 
@@ -202,16 +202,16 @@ def work_with_vehicles():
 				# same brand and model only.
 				answer = input("\n Would you like to see how the atv you just told me \n"
 										+ " about compares to what I can find out? ")
-				if CF.check_answer(answer) == "yes": print("\n" + get_statistical_data(new_atv, vehicle_database))
+				if CF.check_answer(answer) == "yes": print("\n" + get_statistical_data(new_vehicle, vehicle_database))
 				
 				#Look up and see if the atv already exists in the database and then checks
 				# to see what the user wants to do with the atv they created
-				answer = CF.is_in_database(new_atv, vehicle_database)
-				if answer == True: is_same_thing(new_atv)
+				answer = CF.is_in_database(new_vehicle, vehicle_database)
+				if answer == True: is_same_thing(new_vehicle)
 				
 				else:
 					answer = input("\n It seems this a new one, should I remember it? ")
-					should_I_remember(answer, new_atv, vehicle_database)
+					should_I_remember(answer, new_vehicle, vehicle_database)
 					save_files()
 						
 				# Checks to see if the user would like to enter in another ATV
