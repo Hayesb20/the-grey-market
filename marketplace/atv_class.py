@@ -27,17 +27,19 @@ class Atv(V):
 						self.get_model(), 
 						self.get_cc_rating(), 
 						self.get_awd(), 
-						self.get_price()]
+						self.get_price(),
+						self.get_list_date()]
 		return aList
 	
 	def get_essence_as_dict(self):
-		a_dict = {"classification" 	: self.classification,
-						"year" 					: self.year, 
-						"brand" 					: self.brand, 
-						"model" 				: self.model, 
-						"cc_rating" 			: self.cc_rating, 
-						"awd" 					: self.awd, 
-						"price" 					: self.price}
+		a_dict = {"classification" 	: self.get_classification(),
+						"year" 					: self.get_year(), 
+						"brand" 					: self.get_brand(), 
+						"model" 				: self.get_model(), 
+						"cc_rating" 			: self.get_cc_rating(), 
+						"awd" 					: self.get_awd(), 
+						"price" 					: self.get_price(),
+						"list date"				: self.get_list_date()}
 		return a_dict
 		
 		
