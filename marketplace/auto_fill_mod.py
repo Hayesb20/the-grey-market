@@ -112,6 +112,15 @@ def most_likely(the_dict, database):
 				if temp_dict["cc_rating"] : return "price"
 			except: return "cc_rating"
 
+def is_complete(users_list, a_dict):
+	counter = 0
+	my_list = [*set(users_list)]
+	for item in my_list:
+		for key in a_dict:
+			if a_dict[key] == item: counter = counter + 1
+	if counter == len(users_list): return True
+	else: return False
+	
 # a_list is a list with strings that represent information about the object the user wants to create			
 # database will be a list of known objects 
 def autofill_vehicle(users_list, database):
@@ -127,6 +136,9 @@ def autofill_vehicle(users_list, database):
 												
 				elif item == temp_dict[key]:
 					a_dict[key] = item	
+
+		if is_complete(users_list, a_dict): return a_dict
+		
 	
 				
 	return a_dict

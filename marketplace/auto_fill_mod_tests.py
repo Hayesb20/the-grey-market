@@ -23,9 +23,10 @@ test_atv10 = Atv(year = "2018", brand = "polaris", model = "xplorer", cc_rating 
 test_atv11 = Atv(year = "2009", brand = "honda", model = "fourtrax", cc_rating = "350", awd = "yes", price = "600", classification = "four wheeler")
 test_atv12 = Atv(year = "2004", brand = "polaris", model = "sportsman", cc_rating = "350", awd = "no", price = "400", classification = "four wheeler")
 test_atv13 = Atv(year = "2012", brand = "polaris", model = "sportsman", cc_rating = "1000", awd = "no", price = "450", classification = "four wheeler")
+test_atv14 = Atv(year = "2012", brand = "honda", model = "ex", cc_rating = "400", awd = "no", price = "2500", classification = "four wheeler")
 	
 the_data = [test_atv1, test_atv2, test_atv3, test_atv4, test_atv5, test_atv6, test_atv7,
-						test_atv8,test_atv9, test_atv10, test_atv11, test_atv12, test_atv13]
+						test_atv8,test_atv9, test_atv10, test_atv11, test_atv12, test_atv13, test_atv14]
 
 class Autofill_Vehicle(unittest.TestCase):
 	
@@ -268,7 +269,18 @@ class Autofill_Vehicle(unittest.TestCase):
 		self.assertEqual("1445", autofilled_dict["price"])
 		self.assertEqual(1, 			len(autofilled_dict))	
 		
+	def test_autofill_with_user_input_1(self):
+		user_list = ["2001","honda","ex","400","no","2500"]
+		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
+		self.assertEqual("2001", autofilled_dict["year"])
+		self.assertEqual("honda", autofilled_dict["brand"])
+		self.assertEqual("ex", autofilled_dict["model"])
+		self.assertEqual("400", autofilled_dict["cc_rating"])
+		self.assertEqual("no", autofilled_dict["awd"])
+		self.assertEqual("2500", autofilled_dict["price"])
+		self.assertEqual(6, 			len(autofilled_dict))
 		
+			
 #############################################################
          ## Tests that focus of combinations of numbers that are the same ##
 #############################################################

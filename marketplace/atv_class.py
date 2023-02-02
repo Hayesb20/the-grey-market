@@ -10,6 +10,7 @@ class Atv(V):
 
 		# Required argument
 		self.cc_rating = kwargs["cc_rating"]
+		self.awd 	= kwargs ["awd"]
 		# Required arg that can be a default value
 		try: self.classification = kwargs["classification"]
 		except: self.classification = "All Terain Vehicle"
@@ -17,6 +18,7 @@ class Atv(V):
 
 	def get_cc_rating(self):			return self.cc_rating
 	def get_classification(self): 	return self.classification
+	def get_awd(self):					return self.awd
 		
 	def get_essence(self):
 		aList = [ self.get_classification(),

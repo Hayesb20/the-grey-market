@@ -34,15 +34,16 @@ def load_file(database, filename):
 				contence = contence[1:]
 				
 			elif contence[0] == ",":
-				if len(myList)<=6:
+				if len(myList)<=5: #This is a problem. when a new attribute is added to an atv, this screws up the loading of the file
 					myList.append(year)
 				else:
 					myList.append(year)
-					load_atv = Atv(year = myList[0], brand = myList[1], model = myList[2], cc_rating = myList[3], awd = myList[4], price = myList[5])
+					load_atv = Atv(year = myList[0], brand = myList[1], model = myList[2], cc_rating = myList[3], awd = myList[4], price = myList[5], classification = myList[6])
 					database.append(load_atv)
 					myList = []
 				year = ""
 				contence = contence[1:]
+
 	return database
 			
 # NOT TESTED - Will use a filename to determin which sub function needs to be called		

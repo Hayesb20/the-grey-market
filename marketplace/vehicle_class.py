@@ -11,9 +11,9 @@ class Vehicle(I):
 		
 		self.year 	= kwargs["year"]
 		self.model	= kwargs["model"]
-		self.awd 	= kwargs ["awd"]
+		
 		
 	def get_year(self): 			return self.year
 	def get_model(self):		return self.model
-	def get_awd(self):			return self.awd
+
 	

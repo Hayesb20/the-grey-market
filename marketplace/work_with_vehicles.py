@@ -65,16 +65,16 @@ def should_I_remember(answer, item, vehicle_database):
 	
 def build_vehicle(database):
 	string = input("\n Cool, tell me about this vehicle "
-								+ "\n I need to know the year, model, "
-								+ "\n brand, engine size, price and whether or not "
-								+ "\n it has 4X4 capabilities\n"
+								+ "\n I need the Brand, Price, Year, and Model of your item"
+								+ "\n and any other information you have about it. If there"
+								+ "\n anything else I need i'll ask!"
 								+ "\n Please be sure to use spaces between words\n ")
 
 	if CF.check_answer(string) == "no": return "no object made"
 	my_list = parse(string)
 	
 	#Takes a list and returns a dictionary
-	a_dict = autofill_vehicle(	my_list, database = database)
+	a_dict = autofill_vehicle(my_list, database = database)
 	
 	try: 		year = a_dict["year"]
 	except: 	year = input("\n What is the year of the ATV? ")
@@ -94,8 +94,10 @@ def build_vehicle(database):
 	try: 		price = a_dict["price"]	
 	except: 	price = input("\n How much is it? ")
 	
-	try: 		classification = a_dict["classification"]
-	except:	classification = input("\n What is this thing exactly? a car or a four wheeler maybe? ")
+	for thing in vehicle_database:
+		if a_dict["brand"] == thing.get_brand() and a_dict["model"] == thing.get_model():
+			try: 		classification = thing.get_classification()
+			except:	classification = input("\n What is this thing exactly? a car or a four wheeler maybe? ")
 		
 
 	new_vehicle = VM.make_vehicle(	year 		 = year.strip(), 
