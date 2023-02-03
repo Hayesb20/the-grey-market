@@ -1,171 +1,172 @@
-1997,yamaha,banshee,350,no,3000,All Terain Vehicle,02 Feb 2023,
-2015,kawasaki,brute force,750,yes,4250,All Terain Vehicle,02 Feb 2023,
-1992,honda,fourtrax,300,no,1800,All Terain Vehicle,02 Feb 2023,
-2001,yamaha,blaster,200,no,1300,All Terain Vehicle,02 Feb 2023,
-2004,yamaha,raptor,660,no,3000,All Terain Vehicle,02 Feb 2023,
-2006,yamaha,yfz,450,no,3700,All Terain Vehicle,02 Feb 2023,
-1992,yamaha,timberwolf,250,no,1000,All Terain Vehicle,02 Feb 2023,
-2005,yamaha,raptor,660,no,3800,All Terain Vehicle,02 Feb 2023,
-2004,polaris,predator,500,no,2200,All Terain Vehicle,02 Feb 2023,
-2006,yamaha,yfz,450,no,4500,All Terain Vehicle,02 Feb 2023,
-1988,yamaha,blaster,200,no,1500,All Terain Vehicle,02 Feb 2023,
-2006,yamaha,raptor,350,no,2100,All Terain Vehicle,02 Feb 2023,
-1987,kawasaki,mojave,250,no,800,All Terain Vehicle,02 Feb 2023,
-2002,polaris,sportsman,500,yes,2800,All Terain Vehicle,02 Feb 2023,
-1996,honda,fourtrax,300,no,2500,All Terain Vehicle,02 Feb 2023,
-1998,honda,ex,300,no,1000,All Terain Vehicle,02 Feb 2023,
-2003,suzuki,ltz,400,no,2800,All Terain Vehicle,02 Feb 2023,
-1997,yamaha,wolverine,350,yes,2800,All Terain Vehicle,02 Feb 2023,
-2001,polaris,sportsman,500,yes,2200,All Terain Vehicle,02 Feb 2023,
-2007,suzuki,ltz,400,no,3000,All Terain Vehicle,02 Feb 2023,
-2012,polaris,sportsman,400,yes,4000,All Terain Vehicle,02 Feb 2023,
-2017,honda,rancher,420,no,4600,All Terain Vehicle,02 Feb 2023,
-2001,yamaha,warrior,350,no,1900,All Terain Vehicle,02 Feb 2023,
-2000,polaris,magnum,330,yes,2000,All Terain Vehicle,02 Feb 2023,
-2005,polaris,trailboss,250,no,1300,All Terain Vehicle,02 Feb 2023,
-2007,honda,ex,400,no,1975,All Terain Vehicle,02 Feb 2023,
-2003,honda,rancher,350,yes,3500,All Terain Vehicle,02 Feb 2023,
-2008,yamaha,raptor,350,no,1600,All Terain Vehicle,02 Feb 2023,
-1999,yamaha,big bear,350,yes,1500,All Terain Vehicle,02 Feb 2023,
-2000,yamaha,blaster,200,no,1800,All Terain Vehicle,02 Feb 2023,
-2004,polaris,trailblazer,650,no,1900,All Terain Vehicle,02 Feb 2023,
-1999,yamaha,timberwolf,1000,no,1000,All Terain Vehicle,02 Feb 2023,
-2005,honda,ex,300,no,1800,All Terain Vehicle,02 Feb 2023,
-2004,suzuki,ltz,400,no,2200,All Terain Vehicle,02 Feb 2023,
-2006,polaris,sportsman,500,yes,3000,All Terain Vehicle,02 Feb 2023,
-2001,polaris,sportsman,500,yes,2400,All Terain Vehicle,02 Feb 2023,
-2002,polaris,sportsman,500,yes,2700,All Terain Vehicle,02 Feb 2023,
-1999,yamaha,big bear,400,no,1700,All Terain Vehicle,02 Feb 2023,
-1998,honda,foreman,450,yes,2800,All Terain Vehicle,02 Feb 2023,
-2015,honda,rancher,420,yes,3800,All Terain Vehicle,02 Feb 2023,
-1987,honda,fourtrax,350,yes,600,All Terain Vehicle,02 Feb 2023,
-1998,kawasaki,bayou,220,no,1100,All Terain Vehicle,02 Feb 2023,
-1997,honda,recon,250,no,1500,All Terain Vehicle,02 Feb 2023,
-1992,honda,fourtrax,300,no,1800,All Terain Vehicle,02 Feb 2023,
-1986,yamaha,moto4,300,no,500,All Terain Vehicle,02 Feb 2023,
-1999,polaris,trailblazer,250,no,600,All Terain Vehicle,02 Feb 2023,
-1994,honda,fourtrax,300,no,600,All Terain Vehicle,02 Feb 2023,
-2003,yamaha,big bear,400,yes,1550,All Terain Vehicle,02 Feb 2023,
-2016,yamaha,kodiak,700,yes,700,All Terain Vehicle,02 Feb 2023,
-2019,tao,tao,110,no,600,All Terain Vehicle,02 Feb 2023,
-2006,honda,foreman,500,yes,1000,All Terain Vehicle,02 Feb 2023,
-1994,polaris,l,400,yes,2800,All Terain Vehicle,02 Feb 2023,
-1994,polaris,l,400,yes,400,All Terain Vehicle,02 Feb 2023,
-1995,honda,fourtrax,300,no,1900,All Terain Vehicle,02 Feb 2023,
-1999,polaris,trailboss,250,no,1000,All Terain Vehicle,02 Feb 2023,
-2002,yamaha,grizzly,660,yes,4000,All Terain Vehicle,02 Feb 2023,
-2006,arctic,cat,400,yes,3300,All Terain Vehicle,02 Feb 2023,
-2000,yamaha,yz,450,no,3500,All Terain Vehicle,02 Feb 2023,
-2007,honda,ex,400,no,3500,All Terain Vehicle,02 Feb 2023,
-2022,tao,tao,110,no,850,All Terain Vehicle,02 Feb 2023,
-2004,yamaha,warrior,350,no,2500,All Terain Vehicle,02 Feb 2023,
-2013,polaris,ranger,170,no,3400,All Terain Vehicle,02 Feb 2023,
-1998,yamaha,big bear,350,no,1000,All Terain Vehicle,02 Feb 2023,
-2000,honda,foreman,400,yes,1200,All Terain Vehicle,02 Feb 2023,
-2015,polaris,rzr,570,no,1700,All Terain Vehicle,02 Feb 2023,
-2004,polaris,sportsman,90,no,600,All Terain Vehicle,02 Feb 2023,
-1995,yamaha,kodiak,400,yes,1100,All Terain Vehicle,02 Feb 2023,
-1996,polaris,xplorer,400,yes,1500,All Terain Vehicle,02 Feb 2023,
-2002,polaris,sportsman,500,yes,1650,All Terain Vehicle,02 Feb 2023,
-2001,yamaha,warrior,350,no,1800,All Terain Vehicle,02 Feb 2023,
-1998,polaris,xplorer,400,yes,730,All Terain Vehicle,02 Feb 2023,
-2004,yamaha,bruin,350,no,850,All Terain Vehicle,02 Feb 2023,
-2001,honda,ex,300,no,800,All Terain Vehicle,02 Feb 2023,
-2008,honda,rancher,420,yes,5000,All Terain Vehicle,02 Feb 2023,
-2006,honda,trx,450,no,4000,All Terain Vehicle,02 Feb 2023,
-2006,honda,rancher,350,yes,3500,All Terain Vehicle,02 Feb 2023,
-2002,yamaha,kodiak,400,yes,3000,All Terain Vehicle,02 Feb 2023,
-2001,honda,ex,400,no,1000,All Terain Vehicle,02 Feb 2023,
-2003,kawasaki,bayou,250,no,800,All Terain Vehicle,02 Feb 2023,
-2018,tao,tao,110,no,400,All Terain Vehicle,02 Feb 2023,
-2007,polaris,trailblazer,250,no,1600,All Terain Vehicle,02 Feb 2023,
-2005,polaris,scrambler,500,yes,3500,All Terain Vehicle,02 Feb 2023,
-2005,honda,trx,450,no,4000,All Terain Vehicle,02 Feb 2023,
-2000,honda,fourtrax,300,no,2000,All Terain Vehicle,02 Feb 2023,
-2012,honda,trx,450,no,5000,All Terain Vehicle,02 Feb 2023,
-2019,tao,tao,110,no,500,All Terain Vehicle,02 Feb 2023,
-1997,polaris,trailblazer,250,no,1500,All Terain Vehicle,02 Feb 2023,
-2009,yamaha,grizzly,550,yes,3600,All Terain Vehicle,02 Feb 2023,
-1985,honda,fourtrax,250,no,1400,All Terain Vehicle,02 Feb 2023,
-2010,arctic,cat,650,yes,4500,All Terain Vehicle,02 Feb 2023,
-2003,kawasaki,lakota,300,no,1350,All Terain Vehicle,02 Feb 2023,
-1985,honda,fourtrax,250,no,800,All Terain Vehicle,02 Feb 2023,
-2005,honda,rincon,650,yes,3200,All Terain Vehicle,02 Feb 2023,
-2008,polaris,sportsman,500,yes,2500,All Terain Vehicle,02 Feb 2023,
-2000,yamaha,warrior,350,no,2000,All Terain Vehicle,02 Feb 2023,
-2000,kawasaki,kfx,400,no,2000,All Terain Vehicle,02 Feb 2023,
-1999,polaris,scrambler,500,yes,1500,All Terain Vehicle,02 Feb 2023,
-2000,honda,recon,250,no,2000,All Terain Vehicle,02 Feb 2023,
-2001,honda,ex,300,no,1600,All Terain Vehicle,02 Feb 2023,
-2012,polaris,sportsman,500,yes,3000,All Terain Vehicle,02 Feb 2023,
-2006,honda,rancher,350,yes,2900,All Terain Vehicle,02 Feb 2023,
-2007,honda,rancher,400,no,3300,All Terain Vehicle,02 Feb 2023,
-2006,polaris,trailblazer,250,no,800,All Terain Vehicle,02 Feb 2023,
-2016,yamaha,kodiak,700,yes,5500,All Terain Vehicle,02 Feb 2023,
-2002,yamaha,bear tracker,250,no,650,All Terain Vehicle,02 Feb 2023,
-1988,suzuki,quadrunner,230,no,1350,All Terain Vehicle,02 Feb 2023,
-2001,honda,rancher,350,yes,2500,All Terain Vehicle,02 Feb 2023,
-2003,honda,ex,400,no,1000,All Terain Vehicle,02 Feb 2023,
-2004,honda,trx,450,no,3000,All Terain Vehicle,02 Feb 2023,
-2001,polaris,magnum,325,no,1000,All Terain Vehicle,02 Feb 2023,
-2000,polaris,sportsman,400,yes,1500,All Terain Vehicle,02 Feb 2023,
-2009,honda,er,450,no,2500,All Terain Vehicle,02 Feb 2023,
-2000,polaris,magnum,325,no,950,All Terain Vehicle,02 Feb 2023,
-2001,kawasaki,prairie,300,yes,2500,All Terain Vehicle,02 Feb 2023,
-1998,honda,ex,300,no,800,All Terain Vehicle,02 Feb 2023,
-1995,yamaha,blaster,200,no,1200,All Terain Vehicle,02 Feb 2023,
-2008,yamaha,raptor,80,no,1450,All Terain Vehicle,02 Feb 2023,
-2008,suzuki,ltz,400,no,3000,All Terain Vehicle,02 Feb 2023,
-2000,polaris,scrambler,400,no,2000,All Terain Vehicle,02 Feb 2023,
-1992,polaris,trailboss,250,no,850,All Terain Vehicle,02 Feb 2023,
-2007,honda,rancher,420,no,1450,All Terain Vehicle,02 Feb 2023,
-2008,yamaha,big bear,400,yes,2300,All Terain Vehicle,02 Feb 2023,
-2007,kawasaki,brute force,750,yes,4400,All Terain Vehicle,02 Feb 2023,
-2004,polaris,predator,500,no,1500,All Terain Vehicle,02 Feb 2023,
-2000,suzuki,ozark,250,no,1200,All Terain Vehicle,02 Feb 2023,
-2006,kawasaki,bayou,250,no,600,All Terain Vehicle,02 Feb 2023,
-1997,polaris,sportsman,500,yes,1900,All Terain Vehicle,02 Feb 2023,
-2003,honda,foreman,450,no,2800,All Terain Vehicle,02 Feb 2023,
-1999,kawasaki,bayou,300,no,750,All Terain Vehicle,02 Feb 2023,
-1998,honda,fourtrax,250,no,1000,All Terain Vehicle,02 Feb 2023,
-2003,polaris,predator,500,no,1800,All Terain Vehicle,02 Feb 2023,
-2008,arctic,cat,90,no,250,All Terain Vehicle,02 Feb 2023,
-2000,polaris,xplorer,400,yes,1800,All Terain Vehicle,02 Feb 2023,
-2004,arctic,cat,400,yes,2800,All Terain Vehicle,02 Feb 2023,
-1995,polaris,xplorer,300,yes,1100,All Terain Vehicle,02 Feb 2023,
-2012,polaris,sportsman,400,yes,3800,All Terain Vehicle,02 Feb 2023,
-2000,honda,foreman,400,yes,2500,All Terain Vehicle,02 Feb 2023,
-2011,yamaha,grizzly,350,yes,3500,All Terain Vehicle,02 Feb 2023,
-1999,polaris,xplorer,400,yes,1400,All Terain Vehicle,02 Feb 2023,
-2009,yamaha,grizzly,700,yes,5000,All Terain Vehicle,02 Feb 2023,
-2000,honda,ex,400,no,2250,All Terain Vehicle,02 Feb 2023,
-2003,polaris,trailblazer,250,no,900,All Terain Vehicle,02 Feb 2023,
-2000,yamaha,kodiak,400,yes,1200,All Terain Vehicle,02 Feb 2023,
-2005,polaris,magnum,330,no,1000,All Terain Vehicle,02 Feb 2023,
-2009,polaris,sportsman,90,no,800,All Terain Vehicle,02 Feb 2023,
-1998,yamaha,kodiak,400,yes,800,All Terain Vehicle,02 Feb 2023,
-1998,polaris,xplorer,400,yes,500,All Terain Vehicle,02 Feb 2023,
-2006,honda,foreman,500,yes,2800,All Terain Vehicle,02 Feb 2023,
-2020,honda,rancher,420,yes,4500,All Terain Vehicle,02 Feb 2023,
-2003,yamaha,kodiak,400,no,1800,All Terain Vehicle,02 Feb 2023,
-2004,yamaha,kodiak,400,yes,1750,All Terain Vehicle,02 Feb 2023,
-2005,kawasaki,bayou,250,no,1000,All Terain Vehicle,02 Feb 2023,
-2006,polaris,sportsman,500,yes,2000,All Terain Vehicle,02 Feb 2023,
-2002,honda,rancher,350,no,1800,All Terain Vehicle,02 Feb 2023,
-2001,yamaha,bear tracker,250,n,1500,All Terain Vehicle,02 Feb 2023,
-2003,suzuki,ozark,250,no,1200,All Terain Vehicle,02 Feb 2023,
-1999,polaris,sportsman,500,yes,2000,All Terain Vehicle,02 Feb 2023,
-2003,polaris,predator,500,no,900,All Terain Vehicle,02 Feb 2023,
-1994,honda,fourtrax,300,no,1400,All Terain Vehicle,02 Feb 2023,
-1998,polaris,sawtooth,200,no,2000,All Terain Vehicle,02 Feb 2023,
-2001,polaris,sportsman,500,yes,4700,All Terain Vehicle,02 Feb 2023,
-1996,polaris,xpress,300,no,1000,All Terain Vehicle,02 Feb 2023,
-1999,polaris,scrambler,500,no,1200,All Terain Vehicle,02 Feb 2023,
-2001,honda,rancher,350,no,2000,All Terain Vehicle,02 Feb 2023,
-2003,honda,rancher,350,no,1200,All Terain Vehicle,02 Feb 2023,
-2003,yamaha,kodiak,400,yes,1800,All Terain Vehicle,02 Feb 2023,
-1993,polaris,trailboss,350,yes,300,All Terain Vehicle,02 Feb 2023,
-2001,honda,ex,400,no,2500,All Terain Vehicle,02 Feb 2023,
-1997,honda,fourtrax,300,yes,1650,All Terain Vehicle,02 Feb 2023,
-2001,polaris,sportsman,500,yes,2600,four wheeler,02 Feb 2023,
-2001,honda,ex,400,no,2500,all terain vehicle,02 Feb 2023,
+{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'yamaha', 'model': 'banshee', 'cc_rating': '350', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2015', 'brand': 'kawasaki', 'model': 'brute force', 'cc_rating': '750', 'awd': 'yes', 'price': '4250', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1992', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'yamaha', 'model': 'blaster', 'cc_rating': '200', 'awd': 'no', 'price': '1300', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'yamaha', 'model': 'raptor', 'cc_rating': '660', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'yamaha', 'model': 'yfz', 'cc_rating': '450', 'awd': 'no', 'price': '3700', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1992', 'brand': 'yamaha', 'model': 'timberwolf', 'cc_rating': '250', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'yamaha', 'model': 'raptor', 'cc_rating': '660', 'awd': 'no', 'price': '3800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'polaris', 'model': 'predator', 'cc_rating': '500', 'awd': 'no', 'price': '2200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'yamaha', 'model': 'yfz', 'cc_rating': '450', 'awd': 'no', 'price': '4500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1988', 'brand': 'yamaha', 'model': 'blaster', 'cc_rating': '200', 'awd': 'no', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'yamaha', 'model': 'raptor', 'cc_rating': '350', 'awd': 'no', 'price': '2100', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1987', 'brand': 'kawasaki', 'model': 'mojave', 'cc_rating': '250', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1996', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'honda', 'model': 'ex', 'cc_rating': '300', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'yamaha', 'model': 'wolverine', 'cc_rating': '350', 'awd': 'yes', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2012', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '400', 'awd': 'yes', 'price': '4000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2017', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '420', 'awd': 'no', 'price': '4600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'yamaha', 'model': 'warrior', 'cc_rating': '350', 'awd': 'no', 'price': '1900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'magnum', 'cc_rating': '330', 'awd': 'yes', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '250', 'awd': 'no', 'price': '1300', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '1975', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'yes', 'price': '3500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'yamaha', 'model': 'raptor', 'cc_rating': '350', 'awd': 'no', 'price': '1600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'yamaha', 'model': 'big bear', 'cc_rating': '350', 'awd': 'yes', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'yamaha', 'model': 'blaster', 'cc_rating': '200', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'polaris', 'model': 'trailblazer', 'cc_rating': '650', 'awd': 'no', 'price': '1900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'yamaha', 'model': 'timberwolf', 'cc_rating': '1000', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'honda', 'model': 'ex', 'cc_rating': '300', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '2200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2700', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'yamaha', 'model': 'big bear', 'cc_rating': '400', 'awd': 'no', 'price': '1700', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'honda', 'model': 'foreman', 'cc_rating': '450', 'awd': 'yes', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2015', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '420', 'awd': 'yes', 'price': '3800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1987', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '350', 'awd': 'yes', 'price': '600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'kawasaki', 'model': 'bayou', 'cc_rating': '220', 'awd': 'no', 'price': '1100', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'honda', 'model': 'recon', 'cc_rating': '250', 'awd': 'no', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1992', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1986', 'brand': 'yamaha', 'model': 'moto4', 'cc_rating': '300', 'awd': 'no', 'price': '500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'polaris', 'model': 'trailblazer', 'cc_rating': '250', 'awd': 'no', 'price': '600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1994', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'yamaha', 'model': 'big bear', 'cc_rating': '400', 'awd': 'yes', 'price': '1550', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2016', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '700', 'awd': 'yes', 'price': '700', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2019', 'brand': 'tao', 'model': 'tao', 'cc_rating': '110', 'awd': 'no', 'price': '600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'honda', 'model': 'foreman', 'cc_rating': '500', 'awd': 'yes', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1994', 'brand': 'polaris', 'model': 'l', 'cc_rating': '400', 'awd': 'yes', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1994', 'brand': 'polaris', 'model': 'l', 'cc_rating': '400', 'awd': 'yes', 'price': '400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1995', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '1900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '250', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'yamaha', 'model': 'grizzly', 'cc_rating': '660', 'awd': 'yes', 'price': '4000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'arctic', 'model': 'cat', 'cc_rating': '400', 'awd': 'yes', 'price': '3300', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'yamaha', 'model': 'yz', 'cc_rating': '450', 'awd': 'no', 'price': '3500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '3500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2022', 'brand': 'tao', 'model': 'tao', 'cc_rating': '110', 'awd': 'no', 'price': '850', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'yamaha', 'model': 'warrior', 'cc_rating': '350', 'awd': 'no', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2013', 'brand': 'polaris', 'model': 'ranger', 'cc_rating': '170', 'awd': 'no', 'price': '3400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'yamaha', 'model': 'big bear', 'cc_rating': '350', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'honda', 'model': 'foreman', 'cc_rating': '400', 'awd': 'yes', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2015', 'brand': 'polaris', 'model': 'rzr', 'cc_rating': '570', 'awd': 'no', 'price': '1700', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '90', 'awd': 'no', 'price': '600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1995', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'yes', 'price': '1100', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1996', 'brand': 'polaris', 'model': 'xplorer', 'cc_rating': '400', 'awd': 'yes', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '1650', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'yamaha', 'model': 'warrior', 'cc_rating': '350', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'polaris', 'model': 'xplorer', 'cc_rating': '400', 'awd': 'yes', 'price': '730', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'yamaha', 'model': 'bruin', 'cc_rating': '350', 'awd': 'no', 'price': '850', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'ex', 'cc_rating': '300', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '420', 'awd': 'yes', 'price': '5000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'honda', 'model': 'trx', 'cc_rating': '450', 'awd': 'no', 'price': '4000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'yes', 'price': '3500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'yes', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'kawasaki', 'model': 'bayou', 'cc_rating': '250', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2018', 'brand': 'tao', 'model': 'tao', 'cc_rating': '110', 'awd': 'no', 'price': '400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'polaris', 'model': 'trailblazer', 'cc_rating': '250', 'awd': 'no', 'price': '1600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'polaris', 'model': 'scrambler', 'cc_rating': '500', 'awd': 'yes', 'price': '3500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'honda', 'model': 'trx', 'cc_rating': '450', 'awd': 'no', 'price': '4000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2012', 'brand': 'honda', 'model': 'trx', 'cc_rating': '450', 'awd': 'no', 'price': '5000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2019', 'brand': 'tao', 'model': 'tao', 'cc_rating': '110', 'awd': 'no', 'price': '500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'polaris', 'model': 'trailblazer', 'cc_rating': '250', 'awd': 'no', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2009', 'brand': 'yamaha', 'model': 'grizzly', 'cc_rating': '550', 'awd': 'yes', 'price': '3600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1985', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '250', 'awd': 'no', 'price': '1400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2010', 'brand': 'arctic', 'model': 'cat', 'cc_rating': '650', 'awd': 'yes', 'price': '4500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'kawasaki', 'model': 'lakota', 'cc_rating': '300', 'awd': 'no', 'price': '1350', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1985', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '250', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'honda', 'model': 'rincon', 'cc_rating': '650', 'awd': 'yes', 'price': '3200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'yamaha', 'model': 'warrior', 'cc_rating': '350', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'kawasaki', 'model': 'kfx', 'cc_rating': '400', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'polaris', 'model': 'scrambler', 'cc_rating': '500', 'awd': 'yes', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'honda', 'model': 'recon', 'cc_rating': '250', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'ex', 'cc_rating': '300', 'awd': 'no', 'price': '1600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2012', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'yes', 'price': '2900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '400', 'awd': 'no', 'price': '3300', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'polaris', 'model': 'trailblazer', 'cc_rating': '250', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2016', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '700', 'awd': 'yes', 'price': '5500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'yamaha', 'model': 'bear tracker', 'cc_rating': '250', 'awd': 'no', 'price': '650', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1988', 'brand': 'suzuki', 'model': 'quadrunner', 'cc_rating': '230', 'awd': 'no', 'price': '1350', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'yes', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'honda', 'model': 'trx', 'cc_rating': '450', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'polaris', 'model': 'magnum', 'cc_rating': '325', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '400', 'awd': 'yes', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2009', 'brand': 'honda', 'model': 'er', 'cc_rating': '450', 'awd': 'no', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'magnum', 'cc_rating': '325', 'awd': 'no', 'price': '950', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'kawasaki', 'model': 'prairie', 'cc_rating': '300', 'awd': 'yes', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'honda', 'model': 'ex', 'cc_rating': '300', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1995', 'brand': 'yamaha', 'model': 'blaster', 'cc_rating': '200', 'awd': 'no', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'yamaha', 'model': 'raptor', 'cc_rating': '80', 'awd': 'no', 'price': '1450', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'scrambler', 'cc_rating': '400', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1992', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '250', 'awd': 'no', 'price': '850', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '420', 'awd': 'no', 'price': '1450', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'yamaha', 'model': 'big bear', 'cc_rating': '400', 'awd': 'yes', 'price': '2300', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2007', 'brand': 'kawasaki', 'model': 'brute force', 'cc_rating': '750', 'awd': 'yes', 'price': '4400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'polaris', 'model': 'predator', 'cc_rating': '500', 'awd': 'no', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'suzuki', 'model': 'ozark', 'cc_rating': '250', 'awd': 'no', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'kawasaki', 'model': 'bayou', 'cc_rating': '250', 'awd': 'no', 'price': '600', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '1900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'honda', 'model': 'foreman', 'cc_rating': '450', 'awd': 'no', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'kawasaki', 'model': 'bayou', 'cc_rating': '300', 'awd': 'no', 'price': '750', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '250', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'polaris', 'model': 'predator', 'cc_rating': '500', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'arctic', 'model': 'cat', 'cc_rating': '90', 'awd': 'no', 'price': '250', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'xplorer', 'cc_rating': '400', 'awd': 'yes', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'arctic', 'model': 'cat', 'cc_rating': '400', 'awd': 'yes', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1995', 'brand': 'polaris', 'model': 'xplorer', 'cc_rating': '300', 'awd': 'yes', 'price': '1100', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2012', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '400', 'awd': 'yes', 'price': '3800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'honda', 'model': 'foreman', 'cc_rating': '400', 'awd': 'yes', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2011', 'brand': 'yamaha', 'model': 'grizzly', 'cc_rating': '350', 'awd': 'yes', 'price': '3500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'polaris', 'model': 'xplorer', 'cc_rating': '400', 'awd': 'yes', 'price': '1400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2009', 'brand': 'yamaha', 'model': 'grizzly', 'cc_rating': '700', 'awd': 'yes', 'price': '5000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '2250', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'polaris', 'model': 'trailblazer', 'cc_rating': '250', 'awd': 'no', 'price': '900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'yes', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'polaris', 'model': 'magnum', 'cc_rating': '330', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2009', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '90', 'awd': 'no', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'yes', 'price': '800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'polaris', 'model': 'xplorer', 'cc_rating': '400', 'awd': 'yes', 'price': '500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'honda', 'model': 'foreman', 'cc_rating': '500', 'awd': 'yes', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2020', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '420', 'awd': 'yes', 'price': '4500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2004', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'yes', 'price': '1750', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2005', 'brand': 'kawasaki', 'model': 'bayou', 'cc_rating': '250', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2006', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2002', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'no', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'yamaha', 'model': 'bear tracker', 'cc_rating': '250', 'awd': 'n', 'price': '1500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'suzuki', 'model': 'ozark', 'cc_rating': '250', 'awd': 'no', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'polaris', 'model': 'predator', 'cc_rating': '500', 'awd': 'no', 'price': '900', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1994', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'no', 'price': '1400', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1998', 'brand': 'polaris', 'model': 'sawtooth', 'cc_rating': '200', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '4700', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1996', 'brand': 'polaris', 'model': 'xpress', 'cc_rating': '300', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1999', 'brand': 'polaris', 'model': 'scrambler', 'cc_rating': '500', 'awd': 'no', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'no', 'price': '2000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'honda', 'model': 'rancher', 'cc_rating': '350', 'awd': 'no', 'price': '1200', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2003', 'brand': 'yamaha', 'model': 'kodiak', 'cc_rating': '400', 'awd': 'yes', 'price': '1800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1993', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '350', 'awd': 'yes', 'price': '300', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '2500', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'yes', 'price': '1650', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2600', 'list date': '03 Feb 2023'}
+{'classification': 'all terain vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '325', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'all terain vehicle', 'year': '2008', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '2800', 'list date': '03 Feb 2023'}

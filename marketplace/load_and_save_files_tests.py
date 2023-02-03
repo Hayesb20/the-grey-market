@@ -53,8 +53,7 @@ class Save_File(unittest.TestCase):
 class Load_File_Helper(unittest.TestCase):
 	
 	def test_load_file_helper_1(self):
-		empty_database = []
-		the_database = LaS.load_file_helper(empty_database, filename)
+		the_database = LaS.load_file_helper(filename)
 		for i in range(len(database)):
 			self.assertEqual(database[i].get_essence(), the_database[i].get_essence())
 

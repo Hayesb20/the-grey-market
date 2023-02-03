@@ -9,7 +9,9 @@ class Vehicle(I):
 	def __init__ (self, **kwargs):
 		I.__init__(self, **kwargs)
 		
-		self.year 	= kwargs["year"]
+		try: self.year 	= kwargs["year"]
+		except: self.year 	= "Unknown"
+			
 		self.model	= kwargs["model"]
 		
 		

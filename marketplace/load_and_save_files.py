@@ -6,6 +6,7 @@ import ast
 from atv_class import Atv
 from auto_fill_mod import autofill_vehicle
 from datetime import datetime
+from onetime import onetime
 
 dict_of_filepaths = {
 								"filepath_to_vehicle_database.txt" 					: "txt_files/vehicle_database.txt",
@@ -13,18 +14,17 @@ dict_of_filepaths = {
 							}
 
 # TESTED - given a file name and a database, will figure out which loading method to call
-def load_file(database, filename):				
+def load_file(filename):				
 	
 	if filename == dict_of_filepaths["filepath_to_vehicle_database.txt"]:
-		database = load_file_helper(database, filename)
+		database = load_file_helper(filename)
 		
 	elif filename == dict_of_filepaths["filepath_to_vehicle_database_backup.txt"]:
-		database = load_file_helper(database, filename)
-		
+		database = load_file_helper(filename)
 	return database
 			
-#NOT TESTED - Takes an empty list and filename, will load the list with contence of file (atvs)	
-def load_file_helper(database, filename):
+# TESTED - Takes an empty list and filename, will load the list with contence of file (atvs)	
+def load_file_helper(filename):
 	with open(filename, "r") as file_object:
 		contence = file_object.read()
 		database = []
@@ -36,17 +36,18 @@ def load_file_helper(database, filename):
 				contence = contence[1:]
 				
 			elif contence[0] == "\n":
-				kwargs = ast.literal_eval(a_word)
-				newVehicle = Atv(**kwargs)
-				database.append(newVehicle)	
-				a_word = ""
-				contence = contence[1:]	
+				
+				try: 
+					kwargs = ast.literal_eval(a_word)
+					newVehicle = Atv(**kwargs)
+					database.append(newVehicle)	
+					a_word = ""
+					contence = contence[1:]	
+				except: "Object creation failed"
+
 	return database
-	
-	
-	
 			
-# NOT TESTED - Will use a filename to determin which sub function needs to be called		
+# TESTED - Will use a filename to determin which sub function needs to be called		
 def save_file(database, filename):
 	if filename == dict_of_filepaths["filepath_to_vehicle_database.txt"]:
 		with open(filename, "w") as file_object:
@@ -63,7 +64,7 @@ def save_file(database, filename):
 			long_string = convert_objects_in_atv_database_to_a_string(database)
 			file_object.write(long_string)	
 	
-# NOT TESTED - Given the atv_database list, returns a string
+# TESTED - Given the atv_database list, returns a string
 def convert_objects_in_atv_database_to_a_string(list_of_objects):
 	string = ""
 	for thing in list_of_objects:
@@ -75,6 +76,7 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 # NOT TESTED - Returns a string that contains information about an ATV to be orinted		
 #needs to actually return a string to be printed. not print itself
 def show_database(database):
+	print("here", database)
 	for item in database:
-		print(item.get_essence())
+		print(item.get_essence_as_dict())
 			
