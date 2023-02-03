@@ -76,6 +76,5 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 #needs to actually return a string to be printed. not print itself
 def show_database(database):
 	for item in database:
-		print(item.get_date_listed(), item.get_classification(), item.get_year(), item.get_brand(), item.get_model(), 
-							item.get_cc_rating(), item.get_awd(), item.get_price())
+		print(item.get_essence())
 			
