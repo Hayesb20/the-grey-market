@@ -57,19 +57,35 @@ class Confirm_Vehicle_Tests(unittest.TestCase):
 	# attributes of that atv object
 	#--------------------------------------------------------------------------------------------------#
 	
-	#TEST - confirm_atv is called with an atv whos awd is "yes"
+	#TEST - confirm_vehicle is called with an atv whos awd is "yes"
 	def test_confirm_vehicle_1(self):
 		myAtv = mod.make_vehicle(year = "1998", brand = "yamaha", model = "sport", cc_rating = "35", awd = "yes", price = "2300", classification = "four wheeler")
 		message = mod.confirm_vehicle(myAtv)
-		self.assertEqual(" 1998 Yamaha Sport 35CC with 4X4 for $2300", message)
+		self.assertEqual(" 1998 Yamaha Sport with a 35CC Engine, with 4X4 for $2300", message)
 
-	#TEST - confirm_atv is called with an atv whos awd is "no"
+	#TEST - confirm_vehicle is called with an atv whos awd is "no"
 	def test_confirm_vehicle_2(self):
 		myAtv = mod.make_vehicle(year = "1998", brand = "yamaha", model = "sport", cc_rating = "35", awd = "no", price = "2300", classification = "four wheeler")
 		message = mod.confirm_vehicle(myAtv)
-		self.assertEqual(" 1998 Yamaha Sport 35CC without 4X4 for $2300", message)
+		self.assertEqual(" 1998 Yamaha Sport with a 35CC Engine, without 4X4 for $2300", message)
 
+	#TEST - confirm_vehicle is called with a mower that has little information - real life example"
+	def test_confirm_vehicle_3(self):
+		myMower = mod.make_vehicle(brand = "john deere", model = "l100", hp_rating = "17", price = "300", classification = "riding mower")
+		message = mod.confirm_vehicle(myMower)
+		self.assertEqual("  John Deere L100 with a 17HP Engine, for $300", message)
+		
+	#TEST - confirm_vehicle is called with a mower that has all information - real life example"
+	def test_confirm_vehicle_4(self):
+		myMower = mod.make_vehicle(brand = "cub cadet", model = "zt3", hp_rating = "24", price = "3500", classification = "zero turn", deck_size = "60", engine_brand = "kawasaki", year = "2022")
+		message = mod.confirm_vehicle(myMower)
+		self.assertEqual(' 2022 Cub Cadet Zt3 with a 24HP Kawasaki Engine, 60" deck for $3500', message) #run this test to see where we left off
 
+	#TEST - confirm_vehicle is called with a mower that is missing all engine related info - real life example"
+	def test_confirm_vehicle_4(self):
+		myMower = mod.make_vehicle(brand = "encore", model = "xtreme", price = "500", classification = "zero turn", deck_size = "52", year = "2007")
+		message = mod.confirm_vehicle(myMower)
+		self.assertEqual(' 2007 Encore Xtreme with a 52" deck for $500', message) #run this test to see where we left off
 
 
 if __name__ == '__main__':

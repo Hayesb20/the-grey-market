@@ -56,22 +56,22 @@ class Atv_test_case(unittest.TestCase):
 	def test_mower_class_2(self):
 	
 		# Testing get methods 
-		self.assertEqual("Unknown",	test_mower2.get_cc_rating())
-		self.assertEqual("Unknown",	test_mower2.get_hp_rating())
-		self.assertEqual("Unknown",	test_mower2.get_year())
+		self.assertEqual("unknown",		test_mower2.get_cc_rating())
+		self.assertEqual("unknown",		test_mower2.get_hp_rating())
+		self.assertEqual("unknown",		test_mower2.get_year())
 		self.assertEqual("cub cadet", 	test_mower2.get_brand())
 		self.assertEqual("rzt", 				test_mower2.get_model())
-		self.assertEqual("Mower", 		test_mower2.get_classification())
+		self.assertEqual("mower", 		test_mower2.get_classification())
 		self.assertEqual("1500", 			test_mower2.get_price())
 		self.assertEqual("54", 				test_mower2.get_deck_size())
-		self.assertEqual("Unknown", 	test_mower2.get_engine_brand())
+		self.assertEqual("unknown", 	test_mower2.get_engine_brand())
 		self.assertEqual(datetime.strftime(datetime.now(), "%d %b %Y"), 	test_mower2.get_list_date())
 		
-		self.assertEqual(["Mower", "cub cadet", "rzt", "54",  "1500", datetime.strftime(datetime.now(), "%d %b %Y")], test_mower2.get_essence())
+		self.assertEqual(["mower", "cub cadet", "rzt", "54",  "1500", datetime.strftime(datetime.now(), "%d %b %Y")], test_mower2.get_essence())
 	
-		self.assertEqual({"classification"	: "Mower",	"brand" 			: "cub cadet", 	
-										"model" 			: "rzt",  			"deck_size" 	: "54", 				 
-										"price" 				: "1500", 		"list date" 		: datetime.strftime(datetime.now(), "%d %b %Y")}, 
+		self.assertEqual({"classification"	: "mower",	"brand" 			: "cub cadet", 	
+										"model" 			: "rzt",  		"deck_size" 	: "54", 				 
+										"price" 				: "1500", 	"list date" 		: datetime.strftime(datetime.now(), "%d %b %Y")}, 
 										test_mower2.get_essence_as_dict())
 										
 										

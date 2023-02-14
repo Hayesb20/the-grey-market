@@ -51,15 +51,15 @@ class Test_get_statistic_message(unittest.TestCase):
 		myAtv = make_vehicle(year = "2008", brand = "yamaha", model = "banshee", cc_rating = "400", awd = "yes", price = "730", classification = "four wheeler")
 		message = stat.get_statistic_message(myAtv, database)		
 		self.assertEqual(" Compared to other ATVs that are the same brand, model, "
-								+ "and year, \n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "and year, \n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $730 is \n $1020 less than the average price of $1750\n"
 								+ "\n"
 								+ " Compared to other ATVs that are the same brand and model "
-								+ "\n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "\n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $730 is \n $1020 less than the average price of $1750\n"
 								+ "\n"
 								+ " Compared to other ATVs that are the same brand "
-								+ "\n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "\n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $730 is \n $603 less than the average price of $1333\n",message)
 		
 	def test_get_statistic_message_2(self):
@@ -67,30 +67,30 @@ class Test_get_statistic_message(unittest.TestCase):
 		message = stat.get_statistic_message(myAtv, database)
 								
 		self.assertEqual(" Compared to other ATVs that are the same brand, model, "
-								+ "and year, \n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "and year, \n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $1750 is the average price.\n"
 								+ "\n"
 								+ " Compared to other ATVs that are the same brand and model "
-								+ "\n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "\n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $1750 is the average price.\n"
 								+ "\n"
 								+ " Compared to other ATVs that are the same brand "
-								+ "\n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "\n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $1750 is \n $417 more than the average price of $1333\n",message)
 	
 	def test_get_statistic_message_3(self):
 		myAtv = make_vehicle(year = "2008", brand = "yamaha", model = "banshee", cc_rating = "400", awd = "yes", price = "2000", classification = "four wheeler")
 		message = stat.get_statistic_message(myAtv, database)								
 		self.assertEqual(" Compared to other ATVs that are the same brand, model, "
-								+ "and year, \n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "and year, \n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $2000 is \n $250 more than the average price of $1750\n"
 								+ "\n"
 								+ " Compared to other ATVs that are the same brand and model "
-								+ "\n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "\n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $2000 is \n $250 more than the average price of $1750\n"
 								+ "\n"
 								+ " Compared to other ATVs that are the same brand "
-								+ "\n your 2008 Yamaha Banshee 400CC with 4X4 "
+								+ "\n your 2008 Yamaha Banshee with a 400CC Engine, with 4X4 "
 								+ "for $2000 is \n $667 more than the average price of $1333\n",message)
 		
 		

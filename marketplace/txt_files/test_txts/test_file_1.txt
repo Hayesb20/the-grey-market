@@ -1,4 +1,4 @@
-{'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'yamaha', 'model': 'banshee', 'cc_rating': '350', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
-{'classification': 'Four Wheeler', 'year': '2020', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '5600', 'list date': '03 Feb 2023'}
-{'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'yamaha', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '2500', 'list date': '03 Feb 2023'}
-{'classification': 'All Terain Vehicle', 'year': '2013', 'brand': 'yamaha', 'model': 'kadak', 'cc_rating': '350', 'awd': 'no', 'price': '3000', 'list date': '03 Feb 2023'}
+{'classification': 'all terain vehicle', 'year': '1997', 'brand': 'yamaha', 'model': 'banshee', 'cc_rating': '350', 'awd': 'no', 'price': '3000', 'list date': '14 Feb 2023'}
+{'classification': 'four wheeler', 'year': '2020', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '5600', 'list date': '14 Feb 2023'}
+{'classification': 'all terain vehicle', 'year': '2001', 'brand': 'yamaha', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '2500', 'list date': '14 Feb 2023'}
+{'classification': 'all terain vehicle', 'year': '2013', 'brand': 'yamaha', 'model': 'kadak', 'cc_rating': '350', 'awd': 'no', 'price': '3000', 'list date': '14 Feb 2023'}

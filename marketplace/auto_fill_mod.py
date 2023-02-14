@@ -103,6 +103,7 @@ def most_likely(the_dict, database):
 		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter > price_occurence_counter: 	return "cc_rating"
 		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter < price_occurence_counter: 	return "price"		
 		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter == price_occurence_counter: 	return "cannot_interpret"	
+		else: return "cannot_interpret"
 
 	# The two numbers ARE the same
 	if	(len(list_of_possible_CCs) == 2

@@ -14,7 +14,7 @@ dict_of_filepaths = {
 							}
 
 # TESTED - given a file name and a database, will figure out which loading method to call
-def load_file(filename):				
+def load_file(filename):		
 	
 	if filename == dict_of_filepaths["filepath_to_vehicle_database.txt"]:
 		database = load_file_helper(filename)
@@ -30,21 +30,29 @@ def load_file_helper(filename):
 		database = []
 		a_word = ""
 		while contence != "":
-
+			#print(len(contence))
+			#print(contence[0])
 			if contence[0] != "\n":
+				#print("it is not a '/n'")
 				a_word = a_word + contence[0]
 				contence = contence[1:]
-				
-			elif contence[0] == "\n":
-				
+	
+			elif contence[0] == "\n":	
+				#print("it is  a '/n'")		
 				try: 
 					kwargs = ast.literal_eval(a_word)
-					newVehicle = Atv(**kwargs)
-					database.append(newVehicle)	
-					a_word = ""
-					contence = contence[1:]	
+					if kwargs["classification"].lower() ==  "all terain vehicle" or kwargs["classification"].lower() == "four wheeler":
+						newVehicle = Atv(**kwargs)
+						database.append(newVehicle)	
+						a_word = ""
+						contence = contence[1:]	
+					else: 
+						contence = contence[1:]	
 				except: "Object creation failed"
-
+			else: 
+				#print("bruh idek")
+				contence = contence[1:]
+	#print("loaded database",database)
 	return database
 			
 # TESTED - Will use a filename to determin which sub function needs to be called		
@@ -76,7 +84,6 @@ def convert_objects_in_atv_database_to_a_string(list_of_objects):
 # NOT TESTED - Returns a string that contains information about an ATV to be orinted		
 #needs to actually return a string to be printed. not print itself
 def show_database(database):
-	print("here", database)
 	for item in database:
 		print(item.get_essence_as_dict())
 			

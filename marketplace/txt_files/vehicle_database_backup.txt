@@ -168,5 +168,5 @@
 {'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'honda', 'model': 'ex', 'cc_rating': '400', 'awd': 'no', 'price': '2500', 'list date': '03 Feb 2023'}
 {'classification': 'All Terain Vehicle', 'year': '1997', 'brand': 'honda', 'model': 'fourtrax', 'cc_rating': '300', 'awd': 'yes', 'price': '1650', 'list date': '03 Feb 2023'}
 {'classification': 'All Terain Vehicle', 'year': '2001', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '500', 'awd': 'yes', 'price': '2600', 'list date': '03 Feb 2023'}
-{'classification': 'all terain vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '325', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
-{'classification': 'all terain vehicle', 'year': '2008', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '2800', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '325', 'awd': 'no', 'price': '1000', 'list date': '03 Feb 2023'}
+{'classification': 'All Terain Vehicle', 'year': '2008', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '2800', 'list date': '03 Feb 2023'}

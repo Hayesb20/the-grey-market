@@ -9,11 +9,11 @@ class Atv(V):
 		V.__init__(self, **kwargs)
 
 		# Required argument
-		self.cc_rating = kwargs["cc_rating"]
-		self.awd 	= kwargs ["awd"]
+		self.cc_rating 	= kwargs["cc_rating"].replace(" ","")
+		self.awd 			= kwargs ["awd"].lower().replace(" ","")
 		# Required arg that can be a default value
-		try: self.classification = kwargs["classification"]
-		except: self.classification = "All Terain Vehicle"
+		try: self.classification = kwargs["classification"].lower().strip()
+		except: self.classification = "all terain vehicle"
 		
 
 	def get_cc_rating(self):			return self.cc_rating

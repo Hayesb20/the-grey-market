@@ -352,7 +352,7 @@ class Autofill_Vehicle(unittest.TestCase):
 class Most_likely(unittest.TestCase):
 	
 #################################################################################################
-							## TESTS THAT FOCUS ON priceS THAT ARE WITHIN A VALID YEAR RANGE ##
+							## TESTS THAT FOCUS ON PRICES THAT ARE WITHIN A VALID YEAR RANGE ##
 #################################################################################################
 	
 	# User list will contain an appropreate year, common cc_rating, common price value for brand and model
@@ -474,7 +474,7 @@ class Most_likely(unittest.TestCase):
 		self.assertEqual("cc_rating", string)
 
 ##################################################################################################
-								## TESTS THAT FOCUS ON priceS THAT ARE WITHIN A VALID CC RANGE ##
+								## TESTS THAT FOCUS ON PRICES THAT ARE WITHIN A VALID CC RANGE ##
 ##################################################################################################
 		
 	# User list will contain an appropreate year, common cc_rating, and a price value that falls within the range 
@@ -512,7 +512,18 @@ class Most_likely(unittest.TestCase):
 		string  = mod.most_likely(the_dict, the_data)
 		self.assertEqual("price", string)
 	
-	
+	def test_most_likely_8(self):
+		user_list = ["2007", "encore", "xtreme", "52", "500"]
+		a_dict = {}
+		
+		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
+		string  = mod.most_likely(the_dict, the_data)
+		self.assertEqual("cc_rating", string)
+		
+		a_dict = {"cc_rating" : "400"}
+		the_dict = {"item" : "400", "users_list" : user_list,  "a_dict" : a_dict}
+		string  = mod.most_likely(the_dict, the_data)
+		self.assertEqual("price", string)
 	
 	
 	
