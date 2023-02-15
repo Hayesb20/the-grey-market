@@ -1,10 +1,10 @@
 # Brian Hayes
 # 31-Oct-2022
 
-from check_functions 			import check_answer
-from work_with_vehicles		import work_with_vehicles
-from search_mod					import search_item
 
+from check_functions 	import check_answer
+from work_with_vehicles	import work_with_vehicles
+from search_mod			import search_item
 
 def options():
 	options_list = ["\n Search : Tell me about an item and I will tell you everything I know about it", # User can ask about an item # NOT CODED

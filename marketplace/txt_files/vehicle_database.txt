@@ -171,4 +171,3 @@
 {'classification': 'all terain vehicle', 'year': '2000', 'brand': 'polaris', 'model': 'trailboss', 'cc_rating': '325', 'awd': 'no', 'price': '1000', 'list date': '14 Feb 2023'}
 {'classification': 'all terain vehicle', 'year': '2008', 'brand': 'suzuki', 'model': 'ltz', 'cc_rating': '400', 'awd': 'no', 'price': '2800', 'list date': '14 Feb 2023'}
 {'classification': 'all terain vehicle', 'year': '2004', 'brand': 'polaris', 'model': 'sportsman', 'cc_rating': '600', 'awd': 'yes', 'price': '3500', 'list date': '14 Feb 2023'}
-{'classification': 'zero turn', 'brand': 'encore', 'model': 'xtreme', 'deck_size': '52', 'price': '500', 'list date': '14 Feb 2023', 'year': '2007'}
