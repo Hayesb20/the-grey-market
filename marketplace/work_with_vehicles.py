@@ -39,7 +39,7 @@ def get_model(vehicle_database):
 		elif CF.check_answer(answer) == "no"	: model = input("\n Okay, no problem, just tell me the model again ")	
 	return model
 	
-def is_same_thing(item):
+def is_same_thing(item, vehicle_database):
 	print ("\n Ah yes! I remember that one!")
 	answer = input("\n Are they different? ")
 	answer = CF.check_answer(answer)
@@ -85,8 +85,8 @@ def build_vehicle(vehicle_database):
 		a_dict["brand"] = get_brand(vehicle_database)
 		
 	if "model" not in a_dict:	
-	 	a_dict["model"] = get_model(vehicle_database)
-		
+		a_dict["model"] = get_model(vehicle_database)
+	
 	if "price" not in a_dict:
 		a_dict["price"] = input("\n How much is it? ")
 	
@@ -102,7 +102,7 @@ def build_vehicle(vehicle_database):
 	# Decision tree - should probably be its own function
 	if a_dict["classification"] == "all terain vehicle" or a_dict["classification"].title() == "four wheeler":
 		if "cc_rating" not in a_dict:
-		 	a_dict["cc_rating"] = input("\n Do you know how many CCs? ")
+			a_dict["cc_rating"] = input("\n Do you know how many CCs? ")
 		if "awd" not in a_dict:	
 			a_dict["awd"] = input("\n Does it have awd or 4X4 ") # Should add protection against inappropreate values
 		
@@ -165,7 +165,6 @@ def options():
 def work_with_vehicles():
 	
 	vehicle_database = load_files()	
-	print("1")
 	z = 0
 	while z < 1:
 		options()
@@ -243,7 +242,7 @@ def work_with_vehicles():
 				#Look up and see if the atv already exists in the database and then checks
 				# to see what the user wants to do with the atv they created
 				answer = CF.is_in_database(new_vehicle, vehicle_database)
-				if answer == True: is_same_thing(new_vehicle)
+				if answer == True: is_same_thing(new_vehicle, vehicle_database)
 				
 				else:
 					answer = input("\n It seems this a new one, should I remember it? ")
