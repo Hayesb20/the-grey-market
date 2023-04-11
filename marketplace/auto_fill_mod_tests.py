@@ -2,8 +2,6 @@
 # 16 Nov 2022
 
 import unittest
-
-
 #import auto_fill_mod as mod
 import auto_fill_mod as mod
 from atv_class import Atv
