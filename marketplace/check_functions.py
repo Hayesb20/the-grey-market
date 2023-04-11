@@ -6,7 +6,7 @@ affirmative_words 	= ["y", "yes", "yea", "yeah", "mhm", "of course", "yes please
 									
 words_of_denial 		= ["no", "n", "nope", "nay", "not", "ni", "np", "nothing", "nothin",
 										"different one", "diff", "another", "stop", "nvm", "done", "nop",
-										"close", "im done", "i'm done", "close app"]
+										"close", "im done", "i'm done", "close app", "leave"]
 
 search_words 			= ["look up", "search", "find"]
 								

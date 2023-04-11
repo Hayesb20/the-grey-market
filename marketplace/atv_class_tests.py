@@ -1,6 +1,7 @@
 # Brian Hayes
 
 import unittest
+from datetime import datetime
 from atv_class import Atv
 from vehicle_class import Vehicle
 
@@ -11,7 +12,8 @@ test_atv = Atv(year = "2000",
 							cc_rating = "500", 
 							awd = "yes", 
 							price = "2500", 
-							classification = "four wheeler")
+							classification = "four wheeler",
+							list_date = "02 feb 2023")
 
 
 class Atv_test_case(unittest.TestCase):
@@ -26,7 +28,7 @@ class Atv_test_case(unittest.TestCase):
 		self.assertEqual("2500", test_atv.get_price())
 		
 	def test_atv_get_essence(self):
-		self.assertEqual(["four wheeler", "2000", "yamaha", "sportsman", "500", "yes", "2500"], test_atv.get_essence())
+		self.assertEqual(["four wheeler", "2000", "yamaha", "sportsman", "500", "yes", "2500", "02 Feb 2023"], test_atv.get_essence())
 	
 	def test_get_essence_as_dict(self):
 		self.assertEqual({"classification" : "four wheeler", 
@@ -35,7 +37,8 @@ class Atv_test_case(unittest.TestCase):
 										"model" : "sportsman", 
 										"cc_rating" : "500", 
 										"awd" : "yes", 
-										"price" : "2500"}, test_atv.get_essence_as_dict())
+										"price" : "2500",
+										"list date" : "02 Feb 2023"}, test_atv.get_essence_as_dict())
 		
 
 

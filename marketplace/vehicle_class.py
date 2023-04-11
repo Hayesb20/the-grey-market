@@ -9,11 +9,13 @@ class Vehicle(I):
 	def __init__ (self, **kwargs):
 		I.__init__(self, **kwargs)
 		
-		self.year 	= kwargs["year"]
-		self.model	= kwargs["model"]
-		self.awd 	= kwargs ["awd"]
+		try: self.year 	= kwargs["year"].replace(" ","")
+		except: self.year 	= "unknown"
+			
+		self.model	= kwargs["model"].strip().lower()
+		
 		
 	def get_year(self): 			return self.year
 	def get_model(self):		return self.model
-	def get_awd(self):			return self.awd
+
 	
