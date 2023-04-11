@@ -13,6 +13,6 @@ class Item (object):
 			try: self.list_date		= kwargs["list_date"]
 			except: self.list_date 	= datetime.strftime(datetime.now(),"%d %b %Y")
 			
-		def get_price(self):				return self.price
-		def get_brand(self):			return self.brand
-		def get_list_date(self): 		return self.list_date.title()
+		def get_price(self):		return self.price
+		def get_brand(self):		return self.brand
+		def get_list_date(self):	return self.list_date.title()

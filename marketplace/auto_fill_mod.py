@@ -1,145 +1,367 @@
-#Brian Hayes
-#16 Nov 2022
+import datetime
 
-from datetime import date
-import math
+# Autofill will recieve a "users_list" which is a list of strings. These strings represent
+# the information needed to make a vehicle. This could be information to make any classification
+# of vehicle.
+
+# Autofill will also recieve a "database" which is a list of all vehicle objects that the system 
+# knows about. This database may be empty.
+
+# Autofill will return a dictionary with key value pairs. The keys will be strings like but not
+# limited to "brand" "model" "year" etc. The values will be appropriate strings from the 
+# "users_list". These key/value pairs will be used as the kwargs for making vehicle objects.
+# UPDATE autofill should be able to work with any kind of item
+
+# --GOAL--
+# This function should consider each string on an individual basis as well as a collection to determin
+# what string (value) should be associated with which key 
+# The returned dictionary should have as many of the strings confidently placed with the correct key
+# as possible
+
+# Thoughts
+# May try to have 1 function dedicated to looking for a respective key. A function dedicated to finding the
+# most appropriate value for the year if any exist.
+# Once all functions have found suitable values, if possible with the given strings, maybe try to have a 
+# function that recognizes functions that have claimed the same value and make a desicion between them. 
+# Possibly when all values seem feasable, try to discover which vehicle the user is trying to make so that
+# you can get an idea as to what key/values we should expect
+
+def find_brand(users_list, database):
+    for str in users_list:
+        for item in database:
+            if str == item.get_brand():
+                return str
+    return
+
+def is_not_in_list(string, list):
+    for i in range(len(list)):
+        if string == list[i]:
+            #print("returning flase")
+            return False
+    #print("returning true")
+    return True
+
+def is_likely_a_year(string):
+    if (int(string)%25 == 0     # if the number is divisable by 25 with a remainder of not 0
+        or int(string) < 1950   # or the number is less than 1950
+        or int(string) > 2024): # or the number is larger than 2024
+        return False            # The number is likely a year
+    return True # Otherwise the number is unlikely to be a year
+
+def new_is_more_likely(string, curr_best):
+    # This function is ment to determin which number is most likely to be
+    # the price by checkign them against a series of rules and guides
+    # Rule 1 - if one number is within the range for engine power and the other
+    # is larger than that range, the larger is more liekly to be the price
+    if int(string) > 1000 and int(curr_best) <= 1000: 
+        print("returning true")
+        return True
+    #print("returning false")
+    return False
+
+def dup_numbers(string, users_list):
+    # This function will take a string and a list and then return True
+    # if that string appears more than once in that list
+    counter = 0
+    for a_str in users_list:
+        if string == a_str: counter = counter + 1
+    if counter >= 2: return True
+    else: return False
+
+def find_price(users_list, database, a_dict):
+    # The price can be any number >= 0
+    # Prices are usually devisable by 5 with a remainder of 0
+    #   This is only true for items listed in places like ebay or facebook
+    # Prices for a type of item will follow a trend but the price could be an outliar
+    # Numbers that follow the x.xx pattern should be assumed to be the prices
+    # There may also be instances where there are multiple str that match prices of things
+    # in the database. 
+
+    model_price_acc = 0
+    model_count_acc = 0
+    list_of_model_cc_n_hp_rate = []
+
+    brand_price_acc = 0
+    brand_count_acc = 0 
+    for item in database:
+       # if we can determin a brand and/or model we can narrow the search
+       # and get more accurate data faster
+        try:
+            if a_dict["model"] == item.get_model():
+                model_price_acc = model_price_acc + int(item.get_price())
+                model_count_acc = model_count_acc + 1
+                if item.get_cc_rating() != "unknown":
+                    list_of_model_cc_n_hp_rate.append(item.get_cc_rating())
+                if item.get_hp_rating() != "unknown":
+                    list_of_model_cc_n_hp_rate.append(item.get_hp_rating())
+        except: pass
+        try:
+            #print("a ict",a_dict["brand"])
+            if a_dict["brand"] == item.get_brand():
+                brand_price_acc = brand_price_acc + int(item.get_price())
+                brand_count_acc = brand_count_acc + 1
+                if item.get_cc_rating() != "unknown":
+                    list_of_model_cc_n_hp_rate.append(item.get_cc_rating())
+                if item.get_hp_rating() != "unknown":
+                    list_of_model_cc_n_hp_rate.append(item.get_hp_rating())
+                
+                #print("brands count in loop", brand_count_acc)
+        except: pass
+        
+    #print("the hp/cc thing after the try", list_of_model_cc_n_hp_rate)
+    if model_count_acc != 0:
+        count_acc = model_count_acc
+        price_acc = model_price_acc
+    else:
+        #print("brand count in else", brand_count_acc)
+        count_acc = brand_count_acc
+        price_acc = brand_price_acc
+        #print("the count",count_acc)
+
+    if count_acc == 0: return
+    best_match = None
+    for str in users_list:
+        average_price = price_acc/count_acc
+       # print("the average price is", average_price)
+        if str.isdigit():  
+            if model_count_acc != 0 or brand_count_acc != 0:
+                #print("i have this now ", str)
+                if (is_not_in_list(str, list_of_model_cc_n_hp_rate) == True 
+                    or dup_numbers(str, users_list) == True): 
+                    #print(is_likely_a_year(str))
+                    if best_match == None and is_likely_a_year(str) == False:
+                        best_match = str
+                        #print("best match was none but is now ", best_match)
+                    else:
+                        #print("ibv reached the else")
+                        if best_match != None:
+                            #print("this is str", str)
+                            #print("this is the difference between best match and the average",abs((abs(int(best_match))-abs(int(average_price)))))
+                            #print("this is the difference between the new number ",abs((abs(int(str)-abs(int(average_price))))))
+                            if (abs((abs(int(best_match))-abs(int(average_price)))) > abs(abs(int(str)-int(average_price))) 
+                                or new_is_more_likely(str, best_match) == True):
+                                if is_likely_a_year(str) == False:
+                                    best_match = str
+                                #print("we changed new best to be ",best_match)
+                
+    # Intended to catch scenarios where the price is found within the list
+    # of cc_ratings and hp_ratings
+    if best_match == None:
+        eps_and_price = []
+        for string in users_list:
+            if string.isdigit():
+                if int(string) <= 1000:
+                    eps_and_price.append(string)
+        
+        #print("before", eps_and_price)
+        for string in eps_and_price:
+            dict_keys = a_dict.keys()
+            for key in dict_keys:
+                if key == "cc_rating":
+                    if string == a_dict[key]:
+                        eps_and_price.remove(string)
+                if key == "hp_rating":
+                    if string == a_dict[key]:
+                        eps_and_price.remove(string)
+        #print("after", eps_and_price)
+        if len(eps_and_price) == 1: best_match = eps_and_price[0]
 
 
-def most_likely(the_dict, database):
-	
-	if int(the_dict["item"]) > int(date.today().year): return "price"
-	elif int(the_dict["item"]) > 1000 and int(the_dict["item"]) < 1950: return "price" # 1000 cc_rating cannot be autocorrected for. Will not track anything older than 1950AD
-####################################################################
-                   ## Code that deals with prices being in the range of years ##
-####################################################################	
-	list_of_possible_years = []
-	for string in the_dict["users_list"]:
-		try: 
-			if int(string) >= 1950 and int(string) <= date.today().year: list_of_possible_years.append(int(string))
-		except: i = 1
-		
-	# If there is only 1 number in the appropreate year range, return year 
-	# If user does not give a year, then price will be used if it meets the requirements	
-	if (len(list_of_possible_years) == 1 
-		and int(list_of_possible_years[0]) == int(the_dict["item"])): 
-			return "year"
-	
-	# If the user gives values for both year and price but both values fall within the range of appropreate years
-	# the two values ARE NOT == to one another but one value IS divisabe by 25 with a remainder of 0
 
-	if (len(list_of_possible_years) == 2 
-		and int(list_of_possible_years[0]) != int(list_of_possible_years[1])  # Affirm the two values aree not ==
-		and int(the_dict["item"]) > 1000 ): 															# Affirm that "item" is not a cc_rating !!NOTE!! the 1000 should be dynamic andscale depending on what we are working with
-			# If neither number
-			if (math.remainder(int(list_of_possible_years[0]), 25 )!= 0				# Affirm that the first possibility will not have a remainder of 0 if divided by 25
-				and math.remainder(int(list_of_possible_years[1]), 25) != 0):		# Affirm that the second possibility will not have a remainder of 0 if divided by 25
-					return "cannot_interpret"																	# If neither possibility would have a reminder of 0 then an educated guess cannot be made
-			# If the first number
-			elif (math.remainder(int(list_of_possible_years[0]), 25 ) == 0			# Affirm that the first possibility will  have a remainder of 0 if divided by 25
-				and math.remainder(int(list_of_possible_years[1]), 25) != 0):		# Affirm that the second possibility will not have a remainder of 0 if divided by 25
-					if int(the_dict["item"]) == int(list_of_possible_years[0]):			# Is "item" the first number
-						return "price"																					# If it is then logically it is probably the "price"
-					elif int(the_dict["item"]) == int(list_of_possible_years[1]):		# Is "item" the second number
-						return "year"																					# If it is then logically it is probably the "year"
-			# If the second number
-			elif (math.remainder(int(list_of_possible_years[0]), 25 )!= 0			# Affirm that the first possibility will not have a remainder of 0 if divided by 25
-				and math.remainder(int(list_of_possible_years[1]), 25) == 0):		# Affirm that the second possibility will  have a remainder of 0 if divided by 25
-					if int(the_dict["item"]) == int(list_of_possible_years[0]):			# Is "item" the first number
-						return "year"																					# If it is then logically it is probably the "year"
-					elif int(the_dict["item"]) == int(list_of_possible_years[1]):		# Is "item" the second number
-						return "price"																					# If it is then logically it is probably the "price"
-	
-			
-	# If the user gives values for both year and price but both values fall within the range of appropreate years
-	# and the two values ARE  == to one another
-	if (len(list_of_possible_years) == 2 
-		and int(list_of_possible_years[0]) == int(list_of_possible_years[1])	# Affirm that the two values are == to one another
-		and int(the_dict["item"]) > 1000):																# Afform that "item" is not a cc_rating
-		try:
-			temp_dict = the_dict["a_dict"]																	# Check to see if the_dict already has a "year" key	
-			if temp_dict["year"] : return "price"														# If it does then "item" must be the "price"
-		except: return "year"																						# Otherwise "item" must be the "year"
-	
 
-		
-#########################################################
-	## Code that deals with prices being within the range of cc_ratings
-#########################################################
-	list_of_possible_CCs = []
-	for string in the_dict["users_list"]:
-		try:
-			if int(string) <= 1000: list_of_possible_CCs.append(int(string))
-		except: i = 1		
-		
-	if (len(list_of_possible_CCs) == 1 
-		and int(list_of_possible_CCs[0]) == int(the_dict["item"])): 
-			return "cc_rating"	
-	
-	# The two numbers are NOT the same
-	if (len(list_of_possible_CCs) == 2 
-		and int(list_of_possible_CCs[0]) != int(list_of_possible_CCs[1])):			
-		cc_occurence_counter = 0
-		price_occurence_counter = 0
-		for thing in database:
-			
-			if (int(list_of_possible_CCs[0]) == int(thing.get_cc_rating())
-				and int(list_of_possible_CCs[0] == int(the_dict["item"]))):
-					cc_occurence_counter = cc_occurence_counter + 1
-				
-			elif (int(list_of_possible_CCs[0]) == int(thing.get_cc_rating())
-				and int(list_of_possible_CCs[0] == int(the_dict["item"]))):
-					cc_occurence_counter = cc_occurence_counter + 1
-				
-			elif (int(list_of_possible_CCs[1]) == int(thing.get_price())
-				and int(list_of_possible_CCs[1] == int(the_dict["item"]))):
-					price_occurence_counter = price_occurence_counter + 1
-				
-			elif (int(list_of_possible_CCs[1]) == int(thing.get_price())
-					and int(list_of_possible_CCs[1] == int(the_dict["item"]))):
-					price_occurence_counter = price_occurence_counter + 1
 
-		if int(the_dict["item"]) == int(list_of_possible_CCs[0]) 	and cc_occurence_counter > price_occurence_counter: 	return "cc_rating"
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[0]) and cc_occurence_counter < price_occurence_counter: 	return "price"
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter > price_occurence_counter: 	return "cc_rating"
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter < price_occurence_counter: 	return "price"		
-		elif int(the_dict["item"]) == int(list_of_possible_CCs[1]) and cc_occurence_counter == price_occurence_counter: 	return "cannot_interpret"	
-		else: return "cannot_interpret"
+    #print(best_match)      
+    return best_match
+                
+def find_year(users_list, database, a_dict):
+    # The year can only be between 1950 and the present year + 1
+        # I have no interest in vehicles older than 1950 at the moment
+    # Edge cases
+        # 1) The database might not have any vehicles that match the brand and year
+        # 2) The users list might not contain a year
+        # 3) There may be multiple numbers that could be applicable years. In particual the price
+        #   However it should be safe to assume that the price will be in an incrament of 5
+    times_occured = 0
+    list_of_pos_years = []
+    best_match = ""
+    for str in users_list:
+        if str.isdigit():
+            if int(str) >= 1950 and int(str) <= (1+int(datetime.datetime.now().year)):
+                times_occured = times_occured + 1
+                list_of_pos_years.append(str)
+                best_match = str
 
-	# The two numbers ARE the same
-	if	(len(list_of_possible_CCs) == 2
-		and int(list_of_possible_CCs[0]) == int(list_of_possible_CCs[1])):
-			try:
-				temp_dict = the_dict["a_dict"]
-				if temp_dict["cc_rating"] : return "price"
-			except: return "cc_rating"
+    #print("times ",times_occured)
+    if times_occured == 0: return
+    elif times_occured == 1: return best_match
+    elif times_occured == 2:
+        if dup_numbers(best_match, users_list): return best_match
+        else:
+            for str in list_of_pos_years:
+                if is_likely_a_year(str):
+                    return str #str is the best match and also will be the first match it finds
+    else: pass # There are more than 1 option for year. Need to identify best option
+                
+def find_model(users_list, database, a_dist):
+    for str in users_list:
+        for item in database:
+            if str == item.get_model():
+                return str
+    return
+            
+def find_EP (users_list, database, a_dict):
+    # This function must return a key and a value
+        # The first value to be returned will be the key "hp" or "cc"
+        # The second will be the number
+    # Users list may not contain an appropriate value
+    # The value may be in CC or HP mesurement
+    # There may not be a power value supplied
+    # The value, regardless of it being denoted as HP or CC will be less that 1000
+        # Things denoted as CC are usually converted into the HP notation before
+        # crossing the 1000 threshold
+        # Exceedingly few items cross the 1000hp threshold
+    denotation = None
+    # BUG becauseitem_pv is the same variable when looking for 
+    for item in database:
+        try:
+            if a_dict["brand"] == item.get_brand():
+                item_dict = item.get_essence_as_dict()
+                try: item_pv1 = item.get_cc_rating()
+                except: pass
+                try: item_pv = item.get_hp_rating()
+                except: pass
+                temp = {i for i in item_dict if item_dict[i] == item_pv1}
+                denotation = "".join(temp)
+        except: pass
+            # This checking the model and brand only work becasue model is overwriting
+            # brand when it runs, which, is what we need. Model should be given priority
+            # but there should be a descision tree to make this correct regardless of which
+            # runs first
+        try:
+            if a_dict["model"] == item.get_model():
+                item_dict = item.get_essence_as_dict()
+                try: item_pv1 = item.get_cc_rating()
+                except: pass
+                try: item_pv = item.get_hp_rating()
+                except: pass
+                temp = {i for i in item_dict if item_dict[i] == item_pv1}
+                denotation = "".join(temp)
+        except: pass
+    #print("denot after getting", denotation)
+    count_occurances = 0
+    viable_options = []
+    best_match = ""
+    for a_str in users_list:
+        if a_str.isdigit():
+            if int(a_str) < 1000:
+                count_occurances = count_occurances + 1
+                best_match = a_str
+                viable_options.append(a_str)
+    
+    if count_occurances == 0: return None, None
+    if count_occurances == 1: return denotation, best_match
+    else:
+        # First we will refrence the database to see if that can help us
+        # We are assuiming there is a database to work with
+        temp_hp = 0
+        hp_occurance = 0
+        avrg_hp = 0
+        temp_cc = 0
+        cc_occurance = 0
+        avrg_cc = 0
+        for item in database:
+            
+            if item.get_brand() == a_dict["brand"]:
+                #if item.get_hp_rating() != "unknown":
+                #    temp_hp = temp_hp + item.get_hp_rating()
+                #    hp_occurance = hp_occurance + 1
+                if item.get_cc_rating() != "unknown":  
+                    temp_cc = temp_cc + int(item.get_cc_rating())
+                    cc_occurance = cc_occurance + 1
+        #avrg_hp = temp_hp/hp_occurance
+        avrg_cc = temp_cc/cc_occurance
+        #print(avrg_cc)
 
-def is_complete(users_list, a_dict):
-	counter = 0
-	my_list = [*set(users_list)]
-	for item in my_list:
-		for key in a_dict:
-			if a_dict[key] == item: counter = counter + 1
-	if counter == len(users_list): return True
-	else: return False
-	
-# a_list is a list with strings that represent information about the object the user wants to create			
-# database will be a list of known objects 
-def autofill_vehicle(users_list, database):
-	
-	a_dict = {}
-	for thing in database:
-		temp_dict =  thing.get_essence_as_dict()
-		for item in users_list:
-			for key in temp_dict:
-				if item.isnumeric():
-					most_likelys_dict = {"item" : item, "users_list" : users_list, "a_dict" : a_dict}
-					a_dict[most_likely(most_likelys_dict, database)] = item
-												
-				elif item == temp_dict[key]:
-					a_dict[key] = item	
+        for option in viable_options:
+            if best_match == "":
+                best_match = option
+            else:
+                if abs(avrg_cc - int(option)) < abs(avrg_cc - int(best_match)):
+                    best_match = option # Sets the best_match to the number that is closest to the average
+                option_occ_dict = {}
+                for option in viable_options:
+                    option_occurances = 0
+                    for item in database:
+                        if option == item.get_cc_rating() or option == item.get_hp_rating():
+                            option_occurances = option_occurances + 1
+                    option_occ_dict[option] = option_occurances
+                #print(option_occ_dict)
+                temp_best_match = 0
+                for key in option_occ_dict:
+                    if option_occ_dict == 0: temp_best_match = option_occ_dict[key]
+                    else:
+                        if int(option_occ_dict[key]) > int(temp_best_match): 
+                            temp_best_match = option_occ_dict[key]
+                if best_match == temp_best_match: return denotation, best_match
+                else: best_match = list(option_occ_dict.keys())[list(option_occ_dict.values()).index(temp_best_match)]
 
-		if is_complete(users_list, a_dict): return a_dict
-		
-	
-				
-	return a_dict
+        return denotation, best_match
+ 
+def determin_amenities (users_list):
+    # This function needs continued work. I believe that the directed we need to 
+    # go with regards to awd and other features for vehicles, needs to be redesigned
+    # completely. so for now, this function will only search the users input for a yes
+    # or no and then return that string
+
+    for a_string in users_list:
+        if a_string == "yes": return a_string
+        elif a_string == "no": return a_string
+
+    return
+
+def autofill_vehicle (users_list, database):
+    a_dict = {}
+
+# If the database is empty then autofill will not be helpful
+    if database == {}: return a_dict
+    
+# The item class req. a brand and a price so im going to start by looking for those
+    brand = find_brand (users_list, database)
+    try: 
+        if brand != None:
+            a_dict["brand"] = brand
+    except: print("Could not match brand")
+    
+    model = find_model (users_list, database, a_dict)
+    try: 
+        if model != None:
+            a_dict["model"] = model
+    except: print("Could not match model")
+
+    year = find_year (users_list, database, a_dict)
+    try: 
+        if year != None:
+            a_dict["year"] = year
+    except: print("Could not match year")
+    
+    power_type, engine_power = find_EP (users_list, database, a_dict)
+    try: 
+        if power_type != None and engine_power != None:
+            a_dict[power_type] = engine_power
+    except: print("Could not match power rating")
+
+    price = find_price (users_list, database, a_dict)
+    try: 
+        if price != None:
+            a_dict["price"] = price
+    except: print("Could not match price")
+    
+    
+    awd = determin_amenities (users_list)
+    try: 
+        if awd != None:
+            a_dict["awd"] = awd
+    except: print("Could not match amenities")
+    print("The dict to be returned", a_dict)
+    return a_dict
+

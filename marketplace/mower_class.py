@@ -1,6 +1,9 @@
 # Brian Hayes
 # 03 Feb 2023
 
+# need to add gaurds to protect against values that are not wanted such as
+# empty strings to  None, etc.
+
 from vehicle_class import Vehicle as V
 
 class Mower(V):
@@ -26,10 +29,10 @@ class Mower(V):
 
 	# Get functions
 	def get_classification(self): 	return self.classification
-	def get_cc_rating(self):			return self.cc_rating
-	def get_hp_rating(self):			return self.hp_rating
-	def get_deck_size(self):			return self.deck_size
-	def get_engine_brand(self):	return self.engine_brand
+	def get_cc_rating(self):		return self.cc_rating
+	def get_hp_rating(self):		return self.hp_rating
+	def get_deck_size(self):		return self.deck_size
+	def get_engine_brand(self):		return self.engine_brand
 
 	# An unordered list of attributes of the object
 	def get_essence(self):
