@@ -27,10 +27,24 @@ import datetime
 # you can get an idea as to what key/values we should expect
 
 def find_brand(users_list, database):
+    # Searches the database to see if any of the strings from the
+    # users list match a brand from an item in the database
+    # If a match is found that string is returned as the brand
+        # !!Note!!, if there are multiple strings that would be a match
+        # only the first one will be returned
     for str in users_list:
         for item in database:
             if str == item.get_brand():
                 return str
+    # If no matches were found in the database will attempt to "guess" which
+    # of the users strings is the brand, if any of them are
+
+    # Qualities of a string representing a brand
+    #   The string will contain only alphabetical chars
+    #NOT ENOUGH BRAINS TO FIX THIS PROBLEM
+    
+        
+
     return
 
 def is_not_in_list(string, list):
@@ -220,34 +234,7 @@ def find_EP (users_list, database, a_dict):
         # Things denoted as CC are usually converted into the HP notation before
         # crossing the 1000 threshold
         # Exceedingly few items cross the 1000hp threshold
-    denotation = None
-    # BUG becauseitem_pv is the same variable when looking for 
-    for item in database:
-        try:
-            if a_dict["brand"] == item.get_brand():
-                item_dict = item.get_essence_as_dict()
-                try: item_pv1 = item.get_cc_rating()
-                except: pass
-                try: item_pv = item.get_hp_rating()
-                except: pass
-                temp = {i for i in item_dict if item_dict[i] == item_pv1}
-                denotation = "".join(temp)
-        except: pass
-            # This checking the model and brand only work becasue model is overwriting
-            # brand when it runs, which, is what we need. Model should be given priority
-            # but there should be a descision tree to make this correct regardless of which
-            # runs first
-        try:
-            if a_dict["model"] == item.get_model():
-                item_dict = item.get_essence_as_dict()
-                try: item_pv1 = item.get_cc_rating()
-                except: pass
-                try: item_pv = item.get_hp_rating()
-                except: pass
-                temp = {i for i in item_dict if item_dict[i] == item_pv1}
-                denotation = "".join(temp)
-        except: pass
-    #print("denot after getting", denotation)
+    denotation = get_denotation(database, a_dict)
     count_occurances = 0
     viable_options = []
     best_match = ""
@@ -270,24 +257,30 @@ def find_EP (users_list, database, a_dict):
         cc_occurance = 0
         avrg_cc = 0
         for item in database:
+            if "brand" in a_dict:
+                if item.get_brand() == a_dict["brand"]:
+                     #if item.get_hp_rating() != "unknown":
+                    #    temp_hp = temp_hp + item.get_hp_rating()
+                    #    hp_occurance = hp_occurance + 1
+                    if item.get_cc_rating() != "unknown":  
+                        temp_cc = temp_cc + int(item.get_cc_rating())
+                        cc_occurance = cc_occurance + 1
+            else: temp_cc = 0
             
-            if item.get_brand() == a_dict["brand"]:
-                #if item.get_hp_rating() != "unknown":
-                #    temp_hp = temp_hp + item.get_hp_rating()
-                #    hp_occurance = hp_occurance + 1
-                if item.get_cc_rating() != "unknown":  
-                    temp_cc = temp_cc + int(item.get_cc_rating())
-                    cc_occurance = cc_occurance + 1
         #avrg_hp = temp_hp/hp_occurance
-        avrg_cc = temp_cc/cc_occurance
+        if temp_cc == 0: avrg_cc = None
+        else: avrg_cc = temp_cc/cc_occurance
         #print(avrg_cc)
+
 
         for option in viable_options:
             if best_match == "":
                 best_match = option
             else:
-                if abs(avrg_cc - int(option)) < abs(avrg_cc - int(best_match)):
-                    best_match = option # Sets the best_match to the number that is closest to the average
+                # Sets the best_match to the number that is closest to the average
+                if avrg_cc != None:
+                    if abs(avrg_cc - int(option)) < abs(avrg_cc - int(best_match)): best_match = option 
+                
                 option_occ_dict = {}
                 for option in viable_options:
                     option_occurances = 0
@@ -304,8 +297,44 @@ def find_EP (users_list, database, a_dict):
                             temp_best_match = option_occ_dict[key]
                 if best_match == temp_best_match: return denotation, best_match
                 else: best_match = list(option_occ_dict.keys())[list(option_occ_dict.values()).index(temp_best_match)]
-
+       # print(denotation, best_match)
         return denotation, best_match
+
+def get_denotation(database, a_dict):
+    denotation = None
+    empty_set = set()
+    for item in database:
+        try:
+            if a_dict["brand"] == item.get_brand():
+                item_dict = item.get_essence_as_dict()
+                try: item_pv1 = item.get_cc_rating()
+                except: pass
+                try: item_pv2 = item.get_hp_rating()
+                except: pass
+                temp1 = {i for i in item_dict if item_dict[i] == item_pv1}
+                temp2 = {i for i in item_dict if item_dict[i] == item_pv2}
+                if temp1 != empty_set: temp = temp1
+                if temp2 != empty_set: temp = temp2
+                denotation = "".join(temp)
+        except: pass
+            # This checking the model and brand only work becasue model is overwriting
+            # brand when it runs, which, is what we need. Model should be given priority
+            # but there should be a descision tree to make this correct regardless of which
+            # runs first
+        try:
+            if a_dict["model"] == item.get_model():
+                item_dict = item.get_essence_as_dict()
+                try: item_pv1 = item.get_cc_rating()
+                except: pass
+                try: item_pv2 = item.get_hp_rating()
+                except: pass
+                temp1 = {i for i in item_dict if item_dict[i] == item_pv1}
+                temp2 = {i for i in item_dict if item_dict[i] == item_pv2}
+                if temp1 != empty_set: temp = temp1
+                if temp2 != empty_set: temp = temp2
+                denotation = "".join(temp)
+        except: pass
+    return denotation
  
 def determin_amenities (users_list):
     # This function needs continued work. I believe that the directed we need to 
@@ -318,6 +347,22 @@ def determin_amenities (users_list):
         elif a_string == "no": return a_string
 
     return
+
+def find_deck_size(users_list):
+    deck_size_list = ["42", "44", "46", "48", "50", "52", "54", "56", "60","61", "72"]
+    for item in users_list:
+        for num in deck_size_list:
+            if item == num: return item
+
+def find_engine_brand(users_list):
+    brand_list = ["kohler", "briggs","stratton", "kawasaki"]
+
+    for string in users_list:
+        if any(char.isdigit() for char in string) ==  False:
+            for brand in brand_list:
+                alt_string = ''.join([i for i in string if i.isalpha()])
+                if alt_string in brand: return string
+                if brand in alt_string: return string
 
 def autofill_vehicle (users_list, database):
     a_dict = {}
@@ -356,12 +401,27 @@ def autofill_vehicle (users_list, database):
             a_dict["price"] = price
     except: print("Could not match price")
     
-    
     awd = determin_amenities (users_list)
     try: 
         if awd != None:
             a_dict["awd"] = awd
     except: print("Could not match amenities")
-    print("The dict to be returned", a_dict)
+    
+    deck_size = find_deck_size(users_list)
+    try:
+        if deck_size != None:
+            a_dict["deck_size"] = deck_size
+    except: print("Could not determin deck size")
+
+    engine_brand = find_engine_brand(users_list)
+    try:
+        if engine_brand != None:
+            a_dict["engine_brand"] = engine_brand
+    except: print("Could not determin deck size")
+    
+    
+    
+    
+    
     return a_dict
 

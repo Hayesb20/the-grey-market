@@ -4,7 +4,6 @@
 import unittest
 import auto_fill_mod as mod
 from atv_class import Atv
-from mower_class import Mower
 
 
 ## BUG: auto_fill() and most_likely() will not function properly if the year is divisable by 25 with a remainder of 0
@@ -25,17 +24,11 @@ test_atv11 = 	Atv(year = "2009", brand = "honda", 	model = "fourtrax", 	cc_ratin
 test_atv12 = 	Atv(year = "2004", brand = "polaris", 	model = "sportsman", 	cc_rating = "350", 	awd = "no", 	price = "400", 		classification = "four wheeler")
 test_atv13 = 	Atv(year = "2012", brand = "polaris", 	model = "sportsman", 	cc_rating = "1000", awd = "no", 	price = "450", 		classification = "four wheeler")
 test_atv14 = 	Atv(year = "2012", brand = "honda", 	model = "ex", 			cc_rating = "400", 	awd = "no", 	price = "2500", 	classification = "four wheeler")
-test_mower1 = 	Mower(year="2012", brand = "snapper", 	model="yx42", 	hp_rating="22", cc_rating="560", price="550", classification="riding mower", deck_size="54", list_date="02 feb 2023", engine_brand="kawasaki")
+
 	
 the_data = [test_atv1, test_atv2, test_atv3, test_atv4, test_atv5, test_atv6, test_atv7,
 			test_atv8,test_atv9, test_atv10, test_atv11, test_atv12, test_atv13, test_atv14,
-			test_mower1]
-
-class Autofill_Vehicle_With_Mowers(unittest.TestCase):
-	def est_autofill_with_mower_1(self):
-		user_list = ["2012", "snapper", "yx42", "22", "560", "550", "riding mower", "54", "02 feb 2023"]
-		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
-		print(autofilled_dict)
+			]
 
 
 class Autofill_Vehicle_With_ATVs(unittest.TestCase):

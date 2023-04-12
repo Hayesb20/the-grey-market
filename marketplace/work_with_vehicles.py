@@ -2,11 +2,11 @@
 # 17 Nov 2022
 
 import check_functions 		as CF
-import vehicle_mod				as VM
+import vehicle_mod			as VM
 
 from vehicle_statistic_mod 	import get_statistical_data
-from handeling_strings 			import parse
-from auto_fill_mod 				import autofill_vehicle
+from handeling_strings 		import parse
+from auto_fill_mod 			import autofill_vehicle
 from load_and_save_files 	import load_file, save_file, dict_of_filepaths, show_database
 
 from mower_class import Mower
