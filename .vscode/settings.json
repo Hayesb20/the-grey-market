@@ -4,6 +4,7 @@
         "./marketplace/class_files",
         "./marketplace/modules",
         "./marketplace/scrapers/facebook-marketplace-scraper",
-        "./marketplace/scrapers/fbm_scraper"
+        "./marketplace/scrapers/fbm_scraper",
+        "./marketplace/scrapers"
     ]
 }

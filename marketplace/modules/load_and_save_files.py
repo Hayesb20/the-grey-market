@@ -76,7 +76,8 @@ def save_file(database, filepath):
 			file_object.write(long_string)	
 	
 	elif "Search Results" in filepath:
-		with open(filepath, "a") as file_object:
+		# Opened a specific file or creates one if it doesnt exist, for writing only
+		with open(filepath, "w+") as file_object: 
 			list_of_strings = convert_list_to_string(database)
 			create_docx(list_of_strings, get_img_from_web(database), filepath)
 

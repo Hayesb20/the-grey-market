@@ -2,7 +2,7 @@
 # 31-Oct-2022
 import sys
 sys.path.append("marketplace/modules")
-sys.path.append("marketplace/scrapers/fbm_scraper")
+sys.path.append("marketplace/scrapers")
 
 from check_functions 	import check_answer
 from work_with_vehicles	import work_with_vehicles

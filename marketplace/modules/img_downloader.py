@@ -6,20 +6,21 @@ import urllib.request
 
 
 def get_img_from_web(list_of_img_srcs):
+    print("here1")
     global driver
     driver = webdriver.Chrome()
     driver.minimize_window()
     list_of_img_locals = dwnld_imgs (list_of_img_srcs)
-    
     driver.quit()
+    print("im returning")
     return list_of_img_locals
 
 def dwnld_imgs (list_of_img_srcs):
     list_of_img_locals = []
     name = 0
     for tup in list_of_img_srcs:
-        urllib.request.urlretrieve(tup[1], "C:/Users/hayesb3/Geany 1.38/Program Files/marketplace/the-grey-market/search resules/"+str(name)+".jpg")
-        img_path = "C:/Users/hayesb3/Geany 1.38/Program Files/marketplace/the-grey-market/search resules/"+str(name)+".jpg"
+        urllib.request.urlretrieve(tup[1], "C:/Users/hayesb3/Geany 1.38/Program Files/marketplace/the-grey-market/search results/"+str(name)+".jpg")
+        img_path = "C:/Users/hayesb3/Geany 1.38/Program Files/marketplace/the-grey-market/search results/"+str(name)+".jpg"
         list_of_img_locals.append(img_path)	
         name += 1
     return list_of_img_locals
