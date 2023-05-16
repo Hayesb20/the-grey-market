@@ -1,7 +1,8 @@
 #Brian Hayes
 # 17 Nov 2022
+import sys
+sys.path.append("marketplace/class_files")
 
-import check_functions 	as CF
 from atv_class 					import Atv
 from mower_class				import Mower
 
@@ -11,7 +12,7 @@ from mower_class				import Mower
 # them to working_with_atvs.py
 #-----------------------------------------------------------------------------------#
 
-# TESTED - Takes an etv abject and returns a formatted message to ask the user if
+# TESTED - Takes an atv abject and returns a formatted message to ask the user if
 # everything is correct
 def confirm_vehicle(vehicle):
 
@@ -40,10 +41,10 @@ def confirm_vehicle(vehicle):
 			awd = is_awd
 		
 		elif key == "engine_brand" 	and a_dict[key] != "unknown": engine_brand 	= a_dict[key].title() + " Engine, "	# Format engine brand verbage if possible
-		elif key == "deck_size"			and a_dict[key] != "unknown": deck 					= a_dict[key] + '" deck '					# Format deck verbage if possible
-		elif key == "cc_rating" 			and a_dict[key] != "unknown": engine_size		= "with a " + a_dict[key] + "CC "	# Format engine power verbage if possible
-		elif key == "hp_rating" 			and a_dict[key] != "unknown": engine_size 	= "with a " + a_dict[key] + "HP "	# Foremat engine power verbage if possible
-		elif key == "year" 					and a_dict[key] != "unknown": year 					= a_dict[key]									# Format year verbage if possible
+		elif key == "deck_size"		and a_dict[key] != "unknown": deck 			= a_dict[key] + '" deck '					# Format deck verbage if possible
+		elif key == "cc_rating" 	and a_dict[key] != "unknown": engine_size	= "with a " + a_dict[key] + "CC "	# Format engine power verbage if possible
+		elif key == "hp_rating" 	and a_dict[key] != "unknown": engine_size 	= "with a " + a_dict[key] + "HP "	# Foremat engine power verbage if possible
+		elif key == "year" 			and a_dict[key] != "unknown": year 			= a_dict[key]									# Format year verbage if possible
 		
 	# Special case: No engine info known | Change verbage as needed
 	if "cc_rating" not in a_dict and "hp_rating" not in a_dict and "engine_brand" not in a_dict:
