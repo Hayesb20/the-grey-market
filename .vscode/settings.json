@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./marketplace/test_files",
+        "./marketplace/class_files",
+        "./marketplace/modules",
+        "./marketplace/scrapers/facebook-marketplace-scraper",
+        "./marketplace/scrapers/fbm_scraper"
+    ]
+}
