@@ -64,18 +64,17 @@ def should_I_remember(answer, item, vehicle_database):
 	
 def build_vehicle(vehicle_database):
 	string = input("\n Cool, tell me about this vehicle "
-								+ "\n I need the Brand, Price, Year, and Model of your vehicle"
-								+ "\n and any other information you have about it. If there"
-								+ "\n is anything else I need i'll ask!"
-								+ "\n Please be sure to use spaces between words\n ")
+					+ "\n I need the Brand, Price, Year, and Model of your vehicle"
+					+ "\n and any other information you have about it. If there"
+					+ "\n is anything else I need i'll ask!"
+					+ "\n Please be sure to use spaces between words\n ")
 
 	if CF.check_answer(string) == "no": return "no object made"
 	my_list = parse(string)
 	
 	#Takes a list and returns a dictionary
 	a_dict = autofill_vehicle(my_list, database = vehicle_database)
-	print(a_dict)
-	
+		
 	if "year" not in a_dict:
 		if(CF.check_answer(input(" Do you know the year of your vehicles?\n ")) == "no"):
 			pass
@@ -111,13 +110,15 @@ def build_vehicle(vehicle_database):
 	if a_dict["classification"] == "mower" or a_dict["classification"] == "zero turn" or a_dict["classification"] == "riding mower" or a_dict["classification"] == "push mower":
 		# Need clever stuff to determin if this needs CC rating or a HP rating
 		if "cc_rating" not in a_dict:
-			answer = input("\n Do you know how many CCs? ")
+			answer = input("\n Do you know the engines power rating? ")
+
 			if CF.check_answer(answer) != "no":
-				temp_answer = input("is this cc or hp? ")
-				if temp_answer == "cc":
-					a_dict["cc_rating"] = str(answer)
-				else: 	a_dict["hp_rating"] = str(answer)
-		# What if the user replies "no"?
+				temp_answer = input("is this in cc or hp? ")
+
+				if temp_answer == "cc": a_dict["cc_rating"] = str(answer)
+				else: a_dict["hp_rating"] = str(answer)
+			if CF.check_answer(answer) == "no":
+				print("No problem")
 		if "engine_brand" not in a_dict:
 			answer = input("\n Do you know what brand the engine is? ")
 			if CF.check_answer(answer) != "no":
@@ -139,20 +140,18 @@ def build_vehicle(vehicle_database):
 def load_files():
 	# Look for a txt file at the designated location to use
 	try: 
-		database = load_file(filename = dict_of_filepaths["filepath_to_vehicle_database.txt"])
+		database = load_file(filepath = dict_of_filepaths["filepath_to_vehicle_database.txt"])
 		print(" Database loaded successfully")	
 		return database
-	except: print(" Failed to load 'vehicle_database.txt'")	
-	
+	except: print(" Failed to load 'vehicle_database.txt'")		
 
 def save_files(vehicle_database):
 	try : 
 		save_file(	database = vehicle_database, 
-						filename =  dict_of_filepaths["filepath_to_vehicle_database.txt"])
+					filepath =  dict_of_filepaths["filepath_to_vehicle_database.txt"])
 		print(" Database saved successfully")	
 	except: print(" Failed to save 'vehicle_database.txt'")
 	
-
 def options():
 	options_list = ["\n Show database : I will show you all the vehicles I know of",
 							" Load Backup : I will load my most recent backup",
@@ -181,15 +180,15 @@ def work_with_vehicles():
 			try: 
 				show_database(vehicle_database)
 				print (" Okay, there it is")
-			except: print ("No database to show")
+			except: print (" No database to show")
 	
 		elif CF.check_answer(answer) == "load_backup":
 			# Add some sort of warning message about potential data loss and add an option to cancel
 			while vehicle_database != []: vehicle_database.pop()
 			try: 
-				load_file(filename = dict_of_filepaths["filepath_to_vehicle_database_backup.txt"])
+				load_file(filepath = dict_of_filepaths["filepath_to_vehicle_database_backup.txt"])
 				save_files(vehicle_database)
-			except: 	print("Failed to load 'atv_database_backup.txt'")				
+			except: 	print(" Failed to load 'atv_database_backup.txt'")				
 			else: 		print(" Databased loaded successfully")
 		
 			options()
@@ -198,9 +197,9 @@ def work_with_vehicles():
 		elif CF.check_answer(answer) == "backup":
 			try:
 				save_file(	database = vehicle_database, 
-									filename = dict_of_filepaths["filepath_to_vehicle_database_backup.txt"])
-				print("Backup Successful")
-			except: print("Backup Failed")
+							filepath = dict_of_filepaths["filepath_to_vehicle_database_backup.txt"])
+				print(" Backup Successful")
+			except: print(" Backup Failed")
 	
 		elif CF.check_answer(answer) == "open_log":
 		
@@ -239,7 +238,7 @@ def work_with_vehicles():
 										+ " about compares to what I can find out? ")
 				if CF.check_answer(answer) == "yes": print("\n" + get_statistical_data(new_vehicle, vehicle_database))
 				
-				#Look up and see if the atv already exists in the database and then checks
+				# Look up and see if the atv already exists in the database and then checks
 				# to see what the user wants to do with the atv they created
 				answer = CF.is_in_database(new_vehicle, vehicle_database)
 				if answer == True: is_same_thing(new_vehicle, vehicle_database)

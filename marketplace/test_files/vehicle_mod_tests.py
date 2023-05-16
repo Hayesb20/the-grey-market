@@ -2,7 +2,6 @@
 # 17 Nov 2022
 
 import unittest
-from atv_class import Atv
 
 import vehicle_mod as mod
 

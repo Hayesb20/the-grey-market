@@ -42,18 +42,19 @@ newAtv4 = Atv(year = "2013",
 
 database = [newAtv1, newAtv2, newAtv3, newAtv4]
 
-filename =  "txt_files/test_txts/test_file_1.txt"
+os_string = "C:/Users/hayesb3/Geany 1.38/Program Files/marketplace/the-grey-market/marketplace/"
+filepath =  os_string+"txt_files/test_txts/test_file_1.txt"
 
 class Save_File(unittest.TestCase):
 	
 	def test_save_file_1(self):
-		LaS.save_file(database, filename)
+		LaS.save_file(database, filepath)
 		
 
 class Load_File_Helper(unittest.TestCase):
 	
 	def test_load_file_helper_1(self):
-		the_database = LaS.load_file_helper(filename)
+		the_database = LaS.load_file_helper(filepath)
 		for i in range(len(database)):
 			self.assertEqual(database[i].get_essence(), the_database[i].get_essence())
 

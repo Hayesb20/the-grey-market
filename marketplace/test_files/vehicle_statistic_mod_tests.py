@@ -1,10 +1,11 @@
 # Brian Hayes
 # 14 Nov 2022
+import sys
+sys.path.append("marketplace/modules")
 
 import unittest
 import vehicle_statistic_mod as stat
 
-from atv_class import Atv
 from vehicle_mod import make_vehicle
 
 # SET UP STUFF
