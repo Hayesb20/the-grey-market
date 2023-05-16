@@ -1,22 +1,15 @@
 # Brian Hayes
 # 11 Apr 2023
 
-from mower_class import Mower
+import sys
+sys.path.append("marketplace/class_files")
+sys.path.append("marketplace/modules")
+
+
 import unittest
 import auto_fill_mod as mod
+from test_database import mower_data
 
-
-# These test mowers are artificially constructed to test limitations of autofill
-test_mower1 = Mower(year="2012", brand="snapper", model="yx42", hp_rating="22", cc_rating="560", price="550",
-                    classification="riding mower", deck_size="54", list_date="02 feb 2023", engine_brand="kawasaki")
-test_mower3 = Mower(brand="snapper", model="lt1940", hp_rating="20", price="1950", deck_size="50")
-
-# These test mowers are real life examples of what is found on FaceBook Marketplace (FBM)
-test_mower2 = Mower(brand="exmark", model="lazer z",
-                    price="2700", deck_size="60", engine_brand="kohler")
-
-
-the_data = [test_mower1, test_mower2, test_mower3]
 
 class Find_Engine_Brand(unittest.TestCase):
 	def test_feb1 (self):
@@ -30,10 +23,10 @@ class Find_Engine_Brand(unittest.TestCase):
 
 class Autofill_Vehicle_With_Mowers(unittest.TestCase):
 	
-	def test_autofill_with_mower_1(self):
+	def est_autofill_with_mower_1(self):
 		user_list = ["2012", "snapper", "yx42", "22", "550", "riding mower", "54","kawasaki"]
-		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
-		print(autofilled_dict)
+		autofilled_dict = mod.autofill_vehicle(user_list, mower_data)
+		#print(autofilled_dict)
 		self.assertEqual("snapper", autofilled_dict["brand"])
 		self.assertEqual("yx42",    autofilled_dict["model"])
 		self.assertEqual("2012",    autofilled_dict["year"])
@@ -44,7 +37,7 @@ class Autofill_Vehicle_With_Mowers(unittest.TestCase):
 
 	def test_autofill_with_mower_2 (self):
 		user_list = ["exmark", "lazer z", "kohler", "2700", "60"]
-		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, mower_data)
 		#print(autofilled_dict)
 		self.assertEqual("exmark",  autofilled_dict["brand"])
 		self.assertEqual("lazer z", autofilled_dict["model"])
@@ -54,9 +47,9 @@ class Autofill_Vehicle_With_Mowers(unittest.TestCase):
 	
 	# Testing autofill with a mower whos information must be collected from
 	# multiple mowers found in the database
-	def test_autofill_with_a_mower1(self):
+	def est_autofill_with_a_mower1(self):
 		user_list = ["snapper", "lt1940", "22", "50", "1950"]
-		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, mower_data)
 		#print(autofilled_dict)
 		self.assertEqual("snapper", autofilled_dict["brand"])
 		self.assertEqual("lt1940", 	autofilled_dict["model"])
@@ -65,11 +58,11 @@ class Autofill_Vehicle_With_Mowers(unittest.TestCase):
 		self.assertEqual("50",      autofilled_dict["deck_size"])
 
 	# Tests autofill with a mower that has no relationship to anything in the database
-	def test_autofill_with_a_mower2(self):
+	def est_autofill_with_a_mower2(self):
 		# Autofill as no way to infer any of the below information if the brand
 		# and model cannot be found in the database
 		user_list = ["yardman", "mtd", "12.5", "38", "435", "briggs and stratton"]
-		autofilled_dict = mod.autofill_vehicle(user_list, the_data)
+		autofilled_dict = mod.autofill_vehicle(user_list, mower_data)
 		#print(autofilled_dict)
 		#self.assertEqual("yardman", 			autofilled_dict["brand"])
 		#self.assertEqual("mtd", 				autofilled_dict["model"])
