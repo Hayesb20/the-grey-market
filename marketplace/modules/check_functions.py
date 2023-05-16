@@ -33,21 +33,24 @@ def check_model(model, a_dict):
 
 # TESTED - Takes a string and returns another string based uplon what the given string is
 def check_answer(answer):
-	if 	answer.lower() 	in affirmative_words: 				return "yes"
-	elif 	answer.lower() 	in words_of_denial: 					return "no"
-	elif  answer.lower()		in search_words:							return "search"
-#	elif 	answer.lower()		in atv_words:								return "atv_word"
-#	elif 	answer.lower()		in mower_word:							return "mower_word"
-	elif 	answer.lower() 	in show_words:							return "show_database"
-	elif  answer.lower()		== "vehicles":								return "vehicle_word"
-	elif  answer.lower()		== "open log":								return "open_log"
-	elif 	answer.lower()		== "backup":								return "backup"
-	elif 	answer.lower()		== "load backup":						return "load_backup"
-	elif  answer.lower()		== "add filter":								return "add_filter"
-	elif  answer.lower()		== "remove filters":					return "remove_filters"
-	elif  answer.lower() 	== "price info" :							return "price_info"
+	if 	 answer.lower() 	in affirmative_words: 	return "yes"
+	elif answer.lower() 	in words_of_denial: 	return "no"
+	elif answer.lower()		in search_words:		return "search"
+#	elif 	answer.lower()	in atv_words:			return "atv_word"
+#	elif 	answer.lower()	in mower_word:			return "mower_word"
+	elif answer.lower() 	in show_words:			return "show_database"
+	elif answer.lower()		== "vehicles":			return "vehicle_word"
+	elif answer.lower()		== "open log":			return "open_log"
+	elif answer.lower()		== "backup":			return "backup"
+	elif answer.lower()		== "load backup":		return "load_backup"
+	elif answer.lower()		== "add filter":		return "add_filter"
+	elif answer.lower()		== "remove filters":	return "remove_filters"
+	elif answer.lower() 	== "price info" :		return "price_info"
+	elif answer.lower()		== "scrape":			return "scrape"
+	elif answer.lower()		== "save results":				return "save"
+	elif answer.lower()		== "print":				return "print"
 	
-	else: 																						return "other"
+	else: 											return "other"
 	
 # NOT TESTED
 def is_in_database(item, database):
