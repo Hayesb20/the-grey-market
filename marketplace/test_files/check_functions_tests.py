@@ -3,7 +3,7 @@
 
 import unittest
 import check_functions as mod
-from vehicle_mod			import make_vehicle
+from vehicle_mod	import make_vehicle
 
 
 myAtv1 = make_vehicle(year = "2019", brand = "tao", model = "tao", cc_rating = "110", awd = "no", price = "600", classification = "four wheeler")
