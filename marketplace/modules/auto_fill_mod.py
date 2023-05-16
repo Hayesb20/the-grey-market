@@ -1,4 +1,5 @@
 import datetime
+import regex as re
 
 # Autofill will recieve a "users_list" which is a list of strings. These strings represent
 # the information needed to make a vehicle. This could be information to make any classification
@@ -26,52 +27,48 @@ import datetime
 # Possibly when all values seem feasable, try to discover which vehicle the user is trying to make so that
 # you can get an idea as to what key/values we should expect
 
-def find_brand(users_list, database):
-    # Searches the database to see if any of the strings from the
-    # users list match a brand from an item in the database
-    # If a match is found that string is returned as the brand
-        # !!Note!!, if there are multiple strings that would be a match
-        # only the first one will be returned
-    for str in users_list:
-        for item in database:
-            if str == item.get_brand():
-                return str
-    # If no matches were found in the database will attempt to "guess" which
-    # of the users strings is the brand, if any of them are
 
-    # Qualities of a string representing a brand
-    #   The string will contain only alphabetical chars
-    #NOT ENOUGH BRAINS TO FIX THIS PROBLEM
-    
-        
+def is_likely_a_year(curr_string, users_list):
+    # This function recieves a string that is a digit and helps to determin 
+    # whether or not that string is likely to be the number represening a 
+    # year given a set of rules
+    # Rule 1 - There are only 3 numbers to date (2023) where the year is 
+    #           divisable by 25 with a remainder of 0. Thus, if the string
+    #           is divisable by 25 with a remainder of 0 we will assume that
+    #           it is not a year. Those years are 1950, 1975, and 2000
+    # Rule 2 - We are only considering years between 1950 and the current year
+    #           plus 1. So if the string falls without that range, it is not a year
 
-    return
 
-def is_not_in_list(string, list):
-    for i in range(len(list)):
-        if string == list[i]:
-            #print("returning flase")
-            return False
-    #print("returning true")
-    return True
-
-def is_likely_a_year(string):
-    if (int(string)%25 == 0     # if the number is divisable by 25 with a remainder of not 0
-        or int(string) < 1950   # or the number is less than 1950
-        or int(string) > 2024): # or the number is larger than 2024
+    if (int(curr_string)%25 == 0     # if the number is divisable by 25 with a remainder of not 0
+        or int(curr_string) < 1950   # or the number is less than 1950
+        or int(curr_string) > 2024): # or the number is larger than 2024
         return False            # The number is likely a year
+    elif dup_numbers(curr_string, users_list) == True:
+        return False # The number is likely a year
+    
     return True # Otherwise the number is unlikely to be a year
 
-def new_is_more_likely(string, curr_best):
+def new_is_more_likely(string, a_dict, curr_best, users_list):
     # This function is ment to determin which number is most likely to be
-    # the price by checkign them against a series of rules and guides
-    # Rule 1 - if one number is within the range for engine power and the other
+    # the price by checking them against a series of rules and guides
+    # Rule 1 - If one number is within the range for engine power and the other
     # is larger than that range, the larger is more liekly to be the price
-    if int(string) > 1000 and int(curr_best) <= 1000: 
-        print("returning true")
-        return True
-    #print("returning false")
-    return False
+    # Rule 2 - If the the "year" has already been filled and this new number is
+    # equal to that year, and it is not duplicate number, the new number is not
+    # likely to be the price.
+    #if int(string) > 1000 and int(curr_best) <= 1000: return False
+    #print("string", string)
+    if ("year" in a_dict and int(string) == int(a_dict["year"]) 
+        and dup_numbers(string, a_dict) == True): return False
+    if ("year" in a_dict and int(string) == int(a_dict["year"])): return False
+    for key in a_dict:
+        if (a_dict[key] == curr_best and dup_numbers(string, users_list) == True): 
+            return True
+    if int(string) < int(curr_best): return False
+    return True
+    
+   
 
 def dup_numbers(string, users_list):
     # This function will take a string and a list and then return True
@@ -131,32 +128,47 @@ def find_price(users_list, database, a_dict):
         count_acc = brand_count_acc
         price_acc = brand_price_acc
         #print("the count",count_acc)
-
+    #print(model_count_acc)
+    
     if count_acc == 0: return
+    average_price = price_acc/count_acc
+    #print("the average price is", average_price)
     best_match = None
     for str in users_list:
-        average_price = price_acc/count_acc
-       # print("the average price is", average_price)
         if str.isdigit():  
             if model_count_acc != 0 or brand_count_acc != 0:
-                #print("i have this now ", str)
-                if (is_not_in_list(str, list_of_model_cc_n_hp_rate) == True 
-                    or dup_numbers(str, users_list) == True): 
-                    #print(is_likely_a_year(str))
-                    if best_match == None and is_likely_a_year(str) == False:
+                if (str not in list_of_model_cc_n_hp_rate
+                    or dup_numbers(str, users_list) == True):
+                    if best_match == None and is_likely_a_year(str, users_list) == False:
                         best_match = str
                         #print("best match was none but is now ", best_match)
                     else:
-                        #print("ibv reached the else")
                         if best_match != None:
                             #print("this is str", str)
-                            #print("this is the difference between best match and the average",abs((abs(int(best_match))-abs(int(average_price)))))
-                            #print("this is the difference between the new number ",abs((abs(int(str)-abs(int(average_price))))))
-                            if (abs((abs(int(best_match))-abs(int(average_price)))) > abs(abs(int(str)-int(average_price))) 
-                                or new_is_more_likely(str, best_match) == True):
-                                if is_likely_a_year(str) == False:
+                            if (abs(abs(int(best_match))-abs(int(average_price))) > abs(abs(int(str)-abs(int(average_price)))) 
+                                or new_is_more_likely(str, a_dict, best_match, users_list) == True
+                                or some_foo(str, users_list, a_dict) == True):
+                                #print("T OR F", is_there_bigger_num_not_year(str, users_list, best_match))
+                                if (is_there_bigger_num_not_year(str, users_list, best_match) == True
+                                    and new_is_more_likely(str, a_dict, best_match, users_list) == False): 
                                     best_match = str
-                                #print("we changed new best to be ",best_match)
+                                    #print("if 1 we changed new best to be ",best_match)
+
+                                if (is_there_bigger_num_not_year(str, users_list, best_match) == False
+                                    and new_is_more_likely(str, a_dict, best_match, users_list) == True): 
+                                    best_match = str
+                                    #print("if 1.1 we changed new best to be ",best_match)
+
+                                if (is_there_bigger_num_not_year(str, users_list, best_match) == True
+                                    and some_foo(str, users_list, a_dict) == True): 
+                                    best_match = str
+                                    #print("if 2 we changed new best to be ",best_match)
+                                    
+                                if (is_there_bigger_num_not_year(str, users_list, best_match) == False
+                                    and is_likely_a_year(str, users_list) == False
+                                    and new_is_more_likely(str, a_dict, best_match, users_list) == True):
+                                    best_match = str
+                                    #print("if 3 we changed new best to be ",best_match)
                 
     # Intended to catch scenarios where the price is found within the list
     # of cc_ratings and hp_ratings
@@ -180,13 +192,37 @@ def find_price(users_list, database, a_dict):
         #print("after", eps_and_price)
         if len(eps_and_price) == 1: best_match = eps_and_price[0]
 
-
-
-
-
     #print(best_match)      
     return best_match
+
+def some_foo(str, users_list, a_dict):
+    #print("str", str)
+    
+    if ("year" in a_dict # If the year key already exists in a_dict
+        and dup_numbers(str, users_list) == True # If there are duplicate numbers in users_list
+        and is_there_bigger_num_not_year(str, users_list) == True): # If there is NOT a larger number thats not a year
+        #print("retunring true in foo")
+        return True
+
+def is_there_bigger_num_not_year(str, users_list, best_match=0):
+    #print("the str here 1 ", str, best_match)
+    for string in users_list:
+        if string.isdigit():
+            if (int(string) > int(str)                              # If string is larger than str
+                and int(str) > int(best_match)                      # or str is less than best match
+                and is_likely_a_year(string, users_list) == True):  # and string is not likely a year
+                #print("its me")
+                return False                                        # Then string is larger than str and not a year
+            elif (int(string) > int(str)                            # If there is a string in the list that is larger than str
+                and int(str) > int(best_match)
+                and is_likely_a_year(string, users_list) == False): # and that string is not likely a year
+                return True  
                 
+            else : 
+                #print("its me2")
+                return False                                      # Then str is not the largest number that is not a year
+    return True
+
 def find_year(users_list, database, a_dict):
     # The year can only be between 1950 and the present year + 1
         # I have no interest in vehicles older than 1950 at the moment
@@ -212,17 +248,10 @@ def find_year(users_list, database, a_dict):
         if dup_numbers(best_match, users_list): return best_match
         else:
             for str in list_of_pos_years:
-                if is_likely_a_year(str):
+                if is_likely_a_year(str, users_list):
                     return str #str is the best match and also will be the first match it finds
     else: pass # There are more than 1 option for year. Need to identify best option
                 
-def find_model(users_list, database, a_dist):
-    for str in users_list:
-        for item in database:
-            if str == item.get_model():
-                return str
-    return
-            
 def find_EP (users_list, database, a_dict):
     # This function must return a key and a value
         # The first value to be returned will be the key "hp" or "cc"
@@ -234,19 +263,35 @@ def find_EP (users_list, database, a_dict):
         # Things denoted as CC are usually converted into the HP notation before
         # crossing the 1000 threshold
         # Exceedingly few items cross the 1000hp threshold
+
+    # Checks for any strings in the users_list that appear like "20hp" or "400cc" as those are 
+    # the obvious values for the Engine power raiting and its denotation
+    for string in users_list:
+        if re.match("[0-9]*hp", string):
+            denotation = "hp_rating"
+            ep = re.match("[0-9]*", string)
+            return denotation, ep.group(0)
+
+        elif re.match("[0-9]*cc", string):
+            denotation = "cc_rating"
+            ep = re.match("[0-9]*", string)
+            return denotation, ep.group(0)
+
+
     denotation = get_denotation(database, a_dict)
     count_occurances = 0
     viable_options = []
-    best_match = ""
+    best_match = "0"
     for a_str in users_list:
         if a_str.isdigit():
             if int(a_str) < 1000:
                 count_occurances = count_occurances + 1
-                best_match = a_str
                 viable_options.append(a_str)
     
     if count_occurances == 0: return None, None
-    if count_occurances == 1: return denotation, best_match
+    elif count_occurances == 1: 
+        #print("count was 1")
+        return denotation, viable_options[0]
     else:
         # First we will refrence the database to see if that can help us
         # We are assuiming there is a database to work with
@@ -256,51 +301,73 @@ def find_EP (users_list, database, a_dict):
         temp_cc = 0
         cc_occurance = 0
         avrg_cc = 0
+
         for item in database:
-            if "brand" in a_dict:
-                if item.get_brand() == a_dict["brand"]:
-                     #if item.get_hp_rating() != "unknown":
-                    #    temp_hp = temp_hp + item.get_hp_rating()
-                    #    hp_occurance = hp_occurance + 1
+            if "model" in a_dict: # If a_dict has an item with a brand
+                if item.get_model() == a_dict["model"]: # If the brand of item matches a brand of an item from a_dict
+                    if item.get_hp_rating() != "unknown":
+                        temp_hp = temp_hp + int(item.get_hp_rating())
+                        hp_occurance = hp_occurance + 1
+
                     if item.get_cc_rating() != "unknown":  
                         temp_cc = temp_cc + int(item.get_cc_rating())
                         cc_occurance = cc_occurance + 1
-            else: temp_cc = 0
-            
-        #avrg_hp = temp_hp/hp_occurance
+            else: 
+                temp_cc = 0
+                temp_hp = 0
+        #print(hp_occurance, temp_hp)
+        if temp_hp == 0: temp_hp = None    
+        else: avrg_hp = temp_hp/hp_occurance
         if temp_cc == 0: avrg_cc = None
         else: avrg_cc = temp_cc/cc_occurance
-        #print(avrg_cc)
+
+        #print(avrg_cc, avrg_hp)
 
 
         for option in viable_options:
-            if best_match == "":
-                best_match = option
-            else:
-                # Sets the best_match to the number that is closest to the average
+            # Sets the best_match to the number that is closest to the average
+            
+            if (denotation == "cc_rating" and cc_occurance != 0):
                 if avrg_cc != None:
-                    if abs(avrg_cc - int(option)) < abs(avrg_cc - int(best_match)): best_match = option 
+                    #print("cc wasnt None")
+                    if abs(avrg_cc - int(option)) < abs(avrg_cc - int(best_match)): 
+                        best_match = option 
+                        #print("cc best match is set", best_match)
+            
+            if (denotation == "hp_rating" and hp_occurance != 0):
+                if avrg_hp != None:
+                    if abs(avrg_hp - int(option)) < abs(avrg_hp - int(best_match)): 
+                        best_match = option 
+                        #print("hp best match is set", best_match)
                 
-                option_occ_dict = {}
-                for option in viable_options:
+            # Finds the number of times that the possible EP (option) has occured in the avaliable data (database)
+            option_occ_dict = {}
+            for option in viable_options:
                     option_occurances = 0
                     for item in database:
-                        if option == item.get_cc_rating() or option == item.get_hp_rating():
-                            option_occurances = option_occurances + 1
-                    option_occ_dict[option] = option_occurances
-                #print(option_occ_dict)
-                temp_best_match = 0
-                for key in option_occ_dict:
-                    if option_occ_dict == 0: temp_best_match = option_occ_dict[key]
-                    else:
-                        if int(option_occ_dict[key]) > int(temp_best_match): 
-                            temp_best_match = option_occ_dict[key]
-                if best_match == temp_best_match: return denotation, best_match
-                else: best_match = list(option_occ_dict.keys())[list(option_occ_dict.values()).index(temp_best_match)]
-       # print(denotation, best_match)
+                        if option == item.get_cc_rating() or option == item.get_hp_rating(): # If the option can be matched
+                            option_occurances = option_occurances + 1 # Add 1 to the occurence accumulator
+                    option_occ_dict[option] = option_occurances # Add the times occured to the dictionary
+                  
+            temp_best_match = 0
+            for key in option_occ_dict:
+                if int(option_occ_dict[key]) > int(temp_best_match): temp_best_match = option_occ_dict[key]
+                
+            if best_match == temp_best_match: return denotation, best_match
+                
+            else:
+                if any in option_occ_dict != 0: 
+                    best_match = list(option_occ_dict.keys())[list(option_occ_dict.values()).index(temp_best_match)]
+                    #print("best match is set in else", best_match)
+
+        if int(best_match) == 0:
+            best_match = None            
+        #print("returning here", denotation, best_match)
         return denotation, best_match
 
 def get_denotation(database, a_dict):
+    # This function is responible for determining whether the power rating
+    # given by the user is a hp or cc rating
     denotation = None
     empty_set = set()
     for item in database:
@@ -336,6 +403,27 @@ def get_denotation(database, a_dict):
         except: pass
     return denotation
  
+def find_brand(users_list, database):
+    # Searches the database to see if any of the strings from the
+    # users list match a brand from an item in the database
+    # If a match is found that string is returned as the brand
+        # !!Note!!, if there are multiple strings that would be a match
+        # only the first one will be returned
+    for str in users_list:
+        for item in database:
+            if str in item.get_brand():
+                return item.get_brand()
+    # If no matches were found in the database will attempt to "guess" which
+    # of the users strings is the brand, if any of them are
+
+    # Qualities of a string representing a brand
+    #   The string will contain only alphabetical chars
+    #NOT ENOUGH BRAINS TO FIX THIS PROBLEM
+    
+        
+
+    return
+
 def determin_amenities (users_list):
     # This function needs continued work. I believe that the directed we need to 
     # go with regards to awd and other features for vehicles, needs to be redesigned
@@ -346,6 +434,13 @@ def determin_amenities (users_list):
         if a_string == "yes": return a_string
         elif a_string == "no": return a_string
 
+    return
+
+def find_model(users_list, database, a_dist):
+    for str in users_list:
+        for item in database:
+            if str == item.get_model():
+                return str
     return
 
 def find_deck_size(users_list):
@@ -361,14 +456,18 @@ def find_engine_brand(users_list):
         if any(char.isdigit() for char in string) ==  False:
             for brand in brand_list:
                 alt_string = ''.join([i for i in string if i.isalpha()])
-                if alt_string in brand: return string
-                if brand in alt_string: return string
+                if (alt_string in brand
+                    and len(alt_string) > 2): return string
+                if (brand in alt_string
+                    and len(alt_string) > 2): return string
 
+# Main Function
 def autofill_vehicle (users_list, database):
     a_dict = {}
 
 # If the database is empty then autofill will not be helpful
     if database == {}: return a_dict
+
     
 # The item class req. a brand and a price so im going to start by looking for those
     brand = find_brand (users_list, database)
@@ -418,10 +517,7 @@ def autofill_vehicle (users_list, database):
         if engine_brand != None:
             a_dict["engine_brand"] = engine_brand
     except: print("Could not determin deck size")
-    
-    
-    
-    
+
     
     return a_dict
 
