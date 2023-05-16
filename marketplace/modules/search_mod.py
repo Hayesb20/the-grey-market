@@ -2,7 +2,7 @@
 # 23 Jan 2023
 
 from handeling_strings 		import parse
-from load_and_save_files import load_file, dict_of_filepaths, show_database
+from load_and_save_files 	import load_file, dict_of_filepaths, show_database
 from check_functions 		import check_answer
 
 
@@ -10,8 +10,7 @@ vehicle_database = []
 
 def load_files():
 	# Look for a txt file at the designated location to use
-	load_file(	database = vehicle_database,
-							filename = dict_of_filepaths["filepath_to_vehicle_database.txt"])
+	load_file(filepath = dict_of_filepaths["filepath_to_vehicle_database.txt"])
 	print(" Failed to load 'vehicle_database.txt'")	
 	print(" Database loaded successfully")	
 
@@ -22,23 +21,26 @@ def is_valid_thing(a_list, a_word):
 
 def filter_data(list_of_users_words):
 		a = 0
-		while a < len(atv_database):
+		while a < len(vehicle_database):
 			for i in range(len(list_of_users_words)):
-				if is_valid_thing(atv_database[a].get_essence(), list_of_users_words[i]): a = a + 1
-				else: del atv_database[a]
+				if is_valid_thing(vehicle_database[a].get_essence(), list_of_users_words[i]): a = a + 1
+				else: del vehicle_database[a]
 	
 def show_price_info():
+	if vehicle_database == []:
+		print(" I have nothing to show")
+		return
 	the_sum = 0
 	largest = 0
 	smallest = 100000
-	for thing in atv_database:
+	for thing in vehicle_database:
 		if int(thing.get_price()) > largest: largest = int(thing.get_price()) 
 		if int(thing.get_price()) < smallest: smallest = int(thing.get_price())
 		the_sum = the_sum + int(thing.get_price())
 			
 	print("\n The most expensive item in the list is $", largest)
 	print(" The least expensive item in the list is $", smallest)
-	print(" And the average price is $", int(the_sum/len(atv_database)))
+	print(" And the average price is $", int(the_sum/len(vehicle_database)))
 	
 def options():
 	options_list = ["\n Done : to stop looking up items",
